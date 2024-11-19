@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang = 'es-ES'>
+    <head>
+        <link href="style/styles.css"
+              rel="stylesheet"
+              type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lily%20Script%20One' rel='stylesheet'>
+        <meta charset = 'UTF-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Viaje de Papá Noel</title>
+        <link rel="icon" type="image/x-icon" href="images/Santa1-transformed.png">
+        <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <!--Java Scrpit para el contador-->
+        <script src="script/countdown.js" async></script>
+        <!--Java Scrpit para Formulario de Registro-->
+        <script src="script/register.js" async></script>
+        <!--Java Scrpit para Formulario de Log In-->
+        <script src="script/logIn.js" async></script>
+        <!--Java Scrpit para Mostrar la Información del Usuario-->
+        <script src="script/userInfo.js" async></script>
+        <!--Java Scrpit para Gestionar el envío de Cartas-->
+        <script src="script/mailManager.js" async></script>
+        <!--Java Scrpit para el apartado de mis cartas-->
+        <script src="script/myCards.js" async></script>
+        <!--Java Scrpit para Los botones de los juegos-->
+        <script src="script/gameButtons.js" async></script>
+        <!--Java Scrpit para el primer juego-->
+        <script src="script/clickTheCircle.js" async></script>
+
+        <!--Java Scrpits para la apertura de Pop Ups de contenido-->
+        <script src="script/logInFunction.js" async></script>
+        <script src="script/registerFunction.js" async></script>
+        <script src="script/userInfoFunction.js" async></script>
+        <script src="script/changeUserFunction.js" async></script>
+        <script src="script/changePasswordFunction.js" async></script>
+        <script src="script/changeCityFunction.js" async></script>
+        <script src="script/changeEmailFunction.js" async></script>
+        <script src="script/changeCountryFunction.js" async></script>
+        <script src="script/changeGenderFunction.js" async></script>
+        <script src="script/changeChildrenFunction.js" async></script>
+        <script src="script/myCardsFunction.js" async></script>
+    </head>
+
+    <body>
+
+        <header class="Encabezado">
+            <div class="logo"> <!--Logo de la pagina-->
+                <img src="images/Santa1-transformed.png" alt="">
+            </div>
+            
+            <nav class="MenuPrincipal"> <!--Menú Principal-->
+                    <a href="#Page1">Home</a>
+                    <a href="#Page2">Papá Noel</a>
+                    <a href="#Page3">Las Cartas</a>
+                    <a href="#Page4">Envía Tu Carta</a>
+                    <a href="#Page5">¡Juega Ahora!</a>
+                    <button id="LogInBotton" onclick="openPopUpLogIn()">Iniciar Sesión</button>
+                    <button id="RegisterBotton" onclick="openPopUpRegister()">Registro</button>
+
+                    <!--División del Frame para la cuenta del Usuario-->
+                    <div id="MyMenu" class="MyMenu" style="display:none;">
+                        <button id="MyAccount" onclick="openDropDown()">Mi Cuenta</button>
+                        <div id="DropDown" class="DropDown" style="display:none;">
+                            <a class="no-border" href="#" onclick="openMyMenu()">Mi Perfil</a>
+                            <a class="no-border" href="#Page1" onclick="openMyCards()">Mis Cartas</a>
+                            <a class="no-border" href="#" onclick="closeSession()">Cerrar Sesión</a>
+                        </div>
+                    </div>
+                    
+
+                    <!--División del Frame para Formulario de Registro-->
+                    <div class="cargaRegistro" id="cargaRegistro" style="display:none;">
+                        <div id="contenidoRegistro">
+                            <section class="RegisterPage">
+                                <header class="RegisterTitle">
+                                    <h1>Registráte Aquí</h1>
+                                </header>
+                    
+                                <form id="RegisterForm" onsubmit="return checkPassword() && almacenarDatos();">
+                                    <div class="FirstRline">
+                                        <label for="username">Nombre de Usuario: </label><br>
+                                        <input type="text" class="inputRform" id="username" name="username" required 
+                                            minlength="3" placeholder="Tu Nombre Completo..."><br>
+                                        
+                                        <label for="password">Contraseña: </label><br>
+                                        <input type="password" id="password" name="password" placeholder="Contraseña..."
+                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*\d)(?=.*[@#$%^&+=-_]).{12}"
+                                            required><br>
+                                        
+                                        <label for="ciudad">Ciudad: </label><br>
+                                        <input type="text" class="inputRform" id="ciudad" name="ciudad" required 
+                                            minlength="3" placeholder="Ciudad en la que vives..."><br>
+                                    
+                                    </div>
+                    
+                                    <div class="SecondRline">
+                                        <label for="correo">Email: </label><br>
+                                        <input type="email" class="inputRform" id="correo" name="correo" required placeholder="Tu Correo..."><br>
+                                        
+                                        <label for="confirmPassword">Confirme Contraseña: </label><br>
+                                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repita la Contraseña..."
+                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*\d)(?=.*[@#$%^&+=-_]).{12}"
+                                            required><br>
+                                            <span id="message"></span>
+                                        
+                                        <label for="pais">País: </label><br>
+                                        <input type="text" class="inputRform" id="pais" name="pais" required 
+                                            minlength="3" placeholder="País en el que vives..."><br>
+                                    
+                                    </div>
+                                    
+                                    <div class="FinalRline">
+                                        <label>Género:</label>
+                                        <select id="gender" name="gender">
+                                            <option value="men">Masculino</option>
+                                            <option value="women">Femenino</option>
+                                            <option value="other">Otro</option>
+                                            <option value="dontSay">Prefiero No Decirlo</option>
+                                        </select><br>
+                    
+                                        <label for="hijos">Número de Hijos: </label><br>
+                                        <input type="number" id="hijos" name="hijos" min="0" placeholder="0">
+        
+                                        <div id="nombreEdadJuguetes"></div>
+
+                                        <!--<input type="submit" value="Aceptar">-->
+                                        <div class="rBottons">
+                                            <button type="button" onclick="clearForm()">Limpiar Campos</button>
+                                            <button type="submit">Aceptar</button>
+                                            <button type="button" onclick="closeForm()">Cancelar</button>
+                                        </div>
+                    
+                    
+                                    </div>
+                    
+                                </form>
+                    
+                            </section>
+                        </div>
+                    </div>
+
+                    <!--División del Frame para Formulario de Log In-->
+                    <div class="cargaLogIn" id="cargaLogIn" style="display: none;">
+                        <div id="contenidoLogIn">
+                            <section class="LogInPage">
+                                <header class="LogInTitle">
+                                    <h1>Iniciar Sesión</h1>
+                                </header>
+                                
+                                <form id="LogInForm" class="LogInForm" onsubmit="userRegister(); return false;">
+                                    <label class="labelLogIn" for="liusername">Nombre de Usuario: </label><br>
+                                    <input type="text" class="inputLIform" id="liusername" name="liusername" required 
+                                        minlength="3" placeholder="Tu Nombre Completo..."><br>
+                                    
+                                    <label class="labelLogIn" for="lipassword">Contraseña: </label><br>
+                                    <input type="password" id="lipassword" name="lipassword" placeholder="Contraseña..."
+                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*\d)(?=.*[@#$%^&+=-_]).{12}"
+                                        required><br>
+                                    
+                                    <div class="liBottons">
+                                        <button type="submit">Entrar</button>
+                                        <button type="button" onclick="closePopUpLogIn()">Cancelar</button>
+                                    </div>
+                                </form>
+                            </section>
+                        </div>
+                    </div>
+
+                    <!--División del Frame para Mostrar la Información del Usuario-->
+                    <div class="cargaDatos" id="cargaDatos" style="display:none;">
+                        <div id="contenidoDatos">
+                            <section class="MyProfilePage">
+                                <header class="MyProfileTitle">
+                                    <h1>Tus Datos</h1>
+                                    <i class="material-icons" onclick="closePopUpMyProfile()">cancel</i>
+                                </header>
+
+                                <div class="FirstRline">
+                                    <h2 class="MyProfileInfo">Nombre de Usuario:</h2>
+                                    <p class="MyProfileData"> <span id="MyUsername"></span> <i class="material-icons" onclick="openPopUpChangeUser()">edit</i></p>
+                                    
+                                    <!--División del Frame para Formulario para cambiar el nombre de usuario-->
+                                    <div class="cargaChangeUser" id="cargaChangeUser" style="display: none;">
+                                        <div id="contenidoChangeUser">
+                                            <section class="ChangeUserPage">
+                                                <header class="ChangeUserTitle">
+                                                    <h1>Editar Nombre de Usuario</h1>
+                                                </header>
+                                                
+                                                <form id="ChangeUserForm" class="ChangeUserForm" onsubmit="changeUsername(); return false;">
+
+                                                    <label class="labelChangeUser" for="chusername">Nuevo Nombre de Usuario: </label><br>
+                                                    <input type="text" class="inputChangeUser" id="chusername" name="chusername" required 
+                                                        minlength="3" placeholder="Tu Nombre Completo..."><br>
+                                                    
+                                                    <label class="labelChangeUser" for="chUserpassword">Confirmar con Contraseña: </label><br>
+                                                    <input type="password" id="chUserpassword" name="chUserpassword" placeholder="Contraseña..."
+                                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*\d)(?=.*[@#$%^&+=-_]).{12}"
+                                                        required><br>
+                                                    
+                                                    <div class="chUserBottons">
+                                                        <button type="submit">Editar</button>
+                                                        <button type="button" onclick="closePopUpChangeUser()">Cancelar</button>
+                                                    </div>
+                                                </form>
+                                            </section>
+                                        </div>
+                                    </div>
+
+
+                                    <h2 class="MyProfileInfo">Contraseña:</h2>
+                                    <p class="MyProfileData"> <span id="MyPassword"></span> <i class="material-icons" onclick="openPopUpChangePassword()">edit</i></p>
+
+                                    <!--División del Frame para Formulario para cambiar la password-->
+                                    <div class="cargaChangePassword" id="cargaChangePassword" style="display: none;">
+                                        <div id="contenidoChangePassword">
+                                            <section class="ChangePasswordPage">
+                                                <header class="ChangePasswordTitle">
+                                                    <h1>Editar Contraseña</h1>
+                                                </header>
+                                                
+                                                <form id="ChangePasswordForm" class="ChangePasswordForm" onsubmit="changePassword(); return false;">
+
+                                                    <label for="oldPassword">Contraseña Anterior: </label><br>
+                                                    <input type="password" id="oldPassword" name="oldPassword" placeholder="Contraseña..."
+                                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*\d)(?=.*[@#$%^&+=-_]).{12}"
+                                                        required><br>
+
+                                                    <label for="newPassword">Nueva Contraseña: </label><br>
+                                                    <input type="password" id="newPassword" name="newPassword" placeholder="Contraseña..."
+                                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*\d)(?=.*[@#$%^&+=-_]).{12}"
+                                                        required><br>
+
+                                                    <label for="confirmchPassword">Confirme Nueva Contraseña: </label><br>
+                                                    <input type="password" id="confirmchPassword" name="confirmchPassword" placeholder="Repita la Contraseña..."
+                                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*\d)(?=.*[@#$%^&+=-_]).{12}"
+                                                        required><br>                                  
+                                                                                                        
+                                                    <div class="chPasswordBottons">
+                                                        <button type="submit">Editar</button>
+                                                        <button type="button" onclick="closePopUpChangePassword()">Cancelar</button>
+                                                    </div>
+                                                </form>
+                                            </section>
+                                        </div>
+                                    </div>
+
+                                    
+                                    <h2 class="MyProfileInfo">Ciudad:</h2>
+                                    <p class="MyProfileData"> <span id="MyCity"></span> <i class="material-icons" onclick="openPopUpChangeCity()">edit</i></p>
+
+                                    <!--División del Frame para Formulario para cambiar la ciudad-->
+                                    <div class="cargaChangeCity" id="cargaChangeCity" style="display: none;">
+                                        <div id="contenidoChangeCity">
+                                            <section class="ChangeCityPage">
+                                                <header class="ChangeCityTitle">
+                                                    <h1>Editar Ciudad</h1>
+                                                </header>
+                                                
+                                                <form id="ChangeCityForm" class="ChangeCityForm" onsubmit="changeCity(); return false;">
+
+                                                    <label class="labelChangeCity" for="chcity">Nueva Ciudad: </label><br>
+                                                    <input type="text" class="inputChangeUser" id="chcity" name="chcity" required 
+                                                        minlength="3" placeholder="Tu Ciudad..."><br>
+                                                    
+                                                    <label class="labelChangeCity" for="chCityPassword">Confirmar con Contraseña: </label><br>
+                                                    <input type="password" id="chCityPassword" name="chCityPassword" placeholder="Contraseña..."
+                                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*\d)(?=.*[@#$%^&+=-_]).{12}"
+                                                        required><br>
+                                                    
+                                                    <div class="chCityBottons">
+                                                        <button type="submit">Editar</button>
+                                                        <button type="button" onclick="closePopUpChangeCity()">Cancelar</button>
+                                                    </div>
+                                                </form>
+                                            </section>
+                                        </div>
+                                    </div>
+                                    
+                                
+                                </div>
+                
+                                <div class="SecondRline">
+
+                                    <h2 class="MyProfileInfo">Email:</h2>
+                                    <p class="MyProfileData"> <span id="MyEmail"></span> <i class="material-icons" onclick="openPopUpChangeEmail()">edit</i></p>
+
+                                    <!--División del Frame para Formulario para cambiar el email-->
+                                    <div class="cargaChangeEmail" id="cargaChangeEmail" style="display: none;">
+                                        <div id="contenidoChangeEmail">
+                                            <section class="ChangeEmailPage">
+                                                <header class="ChangeEmailTitle">
+                                                    <h1>Editar Email</h1>
+                                                </header>
+                                                
+                                                <form id="ChangeEmailForm" class="ChangeEmailForm" onsubmit="changeEmail(); return false;">
+                                                    
+                                                    <label for="chemail">Nuevo Email: </label><br>
+                                                    <input type="email" class="inputChangeEmail" id="chemail" name="chemail" required placeholder="Tu Correo..."><br>
+                                                                                                       
+                                                    <label class="labelChangeEmail" for="chEmailPassword">Confirmar con Contraseña: </label><br>
+                                                    <input type="password" id="chEmailPassword" name="chEmailPassword" placeholder="Contraseña..."
+                                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*\d)(?=.*[@#$%^&+=-_]).{12}"
+                                                        required><br>
+                                                    
+                                                    <div class="chEmailBottons">
+                                                        <button type="submit">Editar</button>
+                                                        <button type="button" onclick="closePopUpChangeEmail()">Cancelar</button>
+                                                    </div>
+                                                </form>
+                                            </section>
+                                        </div>
+                                    </div>
+                                    
+                                    <h2 class="MyProfileInfo">País:</h2>
+                                    <p class="MyProfileData"> <span id="MyCountry"></span> <i class="material-icons" onclick="openPopUpChangeCountry()">edit</i></p>
+                                    
+                                    <!--División del Frame para Formulario para cambiar el país-->
+                                    <div class="cargaChangeCountry" id="cargaChangeCountry" style="display: none;">
+                                        <div id="contenidoChangeCountry">
+                                            <section class="ChangeCountryPage">
+                                                <header class="ChangeCountryTitle">
+                                                    <h1>Editar País</h1>
+                                                </header>
+                                                
+                                                <form id="ChangeCountryForm" class="ChangeCountryForm" onsubmit="changeCountry(); return false;">
+
+                                                    <label class="labelChangeCountry" for="chcountry">Nuevo País: </label><br>
+                                                    <input type="text" class="inputChangeCountry" id="chcountry" name="chcountry" required 
+                                                        minlength="3" placeholder="Tu País..."><br>
+                                                    
+                                                    <label class="labelChangeCountry" for="chCountryPassword">Confirmar con Contraseña: </label><br>
+                                                    <input type="password" id="chCountryPassword" name="chCountryPassword" placeholder="Contraseña..."
+                                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*\d)(?=.*[@#$%^&+=-_]).{12}"
+                                                        required><br>
+                                                    
+                                                    <div class="chCountryBottons">
+                                                        <button type="submit">Editar</button>
+                                                        <button type="button" onclick="closePopUpChangeCountry()">Cancelar</button>
+                                                    </div>
+                                                </form>
+                                            </section>
+                                        </div>
+                                    </div>
+
+
+                                    <h2 class="MyProfileInfo">Género:</h2>
+                                    <p class="MyProfileData"> <span id="MyGender"></span> <i class="material-icons" onclick="openPopUpChangeGender()">edit</i></p>
+
+                                    <!--División del Frame para Formulario para cambiar el género-->
+                                    <div class="cargaChangeGender" id="cargaChangeGender" style="display: none;">
+                                        <div id="contenidoChangeGender">
+                                            <section class="ChangeGenderPage">
+                                                <header class="ChangeGenderTitle">
+                                                    <h1>Editar Género</h1>
+                                                </header>
+                                                
+                                                <form id="ChangeGenderForm" class="ChangeGenderForm" onsubmit="changeGender(); return false;">
+
+                                                    <label class="labelChangeGender" for="chgender">Género: </label><br>
+                                                    <select id="chgender" name="chgender">
+                                                        <option value="men">Masculino</option>
+                                                        <option value="women">Femenino</option>
+                                                        <option value="other">Otro</option>
+                                                        <option value="dontSay">Prefiero No Decirlo</option>
+                                                    </select><br>
+                                                    
+                                                    <label class="labelChangeGender" for="chGenderPassword">Confirmar con Contraseña: </label><br>
+                                                    <input type="password" id="chGenderPassword" name="chGenderPassword" placeholder="Contraseña..."
+                                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*\d)(?=.*[@#$%^&+=-_]).{12}"
+                                                        required><br>
+                                                    
+                                                    <div class="chGenderBottons">
+                                                        <button type="submit">Editar</button>
+                                                        <button type="button" onclick="closePopUpChangeGender()">Cancelar</button>
+                                                    </div>
+                                                </form>
+                                            </section>
+                                        </div>
+                                    </div>
+                                    
+                                
+                                </div>
+                                
+                                <div class="FinalRline">
+                                    <h2 class="MyProfileInfo">Hijos:</h2>
+                                    <p class="MyProfileData"> <span id="MyNumChildren"></span></p>
+                                    <div id="infoHijos" class="infoHijos"></div>
+
+                                    <!--División del Frame para Formulario para editar la información de los hijos-->
+                                    <div class="cargaChangeChildren" id="cargaChangeChildren" style="display: none;">
+                                        <div id="contenidoChangeChildren">
+                                            <section class="ChangeChildrenPage">
+                                                <header class="ChangeChildrenTitle">
+                                                    <h1>Editar Hijo</h1>
+                                                </header>
+                                                
+                                                <form id="ChangeChildrenForm" class="ChangeChildrenForm" data-index="" onsubmit="changeChildren(); return false;">
+
+                                                    <label for="nameChildren">Nuevo Nombre: </label><br>
+                                                    <input type="text" id="nameChildren" name="nameChildren" placeholder="Nombre..."
+                                                        required><br>
+
+                                                    <label for="ageChildren">Nueva Edad: </label><br>
+                                                    <input type="number" id="ageChildren" name="ageChildren" min="0" placeholder="0"
+                                                        required><br>
+
+                                                    <label for="toysChildren">Nuevos Juguetes: </label><br>
+                                                    <input type="text" id="toysChildren" name="toysChildren" placeholder="Jueguetes..."
+                                                        required><br>                                  
+                                                                                                        
+                                                    <div class="chChildrenBottons">
+                                                        <button type="submit">Editar</button>
+                                                        <button type="button" onclick="closePopUpChangeChildren()">Cancelar</button>
+                                                    </div>
+                                                </form>
+                                            </section>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+                    <div class="cargaMyCards" id="cargaMyCards" style="display: none;">
+                        <div id="contenidoMyCards">
+                            <section class="MyCardsPage">
+                                <header class="MyCardsTitle">
+                                    <h1>Mis Cartas</h1>
+                                    <i class="material-icons" onclick="closePopUpMyCards()">cancel</i>
+                                </header>
+                                <div id="infoCards" class="infoCards"></div>
+                            </section>                            
+                        </div>     
+                    </div>
+            </nav>
+        </header>
+
+        <section id="Page1" class="Page1"> <!--Inicio de la Primera Pagina-->
+
+            <header class="PrincipalTitle">
+                <h1>Sigue a Papá Noel</h1>
+
+                <h3>
+                    <span id="dias"> </span> Días 
+                    <span id="horas"> </span> h
+                    <span id="minutos"> </span> min 
+                    <span id="segundos"> </span> seg
+                </h3>
+
+                <button>Empezar</button>
+            </header>
+
+        </section> <!--Fin de la Primera Pagina-->
+        
+        <div class="PageDivisor"></div>
+
+        <section id="Page2" class="Page2"> <!--Inicio de la Segunda Pagina-->
+            <header class="SantaTitle">
+                <h1>Papá Noel</h1>
+            </header>
+
+            <div class="SecondSection">
+                <div class="SantasImage">
+                    <img src="images/SantaPNG1.png" alt="Papá Noel">
+                </div>
+
+                <div class="SantaText"> 
+                    <p style="font-family:Verdana, Geneva, Tahoma, sans-serif;">
+                        Santa Claus, o Papá Noel, es un señor muy amable y alegre que vive en un 
+                        lugar muy, muy lejano y frío, llamado el Polo Norte. 
+                        Tiene una larga barba blanca y siempre usa un traje rojo con un cinturón negro. 
+                        A Santa le encanta hacer felices a los niños, y su trabajo más importante 
+                        es traer regalos en Navidad.<br><br>
+
+                        Durante todo el año, Santa tiene una fábrica muy grande donde muchos ayudantes, 
+                        llamados elfos, hacen juguetes. Él también tiene unos renos mágicos que vuelan. 
+                        La noche antes de Navidad, Santa viaja en su trineo por todo el mundo, tirado 
+                        por los renos, para llevar regalos a los niños que se han portado bien.<br><br>
+
+                        Santa entra a las casas por la chimenea (o por la puerta si no hay chimenea), y 
+                        deja los regalos debajo del árbol de Navidad o en medias colgadas. 
+                        ¡Pero nunca lo ves porque lo hace todo en secreto mientras duermes! 
+                        Es muy rápido y mágico.<br><br>
+
+                        Santa es muy bueno y le encanta ver a todos felices y con una sonrisa. 
+                        Además, le encanta cuando le dejan galletas y leche para comer cuando pasa 
+                        por las casas.<br>
+                    </p>
+                </div>
+
+            </div>
+        </section> <!--Fin de la Segunda Pagina-->
+
+        <div class="PageDivisor"></div>
+
+        <section id="Page3" class="Page3"> <!--Inicio de la Tercera Pagina-->
+
+            <header class="MailTitle"> <!--Titulo de la pagina de las cartas-->
+                <h2>Las Cartas</h2>
+            </header>
+
+            <!--Hacemos seis divisiones en este punto, una para cada carta-->
+
+            <div class="PrincipalMail">
+                
+                <div class="Mail">
+                    <h3>Carta 1</h3>
+                    <div class="FirstBlock">
+                        <img src="images/P1-transformed.png" alt="">
+                        <div class="SecondBlock">
+                            <h4 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Ana Carlota Picón</h4>
+                            <h5 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Caracas</h5>
+                            <h5 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Venezuela</h5>
+                            <p style="font-family:Verdana, Geneva, Tahoma, sans-serif;">
+                                <b>Querido Papá Noel</b><br>
+                                Este año he trabajado mucho y he intentado dar lo mejor de mí en todo lo que hago. 
+                                Me encantaría pedirte algunos detalles especiales para mí, 
+                                pero lo que más deseo es que mis seres queridos tengan salud y felicidad.
+                                Gracias por la magia que traes cada Navidad y 
+                                por recordarnos lo importante que es compartir y estar juntos.<br><br>
+                                Te dejo galletas y un abrazo desde aquí.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="Mail">
+                    <h3>Carta 2</h3>
+                    <div class="FirstBlock">
+                        <img src="images/P2-transformed.png" alt="">
+                        <div class="SecondBlock">
+                            <h4 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">María Luisa Sánchez</h4>
+                            <h5 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Santo Domingo</h5>
+                            <h5 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">República Dominicana</h5>
+                            <p style="font-family:Verdana, Geneva, Tahoma, sans-serif;">
+                                <b>Querido Papá Noel</b><br>
+                                Espero que estés bien y que este año no haya sido demasiado agitado para ti y 
+                                tus ayudantes. 
+                                Quiero decirte que he estado trabajando duro para ser una mejor persona y 
+                                hacer sonreír a quienes me rodean.<br><br>
+                                Este año, más que regalos, me gustaría pedir paz, salud y 
+                                momentos felices para mi familia y amigos. 
+                                Aunque, si queda espacio en tu trineo, 
+                                no me vendría mal algo especial para disfrutar esta Navidad.<br><br>
+                                Gracias por mantener viva la magia y la ilusión cada año. 
+                                ¡Te esperamos con mucha alegría
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="Mail">
+                    <h3>Carta 3</h3>
+                    <div class="FirstBlock">
+                        <img src="images/P4-transformed.png" alt="">
+                        <div class="SecondBlock">
+                            <h4 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Andrés Duarte</h4>
+                            <h5 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Miami</h5>
+                            <h5 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Estados Unidos</h5>
+                            <p style="font-family:Verdana, Geneva, Tahoma, sans-serif;">
+                                <b>Querido Papá Noel</b><br>
+                                ¡Hola! Espero que tú y los renos estén bien. 
+                                Este año he intentado portarme bien y ayudar a mis papás en casa. 
+                                Me he esforzado mucho en la escuela también.<br><br>
+                                Me gustaría pedirte algunos juguetes que me gustan mucho, 
+                                pero lo que más quiero es que todos estén felices y 
+                                que no falte la magia de la Navidad en mi casa.<br><br>
+                                Voy a dejarte galletas y leche, y zanahorias para los renos. ¡Espero que te gusten!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="Mail">
+                    <h3>Carta 4</h3>
+                    <div class="FirstBlock">
+                        <img src="images/P8-transformed.png" alt="">
+                        <div class="SecondBlock">
+                            <h4 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">José Andrés Carrasquero</h4>
+                            <h5 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Madrid</h5>
+                            <h5 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">España</h5>
+                            <p style="font-family:Verdana, Geneva, Tahoma, sans-serif;">
+                                <b>Querido Papá Noel</b><br>
+                                Este año ha sido un reto, pero también ha traído aprendizajes importantes. 
+                                Hemos trabajado duro en la empresa para superar obstáculos y seguir creciendo, 
+                                y estoy agradecido por todo lo que hemos logrado.<br><br>
+                                Para esta Navidad, no te voy a pedir regalos materiales. 
+                                En cambio, desearía salud, bienestar y oportunidades para seguir avanzando, 
+                                tanto en lo personal como en lo profesional. 
+                                Que el próximo año traiga estabilidad y éxito para todos.<br><br>
+                                Gracias por recordarnos la importancia de la generosidad y la magia de compartir.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="Mail">
+                    <h3>Carta 5</h3>
+                    <div class="FirstBlock">
+                        <img src="images/P12-transformed.png" alt="">
+                        <div class="SecondBlock">
+                            <h4 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Jaime Da Silva</h4>
+                            <h5 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Lisboa</h5>
+                            <h5 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Portugal</h5>
+                            <p style="font-family:Verdana, Geneva, Tahoma, sans-serif;">
+                                <b>Querido Papá Noel</b><br>
+                                Este año ha sido intenso, lleno de entrenamientos y competencias. 
+                                Me he esforzado al máximo para mejorar en mi deporte, y aunque he tenido éxitos, 
+                                también he aprendido mucho de los desafíos.<br><br>
+                                Para esta Navidad, no te pido nada material. 
+                                Solo deseo salud, fuerza y motivación para seguir adelante y alcanzar mis metas. 
+                                También me gustaría que mis compañeros de equipo y entrenadores 
+                                sigan creciendo conmigo.<br><br>
+                                Gracias por mantener viva la ilusión y por recordarnos la 
+                                importancia de la dedicación y el esfuerzo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="Mail">
+                    <h3>Carta 6</h3>
+                    <div class="FirstBlock">
+                        <img src="images/P4-transformed.png" alt="">
+                        <div class="SecondBlock">
+                            <h4 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Linda Semidey</h4>
+                            <h5 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Caracas</h5>
+                            <h5 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Venezuela</h5>
+                            <p style="font-family:Verdana, Geneva, Tahoma, sans-serif;">
+                                <b>Querido Papá Noel</b><br>
+                                ¡Hola! Espero que estés muy bien en el Polo Norte y que los renos y 
+                                los duendes estén listos para la Navidad. 
+                                Este año he sido buena, he ayudado en casa y 
+                                he tratado de ser amable con todos mis amigos.<br><br>
+                                Me gustaría pedirte algunos juguetes que me encantan, 
+                                pero también deseo que mi familia y mis amigos estén felices 
+                                y que la Navidad sea mágica para todos.<br><br>
+                                Te dejaré galletas y leche cuando vengas. ¡Cuida mucho a los renos!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section> <!--Fin de la Tercera Pagina-->
+
+        <div class="PageDivisor"></div>
+
+        <section id="Page4" class="Page4"> <!--Inicio de la Cuarta Pagina-->
+
+            <header class="MyMailTitle"> <!--Titulo de la pagina con el formulario para enviar cartas-->
+                <h2>Envía Tu Carta</h2>
+            </header>
+
+            <div class="Formulario">
+                <form id="MailForm" class="MailForm" onsubmit="sendLetter(); return false;">
+                    <div class="FirstLine">
+                        <label for="nombre">Nombre: </label><br>
+                        <input type="text" class="inputCform" id="nombre" name="nombre" placeholder="Tu Nombre Completo..." required><br>
+                        <label for="ciudad">Ciudad: </label><br>
+                        <input type="text" class="inputCform" id="ciudad" name="ciudad" placeholder="Ciudad en la que vives..." required><br>
+                    </div>
+                    <div class="SecondLine">
+                        <label for="correo">Email: </label><br>
+                        <input type="email" class="inputCform" id="correo" name="correo" placeholder="Tu Correo..." required><br>
+                        <label for="pais">País: </label><br>
+                        <input type="text" class="inputCform" id="pais" name="pais" placeholder="País en el que vives..." required><br>
+                    </div>
+                    <div class="FinishLine">
+                        <label>Escribe tu Carta: </label><br>
+                        <textarea name="message" rows="10" cols="50" placeholder="Querido Santa..." required></textarea><br>
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+
+        </section> <!--Fin de la Cuarta Pagina-->
+
+        <div class="PageDivisor"></div>
+
+        <section id="Page5" class="Page5"> <!--Inicio de la Cuarta Pagina-->
+            <header class="PlayTitle">
+                <h1>¡Juega Ahora!</h1>
+            </header>
+
+            <div class="GamesSection">
+                <div class="GameNames">
+                    <button id="Game1Button" class="GameButton" onclick="ButtonGame1()">Juego 1</button>
+                    <button id="Game2Button" class="GameButton" onclick="ButtonGame2()">Juego 2</button>
+                    <button id="Game3Button" class="GameButton" onclick="ButtonGame3()">Juego 3</button>
+                    <!--<input type="radio" id="Game1" name="Games" checked="checked">
+                    <label for="Game1">Juego 1</label>
+                    <input type="radio" id="Game2" name="Games">
+                    <label for="Game2">Juego 2</label>
+                    <input type="radio" id="Game3" name="Games">
+                    <label for="Game3">Juego 3</label>-->
+                </div>
+
+                <div class="Games">
+                    <div class="FuncionalGame1" id="FuncionalGame1" style="display: block;">
+                        <h1>Click The Circle</h1>
+                        <div class="Game1Circle" id="Game1Circle" style="display: none;"></div>
+                        <h3 id="Game1Score">Puntaje: 0</h3>
+                        <h3 id="Game1Timer">Tiempo: 
+                            <span id="minutosGame1">1</span> :
+                            <span id="segundosGame1">30</span>
+                        </h3>
+                        <button class="Game1Start" id="Game1Start" onclick="startGame1()">Start</button>
+                    </div>
+
+                    <img class="GameImage2" id="GameImage2" src="images/Santa-Jugando.png" alt="Juego 2">
+
+                    <img class="GameImage3" id="GameImage3" src="images/Overwatch-Navidad.png" alt="Juego 3">
+
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+
+            <div class="FirstFooterPart">
+                <div class="logoFooter"> <!--Logo de la pagina-->
+                    <img src="images/Santa1-transformed.png" alt="">
+                </div>
+    
+                <nav class="SocialMedia">
+                    <a href="https://www.facebook.com" class="fa fa-facebook"></a>
+                    <a href="https://x.com" class="fa fa-twitter"></a>
+                    <a href="https://www.instagram.com" class="fa fa-instagram"></a>
+                    <a href="https://www.youtube.com" class="fa fa-youtube"></a>
+                    <a href="https://es.pinterest.com" class="fa fa-pinterest"></a>
+                    <a href="https://www.google.com" class="fa fa-google"></a>
+                </nav>
+            </div>
+
+            <div class="SecondFooterPart">
+                <nav class="WebPolitics">
+                    <a href="https://www.aepd.es/politica-de-privacidad-y-aviso-legal">Política de Privacidad</a>
+                    <a href="https://protecciondatos-lopd.com/empresas/politica-de-cookies">Cookies</a>
+                </nav>
+
+                <div class="Contact">
+                    <h2 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Formas de Contactarnos:</h2>
+                    <a href="tel:+34%20916%20246%20000" class="telefono">Llama al +34 916 246 000</a>
+                    <a href="mailto:100477706@alumnos.uc3m.es" class="email">Envíanos un correo</a>
+                    <a href="https://www.google.com/maps/place/Universidad+Carlos+III+de+Madrid+%7C+Campus+de+Legan%C3%A9s/@40.3324408,-3.7676849,1017m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd41898b1cc06b5b:0xaf0cadd098b516f8!8m2!3d40.3324367!4d-3.76511!16s%2Fm%2F0cvhzsb?authuser=0&entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D" 
+                    class="location">Ubícanos en el Mapa con este enlace</a>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>
