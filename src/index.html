@@ -13,6 +13,10 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">  </script>
+
+
+
         <!--Java Scrpit para el contador-->
         <script src="script/countdown.js" async></script>
         <!--Java Scrpit para Formulario de Registro-->
@@ -28,7 +32,6 @@
         <!--Java Scrpit para Los botones de los juegos-->
         <script src="script/gameButtons.js" async></script>
         <!--Java Scrpit para el primer juego-->
-        <script src="script/clickTheCircle.js" async></script>
 
         <!--Java Scrpits para la apertura de Pop Ups de contenido-->
         <script src="script/logInFunction.js" async></script>
@@ -42,6 +45,7 @@
         <script src="script/changeGenderFunction.js" async></script>
         <script src="script/changeChildrenFunction.js" async></script>
         <script src="script/myCardsFunction.js" async></script>
+
     </head>
 
     <body>
@@ -75,9 +79,9 @@
                     <div class="cargaRegistro" id="cargaRegistro" style="display:none;">
                         <div id="contenidoRegistro">
                             <section class="RegisterPage">
-                                <header class="RegisterTitle">
-                                    <h1>Registráte Aquí</h1>
-                                </header>
+                                <div class="RegisterTitle">
+                                    <h2>Registráte Aquí</h2>
+                                </div>
                     
                                 <form id="RegisterForm" onsubmit="return checkPassword() && almacenarDatos();">
                                     <div class="FirstRline">
@@ -90,15 +94,15 @@
                                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*\d)(?=.*[@#$%^&+=-_]).{12}"
                                             required><br>
                                         
-                                        <label for="ciudad">Ciudad: </label><br>
-                                        <input type="text" class="inputRform" id="ciudad" name="ciudad" required 
-                                            minlength="3" placeholder="Ciudad en la que vives..."><br>
+                                        <label for="ciudadd">Ciudad: </label><br>
+                                        <input type="text" class="inputRform" id="ciudadd" name="ciudad" required
+                                               minlength="3" placeholder="Ciudad en la que vives..."><br>
                                     
                                     </div>
                     
                                     <div class="SecondRline">
-                                        <label for="correo">Email: </label><br>
-                                        <input type="email" class="inputRform" id="correo" name="correo" required placeholder="Tu Correo..."><br>
+                                        <label for="correoo">Email: </label><br>
+                                        <input type="email" class="inputRform" id="correoo" name="correo" required placeholder="Tu Correo..."><br>
                                         
                                         <label for="confirmPassword">Confirme Contraseña: </label><br>
                                         <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repita la Contraseña..."
@@ -106,9 +110,9 @@
                                             required><br>
                                             <span id="message"></span>
                                         
-                                        <label for="pais">País: </label><br>
-                                        <input type="text" class="inputRform" id="pais" name="pais" required 
-                                            minlength="3" placeholder="País en el que vives..."><br>
+                                        <label for="paiss">País: </label><br>
+                                        <input type="text" class="inputRform" id="paiss" name="pais" required
+                                               minlength="3" placeholder="País en el que vives..."><br>
                                     
                                     </div>
                                     
@@ -146,9 +150,9 @@
                     <div class="cargaLogIn" id="cargaLogIn" style="display: none;">
                         <div id="contenidoLogIn">
                             <section class="LogInPage">
-                                <header class="LogInTitle">
-                                    <h1>Iniciar Sesión</h1>
-                                </header>
+                                <div class="LogInTitle">
+                                    <h2>Iniciar Sesión</h2>
+                                </div>
                                 
                                 <form id="LogInForm" class="LogInForm" onsubmit="userRegister(); return false;">
                                     <label class="labelLogIn" for="liusername">Nombre de Usuario: </label><br>
@@ -173,10 +177,10 @@
                     <div class="cargaDatos" id="cargaDatos" style="display:none;">
                         <div id="contenidoDatos">
                             <section class="MyProfilePage">
-                                <header class="MyProfileTitle">
-                                    <h1>Tus Datos</h1>
+                                <div class="MyProfileTitle">
+                                    <h2>Tus Datos</h2>
                                     <i class="material-icons" onclick="closePopUpMyProfile()">cancel</i>
-                                </header>
+                                </div>
 
                                 <div class="FirstRline">
                                     <h2 class="MyProfileInfo">Nombre de Usuario:</h2>
@@ -186,9 +190,9 @@
                                     <div class="cargaChangeUser" id="cargaChangeUser" style="display: none;">
                                         <div id="contenidoChangeUser">
                                             <section class="ChangeUserPage">
-                                                <header class="ChangeUserTitle">
-                                                    <h1>Editar Nombre de Usuario</h1>
-                                                </header>
+                                                <div class="ChangeUserTitle">
+                                                    <h2>Editar Nombre de Usuario</h2>
+                                                </div>
                                                 
                                                 <form id="ChangeUserForm" class="ChangeUserForm" onsubmit="changeUsername(); return false;">
 
@@ -218,9 +222,9 @@
                                     <div class="cargaChangePassword" id="cargaChangePassword" style="display: none;">
                                         <div id="contenidoChangePassword">
                                             <section class="ChangePasswordPage">
-                                                <header class="ChangePasswordTitle">
-                                                    <h1>Editar Contraseña</h1>
-                                                </header>
+                                                <div class="ChangePasswordTitle">
+                                                    <h2>Editar Contraseña</h2>
+                                                </div>
                                                 
                                                 <form id="ChangePasswordForm" class="ChangePasswordForm" onsubmit="changePassword(); return false;">
 
@@ -256,9 +260,9 @@
                                     <div class="cargaChangeCity" id="cargaChangeCity" style="display: none;">
                                         <div id="contenidoChangeCity">
                                             <section class="ChangeCityPage">
-                                                <header class="ChangeCityTitle">
-                                                    <h1>Editar Ciudad</h1>
-                                                </header>
+                                                <div class="ChangeCityTitle">
+                                                    <h2>Editar Ciudad</h2>
+                                                </div>
                                                 
                                                 <form id="ChangeCityForm" class="ChangeCityForm" onsubmit="changeCity(); return false;">
 
@@ -292,9 +296,9 @@
                                     <div class="cargaChangeEmail" id="cargaChangeEmail" style="display: none;">
                                         <div id="contenidoChangeEmail">
                                             <section class="ChangeEmailPage">
-                                                <header class="ChangeEmailTitle">
-                                                    <h1>Editar Email</h1>
-                                                </header>
+                                                <div class="ChangeEmailTitle">
+                                                    <h2>Editar Email</h2>
+                                                </div>
                                                 
                                                 <form id="ChangeEmailForm" class="ChangeEmailForm" onsubmit="changeEmail(); return false;">
                                                     
@@ -322,9 +326,9 @@
                                     <div class="cargaChangeCountry" id="cargaChangeCountry" style="display: none;">
                                         <div id="contenidoChangeCountry">
                                             <section class="ChangeCountryPage">
-                                                <header class="ChangeCountryTitle">
-                                                    <h1>Editar País</h1>
-                                                </header>
+                                                <div class="ChangeCountryTitle">
+                                                    <h2>Editar País</h2>
+                                                </div>
                                                 
                                                 <form id="ChangeCountryForm" class="ChangeCountryForm" onsubmit="changeCountry(); return false;">
 
@@ -354,9 +358,9 @@
                                     <div class="cargaChangeGender" id="cargaChangeGender" style="display: none;">
                                         <div id="contenidoChangeGender">
                                             <section class="ChangeGenderPage">
-                                                <header class="ChangeGenderTitle">
-                                                    <h1>Editar Género</h1>
-                                                </header>
+                                                <div class="ChangeGenderTitle">
+                                                    <h2>Editar Género</h2>
+                                                </div>
                                                 
                                                 <form id="ChangeGenderForm" class="ChangeGenderForm" onsubmit="changeGender(); return false;">
 
@@ -394,9 +398,9 @@
                                     <div class="cargaChangeChildren" id="cargaChangeChildren" style="display: none;">
                                         <div id="contenidoChangeChildren">
                                             <section class="ChangeChildrenPage">
-                                                <header class="ChangeChildrenTitle">
-                                                    <h1>Editar Hijo</h1>
-                                                </header>
+                                                <div class="ChangeChildrenTitle">
+                                                    <h2>Editar Hijo</h2>
+                                                </div>
                                                 
                                                 <form id="ChangeChildrenForm" class="ChangeChildrenForm" data-index="" onsubmit="changeChildren(); return false;">
 
@@ -429,10 +433,10 @@
                     <div class="cargaMyCards" id="cargaMyCards" style="display: none;">
                         <div id="contenidoMyCards">
                             <section class="MyCardsPage">
-                                <header class="MyCardsTitle">
-                                    <h1>Mis Cartas</h1>
+                                <div class="MyCardsTitle">
+                                    <h2>Mis Cartas</h2>
                                     <i class="material-icons" onclick="closePopUpMyCards()">cancel</i>
-                                </header>
+                                </div>
                                 <div id="infoCards" class="infoCards"></div>
                             </section>                            
                         </div>     
@@ -460,9 +464,9 @@
         <div class="PageDivisor"></div>
 
         <section id="Page2" class="Page2"> <!--Inicio de la Segunda Pagina-->
-            <header class="SantaTitle">
-                <h1>Papá Noel</h1>
-            </header>
+            <div class="SantaTitle">
+                <h2>Papá Noel</h2>
+            </div>
 
             <div class="SecondSection">
                 <div class="SantasImage">
@@ -669,12 +673,13 @@
                     <div class="SecondLine">
                         <label for="correo">Email: </label><br>
                         <input type="email" class="inputCform" id="correo" name="correo" placeholder="Tu Correo..." required><br>
+
                         <label for="pais">País: </label><br>
                         <input type="text" class="inputCform" id="pais" name="pais" placeholder="País en el que vives..." required><br>
                     </div>
                     <div class="FinishLine">
-                        <label>Escribe tu Carta: </label><br>
-                        <textarea name="message" rows="10" cols="50" placeholder="Querido Santa..." required></textarea><br>
+                        <label for = "cartaa">Escribe tu Carta: </label><br>
+                        <textarea name="message" rows="10" cols="50" placeholder="Querido Santa..." required id = "cartaa"></textarea><br>
                         <button type="submit">Enviar</button>
                     </div>
                 </form>
@@ -684,41 +689,54 @@
 
         <div class="PageDivisor"></div>
 
-        <section id="Page5" class="Page5"> <!--Inicio de la Cuarta Pagina-->
-            <header class="PlayTitle">
-                <h1>¡Juega Ahora!</h1>
-            </header>
+        <section id="Page5"> <!-- Quinta página -->
+            <!--class="pn_write" -->
+            <div>
+                <h2>¡Juega! </h2>
+            </div>
 
-            <div class="GamesSection">
-                <div class="GameNames">
-                    <button id="Game1Button" class="GameButton" onclick="ButtonGame1()">Juego 1</button>
-                    <button id="Game2Button" class="GameButton" onclick="ButtonGame2()">Juego 2</button>
-                    <button id="Game3Button" class="GameButton" onclick="ButtonGame3()">Juego 3</button>
-                    <!--<input type="radio" id="Game1" name="Games" checked="checked">
-                    <label for="Game1">Juego 1</label>
-                    <input type="radio" id="Game2" name="Games">
-                    <label for="Game2">Juego 2</label>
-                    <input type="radio" id="Game3" name="Games">
-                    <label for="Game3">Juego 3</label>-->
-                </div>
+            <div id="game">
+                <div id="marcadores">
+                    <div id="opciones_juego">
+                        <div class="option">
+                            <input type="radio" id="juego1" name="game" checked >
+                            <label for="juego1" onclick="juego1()">Juego 1</label>
 
-                <div class="Games">
-                    <div class="FuncionalGame1" id="FuncionalGame1" style="display: block;">
-                        <h1>Click The Circle</h1>
-                        <div class="Game1Circle" id="Game1Circle" style="display: none;"></div>
-                        <h3 id="Game1Score">Puntaje: 0</h3>
-                        <h3 id="Game1Timer">Tiempo: 
-                            <span id="minutosGame1">1</span> :
-                            <span id="segundosGame1">30</span>
-                        </h3>
-                        <button class="Game1Start" id="Game1Start" onclick="startGame1()">Start</button>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="juego2" name="game">
+                            <label for="juego2" onclick="juego2()">Juego 2</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="juego3" name="game">
+                            <label for="juego3">Juego 3</label>
+                        </div>
                     </div>
+                    <div id = "marcador">
+                        <p> Hola </p>
+                    </div>
+                </div>
 
-                    <img class="GameImage2" id="GameImage2" src="images/Santa-Jugando.png" alt="Juego 2">
+                <div class="images">
 
-                    <img class="GameImage3" id="GameImage3" src="images/Overwatch-Navidad.png" alt="Juego 3">
+                    <div id="Imagen1">
+                        <p id="gameScore"></p>
+                        <p id="gameTimer"></p>
+                        <img src="images/white-circle.png" alt="foto_circulo" id="circulo">
+                    </div>
+                    <div id="Imagen2">
+                        <p id="gameScore2"></p>
+                        <img id="r" src="images/rojo.png" class="simondicecolores" alt="rojo">
+                        <img id="v" src="images/verde.png" class="simondicecolores" alt="verde">
+                        <img id="a" src="images/azul.png" class="simondicecolores" alt="azul">
+                        <img id="am" src="images/amarillo.png" class="simondicecolores" alt="amarillo">
+                    </div>
+                    <img src="images/juego3.jpg" alt="foto_user" id="Imagen3">
+
 
                 </div>
+
+
             </div>
         </section>
 
@@ -730,12 +748,12 @@
                 </div>
     
                 <nav class="SocialMedia">
-                    <a href="https://www.facebook.com" class="fa fa-facebook"></a>
-                    <a href="https://x.com" class="fa fa-twitter"></a>
-                    <a href="https://www.instagram.com" class="fa fa-instagram"></a>
-                    <a href="https://www.youtube.com" class="fa fa-youtube"></a>
-                    <a href="https://es.pinterest.com" class="fa fa-pinterest"></a>
-                    <a href="https://www.google.com" class="fa fa-google"></a>
+                    <a href="https://www.facebook.com" class="fa fa-facebook"> . </a>
+                    <a href="https://x.com" class="fa fa-twitter"> . </a>
+                    <a href="https://www.instagram.com" class="fa fa-instagram"> . </a>
+                    <a href="https://www.youtube.com" class="fa fa-youtube"> . </a>
+                    <a href="https://es.pinterest.com" class="fa fa-pinterest"> . </a>
+                    <a href="https://www.google.com" class="fa fa-google"> . </a>
                 </nav>
             </div>
 

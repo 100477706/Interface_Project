@@ -22,6 +22,7 @@ function sendLetter(){
                 messageMail: messageLetter
             };
 
+            enviarcartacorreo(dataLetter)
             rechargeData(userMailData, dataLetter);
         }
         else{
@@ -33,6 +34,33 @@ function sendLetter(){
         window.alert("Es necesario iniciar sesión para enviar una carta");
         return;
     }
+}
+
+function enviarcartacorreo(dataLetter) {
+    emailjs.init("RUcPRt9XaorCJKOTE");
+
+    // Verifica si la clave pública se ha cargado correctamente
+    if (!emailjs) {
+        throw new Error("No se pudo inicializar EmailJS. Verifica tu clave pública.");
+    }
+
+    // Parámetros para enviar el correo
+    var templateParams = {
+        nombre: dataLetter.nameMail,
+        correo: dataLetter.emailMail,
+        ciudad: dataLetter.cityMail,
+        pais: dataLetter.countryMail,
+        mensaje: dataLetter.messageMail,
+    };
+
+    emailjs.send('service_69dgpth', 'template_737dot7', templateParams).then(
+      (response) => {
+        console.log('SUCCESS!', response.status, response.text);
+      },
+      (error) => {
+        console.log('FAILED...', error);
+      },
+    );
 }
 
 /*Función que recarga la información del usuario cada vez que se escribe una nueva carta*/
