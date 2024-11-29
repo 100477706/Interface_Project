@@ -1,52 +1,3 @@
-const Game1 = document.getElementById("FuncionalGame1")
-const Game2 = document.getElementById("GameImage2")
-const Game3 = document.getElementById("GameImage3")
-const Button1 = document.getElementById("Game1Button")
-const Button2 = document.getElementById("Game2Button")
-const Button3 = document.getElementById("Game3Button")
-
-
-function ButtonGame1(){
-    //Cambiamos el juego/imagen
-    Game1.style.display= "block";
-    Game2.style.display= "none";
-    Game3.style.display= "none";
-    //Cambiamos los colores de los botones
-    Button1.style.backgroundColor= "white";
-    Button1.style.color = "black";
-    Button2.style.backgroundColor= "red";
-    Button2.style.color = "white";
-    Button3.style.backgroundColor= "red";
-    Button3.style.color = "white";
-}
-
-function ButtonGame2(){
-    Game2.style.display= "block";
-    Game1.style.display= "none";
-    Game3.style.display= "none";
-    //Cambiamos los colores de los botones
-    Button2.style.backgroundColor= "white";
-    Button2.style.color = "black";
-    Button1.style.backgroundColor= "red";
-    Button1.style.color = "white";
-    Button3.style.backgroundColor= "red";
-    Button3.style.color = "white";
-}
-
-function ButtonGame3(){
-    Game3.style.display= "block";
-    Game1.style.display= "none";
-    Game2.style.display= "none";
-    //Cambiamos los colores de los botones
-    Button3.style.backgroundColor= "white";
-    Button3.style.color = "black";
-    Button1.style.backgroundColor= "red";
-    Button1.style.color = "white";
-    Button2.style.backgroundColor= "red";
-    Button2.style.color = "white";
-}
-
-
 function juego1(){
         document.getElementById('Imagen1').style.display = 'block';
         closeGame('Imagen2');
@@ -58,13 +9,14 @@ function juego1(){
 
     }
 
-function juego2(){
-        document.getElementById('Imagen2').style.display = 'block';
-        closeGame('Imagen1');
-        closeGame('Imagen3');
-        resetGame1();
-        simondice();
-    }
+    function juego2() {
+    document.getElementById('Imagen2').style.display = 'block';
+    closeGame('Imagen1');
+    closeGame('Imagen3');
+    resetGame1();
+    simondice();
+    juegoActivo = true; // Activar estado del juego 2
+}
 
     let game3Radio = document.getElementById('juego3');
     game3Radio.addEventListener('click', function () {
@@ -153,65 +105,76 @@ function juego2(){
 
 
 
+let colores = ['r', 'v', 'a', 'am'];
+let juego = [];
+let usuario = [];
+let nivel = 0;
 
-    let colores = ['r', 'v', 'a', 'am'];
-    let juego = [];
-    let usuario = [];
-    let nivel = 0;
+function simondice() {
+    juego = [];
+    usuario = [];
+    nivel = 0;
+    secuencia();
+}
+function secuencia() {
+    usuario = [];
+    let scoreTable2 = document.getElementById('gameScore2');
+    let scoreTable22 = document.getElementById('gameScore22');
+    scoreTable2.innerHTML = "score: " + nivel;
+    scoreTable22.innerHTML = "Rojo: 1, Verde: 2, Azul: 3, Amarillo: 4";
+    nivel++;
+    juego.push(colores[Math.floor(Math.random() * 4)]);
 
-
-    function simondice() {
-        juego = [];
-        usuario = [];
-        nivel = 0;
-        secuencia();
-    }
-
-    function secuencia() {
-        usuario = [];
-        let scoreTable2 = document.getElementById('gameScore2');
-        scoreTable2.innerHTML = "score: " + nivel;
-        nivel++;
-        juego.push(colores[Math.floor(Math.random() * 4)]);
-
-        document.querySelectorAll('.simondicecolores').forEach(color => {
-            color.style.visibility = 'hidden';
-        });
-
-        juego.forEach((color, tamano) => {
-            setTimeout(() => {
-                document.getElementById(color).style.visibility = 'visible';
-                setTimeout(() => {
-                    document.getElementById(color).style.visibility = 'hidden';
-                    if (tamano === juego.length - 1) {
-                        document.querySelectorAll('.simondicecolores').forEach(color => {
-                            color.style.visibility = 'visible';
-
-                        });
-
-                    }
-                }, 1200);
-            }, tamano * 1300);
-        });
-
-    }
-
-    document.querySelectorAll('.simondicecolores').forEach(colores => {
-        colores.addEventListener('click', function () {
-            usuario.push(colores.id);
-            if (juego[usuario.length - 1] === usuario[usuario.length - 1]) {
-                if (usuario.length === juego.length) { secuencia(); } }
-            else { alert('Cadena errónea'); }
-        });
+    document.querySelectorAll('.simondicecolores').forEach(color => {
+        color.style.visibility = 'hidden';
     });
 
+    juego.forEach((color, tamano) => {
+        setTimeout(() => {
+            document.getElementById(color).style.visibility = 'visible';
+            setTimeout(() => {
+                document.getElementById(color).style.visibility = 'hidden';
+                if (tamano === juego.length - 1) {
+                    document.querySelectorAll('.simondicecolores').forEach(color => {
+                        color.style.visibility = 'visible';
+                    });
+                }
+            }, 1200);
+        }, tamano * 1300);
+    });
+}
 
-    function resetGame2() {
-        juego = [];
-        usuario = [];
-        nivel = 0;
+// Mapeo de teclas a colores
+const teclaAColor = {
+    '1': 'r',
+    '2': 'v',
+    '3': 'a',
+    '4': 'am'
+};
+// Escucha eventos de teclado para seleccionar colores
+document.addEventListener('keydown', function (event) {
+    if (!juegoActivo) return; // Solo procesar teclas si el juego 2 está activo
 
-        document.querySelectorAll('.simondicecolores').forEach(color => {
-            color.style.visibility = 'hidden';
-        });
+    const color = teclaAColor[event.key];
+    if (color) {
+        usuario.push(color);
+        if (juego[usuario.length - 1] === usuario[usuario.length - 1]) {
+            if (usuario.length === juego.length) {
+                secuencia();
+            }
+        } else {
+            alert('Cadena errónea');
+        }
     }
+});
+
+function resetGame2() {
+    juego = [];
+    usuario = [];
+    nivel = 0;
+    juegoActivo = false; // Desactivar estado del juego 2
+
+    document.querySelectorAll('.simondicecolores').forEach(color => {
+        color.style.visibility = 'hidden';
+    });
+}

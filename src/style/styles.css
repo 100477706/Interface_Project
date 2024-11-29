@@ -60,6 +60,7 @@ body{
     color: black;
 }
 
+
 .MenuPrincipal button {
     background-color: transparent;
     border: 2px solid #ffffff;
@@ -1795,7 +1796,8 @@ header.Encabezado{
     height: 100vh;
     background-image: url("../images/Page1-Background.jpg") ;
     background-repeat: no-repeat;
-    background-size: 140%;
+    background-size: 200%;
+    background-position-y: center;
     /*border-bottom: 0.3rem  solid #fafafa;*/
 }
 
@@ -2392,10 +2394,15 @@ a{
 
 }
 #gameScore2{
-    margin: 10%;
     padding: 1.5%;
     color: white;
 }
+#gameScore22{
+    margin-bottom: 10%;
+    padding: 1.5%;
+    color: white;
+}
+
 
 
 /**********************************************************************************************************************************/
@@ -2827,13 +2834,6 @@ a{
     .MyProfileCardsBox h2{
         font-size: 1.1rem;
     }
-
-    /*Cambios para la Primera Página*/
-    .Page1{
-        width: 100vw;
-        height: 100vh;
-    }
-
 
 
     .PrincipalMail{
