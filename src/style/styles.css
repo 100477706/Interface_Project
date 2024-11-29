@@ -21,7 +21,7 @@ body{
     display: grid;
     grid-template-columns: 20% 80%;
     width: 100vw;
-    height: 20vh ;
+    height: 12vh ;
 }
 
 .MenuPrincipal{
@@ -78,7 +78,7 @@ body{
 }
 
 .logo{
-    height: 20vh; 
+    height: 10vh;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -368,6 +368,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .LogInForm{
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
     width: auto;
 }
 
@@ -457,10 +461,8 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer;
     border-radius: 0.4rem;
     transition: background-color 0.3s;
-    margin-top: 1.5rem;
-    width: 28%;
-    margin-left: 5rem;
-    margin-bottom: 2rem;
+    width: fit-content;
+    margin-top: 10% ;
 }
 
 .liBottons button:hover {
@@ -1787,17 +1789,19 @@ header.Encabezado{
 /************************************************/
 /*Elementos de la Primera Pagina*/
 .Page1{
+    display: grid;
+    justify-content: center;
     width: 100vw;
-    height: 80vh;
-    background-image: url("../images/Page1-Background.jpg");
+    height: 100vw;
+    background-image: url("../images/Page1-Background.jpg") ;
     background-repeat: no-repeat;
-    background-size: 100%;    
+    background-size: 100%;
     /*border-bottom: 0.3rem  solid #fafafa;*/
 }
 
 .PrincipalTitle{
     width: 100vw;
-    height: 80vh;
+    height: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1856,7 +1860,7 @@ header.Encabezado{
     height: 100vh;
     background-image: url("../images/Copos.gif");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 200%;
     /*border-bottom: 0.3rem  solid #fafafa;*/
 
 }
@@ -1913,9 +1917,11 @@ header.Encabezado{
 /***************************************************/
 /*Elementos de la Tercera Pagina*/
 .Page3{
+    display: grid;
     background-color: rgb(133, 20, 20);
     width: 100vw;
-    height: 100vh;
+    height: fit-content;
+    min-height: 100vh;
     align-items: center;
     overflow: auto;
 }
@@ -1923,11 +1929,14 @@ header.Encabezado{
 .MailTitle{
     font-size: 2rem;
     width: auto;
-    display: flex;
+    display: grid;
+    align-items: center;
+    justify-content: center;
     padding: 1rem
 }
 
 .MailTitle h2{
+    width: fit-content;
     color: rgb(255, 255, 255);
     font-family: 'Lily Script One', serif;
     font-style: italic;
@@ -1998,15 +2007,19 @@ header.Encabezado{
 /*Elementos de la Cuarta Pagina*/
 .Page4{
     background-color: rgb(133, 20, 20);
+    display: grid;
     width: 100vw;
     height: 100vh;
     overflow: auto;
 }
 
 .MyMailTitle{
-    font-size: 2rem;
+    font-size: 4rem;
     width: auto;
+    height: fit-content;
     display: flex;
+    justify-content: center;
+    margin-top: 4rem;
     padding: 1rem;
     font-family: 'Lily Script One', serif;
     color:  rgb(255, 255, 255);
@@ -2019,7 +2032,8 @@ header.Encabezado{
 }
 
 .Formulario{
-    width: auto;
+    height: fit-content;
+    width: fit-content;
 }
 
 .inputCform{
@@ -2167,23 +2181,23 @@ label{
     height: 15vh; 
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    margin-left: 2rem;
+    justify-content: center;
     margin-top: 1rem;
 }
 
 .SocialMedia{
+    display: flex;
+    justify-content: center;
     margin-left: 2rem;
     margin-top: 1rem;
 }
 
 .fa{
-    padding: 1.42rem;
+    padding: 1rem;
     width: 4rem;
     text-align: center;
     text-decoration: none;
-    margin: 5px 2px;
-    margin-left: 1rem;
+    margin: 2px 2px;
 }
 
 .fa:hover{
@@ -2230,10 +2244,17 @@ label{
 }
 
 .SecondFooterPart{
+    display: grid;
     margin-top: 1rem;
 }
 
 .Contact{
+    display: grid;
+    margin-top: 1rem;
+}
+
+.WebPolitics{
+    display: grid;
     margin-top: 1rem;
 }
 
@@ -2373,12 +2394,12 @@ a{
     /*Cambios para el Encabezado*/
     header.Encabezado{
         grid-template-columns: 50% 50%;
-        height: 48vh;
+        height: 30vh;
     }
 
     .logo{
         display: block;
-        height: 45vh;
+        height: 20vh;
     }
 
     .MenuPrincipal{
@@ -2488,7 +2509,6 @@ a{
     .liBottons button {
         font-size: 1rem;
         padding: 1rem 1rem;
-        margin-left: 3.2rem;
     }
 
     /*Cambios para la ventana de la info del usuario */
@@ -2804,15 +2824,14 @@ a{
     /*Cambios para la Primera Página*/
     .Page1{
         width: 100vw;
-        height: 52vh;
-        background-image: url("../images/Page1-Background.jpg");
-        background-repeat: no-repeat;
-        background-size: 200%;  
+        height: 100vh;
     }
 
     .PrincipalTitle{
+        background-image: url("../images/Page1-Background.jpg");
+        background-repeat: no-repeat;
         width: 100vw;
-        height: 52vh;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -2846,7 +2865,8 @@ a{
     .Page2{
         width: 100vw;
         height: 52vh;
-        background-size: 120%;
+        background-size: 200%;
+
     }
 
     .SecondSection{
@@ -2865,13 +2885,15 @@ a{
     }
 
     .SantaText{
+        display: grid;
+        align-content: center;
         margin-top: 1vh;
         margin-right: 1rem;
         padding: 0.7rem;
     }
 
     .SantaText p{
-        font-size: 0.5rem;
+        font-size: 0.7rem;
     }
     
     /*Cambios para la Tercera Página*/
@@ -2912,6 +2934,7 @@ a{
 
     /*Cambios para el Footer*/
     .SecondFooterPart{
+        display: grid;
         margin-top: 4rem;
     }
 
@@ -2987,7 +3010,6 @@ a{
     .liBottons button {
         font-size: 3rem;
         padding: 1rem 1rem;
-        margin-left: 5rem;
     }
 
     /*Cambios para la ventana de la info del usuario */
@@ -3300,10 +3322,18 @@ a{
     /*Cambios para la Primera Página*/
     .Page1{
         width: 100vw;
-        height: 80vh;
+        height: 100vh;
+    }
+
+    .PrincipalTitle{
         background-image: url("../images/Page1-Background.jpg");
         background-repeat: no-repeat;
-        background-size: 200%;  
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .PrincipalMail{
@@ -3333,7 +3363,7 @@ a{
     .Page2{
         width: 100vw;
         height: 80vh;
-        background-size: 185%;
+        background-size: 200%;
     }
 
     .SantaTitle h2{
@@ -3346,9 +3376,12 @@ a{
         height: 50vh;
         width: 45vw;
     }
-    
+
 
     .SantaText{
+        display: grid;
+        align-content: center;
+        justify-content: center;
         margin-top: 1vh;
         margin-right: 1.5rem;
         padding: 0.7rem;
@@ -3357,7 +3390,8 @@ a{
     .SantaText p{
         font-size: 0.7rem;
     }
-    
+
+
     /*Cambios para la Tercera Página*/
     .Page3{
         border-bottom: 0.3rem  solid #fafafa;
@@ -3391,6 +3425,7 @@ a{
 
     /*Cambios para el Footer*/
     .SecondFooterPart{
+        display: grid;
         margin-top: 3rem;
     }
     
@@ -3426,16 +3461,22 @@ a{
     .liBottons button {
         padding: 1rem 1rem;
         margin-left: 6.5rem;
-        margin-bottom: 1rem;
     }
 
-    /*Cambios para la Primera Página*/
     .Page1{
         width: 100vw;
-        height: 80vh;
+        height: 100vh;
+    }
+
+    .PrincipalTitle{
         background-image: url("../images/Page1-Background.jpg");
         background-repeat: no-repeat;
-        background-size: 140%;  
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     /*Divisor de pagina*/
@@ -3461,8 +3502,11 @@ a{
     }
     
 
-    .SantaText{
-        margin-top:0.5vh;
+     .SantaText{
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        margin-top: 1vh;
         margin-right: 1.5rem;
         padding: 0.7rem;
     }
