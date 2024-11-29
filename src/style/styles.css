@@ -1792,16 +1792,16 @@ header.Encabezado{
     display: grid;
     justify-content: center;
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     background-image: url("../images/Page1-Background.jpg") ;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 140%;
     /*border-bottom: 0.3rem  solid #fafafa;*/
 }
 
 .PrincipalTitle{
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1856,11 +1856,15 @@ header.Encabezado{
 /***************************************************/
 /*Elementos de la Segunda Pagina*/
 .Page2{
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
     width: 100vw;
     height: 100vh;
     background-image: url("../images/Copos.gif");
     background-repeat: no-repeat;
-    background-size: 200%;
+    background-size: 320%;
     /*border-bottom: 0.3rem  solid #fafafa;*/
 
 }
@@ -1883,30 +1887,37 @@ header.Encabezado{
     grid-template-columns: 50% 50%;
 }
 
+.SantasImage{
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+}
 
 .SantasImage img{
     display: block;
-    height: 68vh;
     width: 45vw;
     border: 0.3rem solid #ffffff;
     border-radius: 1rem;
-    margin-top: 6vh;
     margin-left: 1rem;
 }
 
-
 .SantaText{
-    display: block;
-    border: 0.4rem solid red;
-    background-color: rgba(159, 31, 31, 0.92);
-    border-radius: 10px;
-    margin-top: 6vh;
-    margin-right: 3rem;
-    padding: 0.7rem;
-}
+        display: grid;
+        border: 0.4rem solid red;
+        background-color: rgba(159, 31, 31, 0.92);
+        border-radius: 10px;
+        align-content: center;
+        justify-content: center;
+        margin-top: 1vh;
+        margin-right: 1.5rem;
+        padding: 0.7rem;
+    }
+
 
 .SantaText p{
-    font-size: 1.1rem;
+    font-size: clamp(12px, 2px, 2px);
     color: white;
     font-style: italic;
     font-weight: bold;
@@ -2506,10 +2517,6 @@ a{
         width: 45vw;
     }
 
-    .liBottons button {
-        font-size: 1rem;
-        padding: 1rem 1rem;
-    }
 
     /*Cambios para la ventana de la info del usuario */
     #contenidoDatos {
@@ -2827,16 +2834,7 @@ a{
         height: 100vh;
     }
 
-    .PrincipalTitle{
-        background-image: url("../images/Page1-Background.jpg");
-        background-repeat: no-repeat;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+
 
     .PrincipalMail{
         grid-template-columns: 100%;
@@ -2861,13 +2859,6 @@ a{
         height: 5.2vh;
     }
 
-    /*Cambios para la Segunda Página*/
-    .Page2{
-        width: 100vw;
-        height: 52vh;
-        background-size: 200%;
-
-    }
 
     .SecondSection{
         grid-template-columns: 35% 65%;
@@ -2876,25 +2867,7 @@ a{
     .SantaTitle h2{
         font-size: 2rem;
     }
-   
 
-    .SantasImage img{
-        margin-top: 1vh;
-        height: 35vh;
-        width: 30vw;
-    }
-
-    .SantaText{
-        display: grid;
-        align-content: center;
-        margin-top: 1vh;
-        margin-right: 1rem;
-        padding: 0.7rem;
-    }
-
-    .SantaText p{
-        font-size: 0.7rem;
-    }
     
     /*Cambios para la Tercera Página*/
     .Page3{
@@ -3007,10 +2980,6 @@ a{
         width: 45vw;
     }
 
-    .liBottons button {
-        font-size: 3rem;
-        padding: 1rem 1rem;
-    }
 
     /*Cambios para la ventana de la info del usuario */
     #contenidoDatos {
@@ -3319,23 +3288,6 @@ a{
         font-size: 1.5rem;
     }
 
-    /*Cambios para la Primera Página*/
-    .Page1{
-        width: 100vw;
-        height: 100vh;
-    }
-
-    .PrincipalTitle{
-        background-image: url("../images/Page1-Background.jpg");
-        background-repeat: no-repeat;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
     .PrincipalMail{
         grid-template-columns: 50% 50%;
     }
@@ -3359,37 +3311,11 @@ a{
         height: 7.5vh;
     }
 
-    /*Cambios para la Segunda Página*/
-    .Page2{
-        width: 100vw;
-        height: 80vh;
-        background-size: 200%;
-    }
 
     .SantaTitle h2{
         font-size: 5rem;
     }
-   
 
-    .SantasImage img{
-        margin-top: 1vh;
-        height: 50vh;
-        width: 45vw;
-    }
-
-
-    .SantaText{
-        display: grid;
-        align-content: center;
-        justify-content: center;
-        margin-top: 1vh;
-        margin-right: 1.5rem;
-        padding: 0.7rem;
-    }
-
-    .SantaText p{
-        font-size: 0.7rem;
-    }
 
 
     /*Cambios para la Tercera Página*/
@@ -3458,60 +3384,14 @@ a{
         width: 45vw;
     }
 
-    .liBottons button {
-        padding: 1rem 1rem;
-        margin-left: 6.5rem;
-    }
-
-    .Page1{
-        width: 100vw;
-        height: 100vh;
-    }
-
-    .PrincipalTitle{
-        background-image: url("../images/Page1-Background.jpg");
-        background-repeat: no-repeat;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
 
     /*Divisor de pagina*/
     .PageDivisor{
         height: 11vh;
     }
 
-    /*Cambios para la Segunda Página*/
-    .Page2{
-        width: 100vw;
-        height: 80vh;
-    }
-
     .SantaTitle h2{
         font-size: 4rem;
     }
-   
 
-    .SantasImage img{
-        margin-top: 0.5vh;
-        height: 50vh;
-        width: 45vw;
-    }
-    
-
-     .SantaText{
-        display: grid;
-        align-content: center;
-        justify-content: center;
-        margin-top: 1vh;
-        margin-right: 1.5rem;
-        padding: 0.7rem;
-    }
-
-    .SantaText p{
-        font-size: 0.8rem;
-    }
 }
