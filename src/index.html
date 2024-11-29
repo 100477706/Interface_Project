@@ -69,9 +69,9 @@
                     <div id="MyMenu" class="MyMenu" style="display:none;">
                         <button id="MyAccount" onclick="openDropDown()">Mi Cuenta</button>
                         <div id="DropDown" class="DropDown" style="display:none;">
-                            <a class="no-border" href="#" onclick="openMyMenu()">Mi Perfil</a>
-                            <a class="no-border" href="#Page1" onclick="openMyCards()">Mis Cartas</a>
-                            <a class="no-border" href="#" onclick="closeSession()">Cerrar Sesión</a>
+                            <a class="no-border" href="#" onclick="openMyMenu()" style="color: black;">Mi Perfil</a>
+                            <a class="no-border" href="#Page1" onclick="openMyCards()" style="color: black;">Mis Cartas</a>
+                            <a class="no-border" href="#" onclick="closeSession()" style="color: black;">Cerrar Sesión</a>
                         </div>
                     </div>
                     
@@ -701,16 +701,16 @@
                     <div id="opciones_juego">
                         <div class="option">
                             <input type="radio" id="juego1" name="game" checked >
-                            <label for="juego1" onclick="juego1()">Juego 1</label>
+                            <label for="juego1" onclick="juego1()" style="color: black;">Juego 1</label>
 
                         </div>
                         <div class="option">
                             <input type="radio" id="juego2" name="game">
-                            <label for="juego2" onclick="juego2()">Juego 2</label>
+                            <label for="juego2" onclick="juego2()" style="color: black;">Juego 2</label>
                         </div>
                         <div class="option">
                             <input type="radio" id="juego3" name="game">
-                            <label for="juego3">Juego 3</label>
+                            <label for="juego3" style="color: black;">Juego 3</label>
                         </div>
                     </div>
                     <div id = "marcador">
@@ -727,6 +727,7 @@
                     </div>
                     <div id="Imagen2">
                         <p id="gameScore2"></p>
+                        <p id="gameScore22"></p>
                         <img id="r" src="images/rojo.png" class="simondicecolores" alt="rojo">
                         <img id="v" src="images/verde.png" class="simondicecolores" alt="verde">
                         <img id="a" src="images/azul.png" class="simondicecolores" alt="azul">
