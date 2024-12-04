@@ -1,5 +1,6 @@
 function juego1(){
         document.getElementById('Imagen1').style.display = 'block';
+        document.getElementById('marcadoresglobales').style.display = 'block';
         closeGame('Imagen2');
         closeGame('Imagen3');
 
@@ -11,6 +12,7 @@ function juego1(){
 
     function juego2() {
     document.getElementById('Imagen2').style.display = 'block';
+    document.getElementById('marcadoresglobales').style.display = 'block';
     closeGame('Imagen1');
     closeGame('Imagen3');
     resetGame1();
