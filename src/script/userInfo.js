@@ -15,37 +15,10 @@ function userInformation(data){
     document.getElementById("MyEmail").textContent = userData.email;
     document.getElementById("MyCountry").textContent = userData.country;
     document.getElementById("MyGender").textContent = userData.gender;
-    document.getElementById("MyNumChildren").textContent = userData.numChildren;
-    showChildren(userData.numChildren);
 
     userNamePassword = `${userData.username},${userData.password}`
 }
 
-/*Función para mostrar la información de cada hijo*/
-function showChildren(num){
-    const showInfo = document.getElementById("infoHijos");
-    const numHijos = num;
-    showInfo.innerHTML = '';
-
-    if (numHijos > 0){
-        for (let i=0; i<numHijos; i++){
-            let childrenArray = userData.children[i];
-            let nombre = childrenArray.nombre;
-            let edad = childrenArray.edad;
-            let juguetes = childrenArray.juguetes;
-
-            const hijosContent = document.createElement("div");
-            hijosContent.classList.add("MyProfileChildrenBox");
-            hijosContent.innerHTML = `<strong>Hijo/a ${i+1}:</strong>
-                                        <i class="material-icons" data-index="${i}" onclick="openPopUpChangeChildren(${i})">edit</i><br>
-                                        <h2>Nombre:</h2> ${nombre}<br>
-                                        <h2>Edad:</h2> ${edad}<br>
-                                        <h2>Juguetes:</h2> ${juguetes}<br>`;
-
-            showInfo.append(hijosContent);
-        }
-    }
-}
 
 /*Función para ejecutar el cambio de nombre del usuario*/
 function changeUsername(){
@@ -241,27 +214,4 @@ function changeGender(){
         window.alert("Este es tu género definido anteriormente");
         return;
     }
-}
-
-function changeChildren(){
-    const form = document.getElementById("ChangeChildrenForm");
-    const index = form.getAttribute("data-index");
-
-    const newName = document.getElementById("nameChildren").value;
-    const newAge = document.getElementById("ageChildren").value;
-    const newToys = document.getElementById("toysChildren").value;
-
-    let oldDataKey = `${userData.username},${userData.password}`;
-    localStorage.removeItem(oldDataKey);
-
-    userData.children[index].nombre = newName;
-    userData.children[index].edad = parseInt(newAge);
-    userData.children[index].juguetes = newToys;
-
-    let newDataKey = `${userData.username},${userData.password}`;
-    localStorage.setItem(newDataKey, JSON.stringify(userData));
-    
-    window.alert("Modificación Exitosa");
-    closePopUpChangeChildren();
-    userInformation(JSON.stringify(userData));
 }

@@ -44,7 +44,6 @@
         <script src="script/changeEmailFunction.js" async></script>
         <script src="script/changeCountryFunction.js" async></script>
         <script src="script/changeGenderFunction.js" async></script>
-        <script src="script/changeChildrenFunction.js" async></script>
         <script src="script/myCardsFunction.js" async></script>
         <script src="script/popupAdviento.js" async></script>
 
@@ -128,9 +127,6 @@
                                             <option value="other">Otro</option>
                                             <option value="dontSay">Prefiero No Decirlo</option>
                                         </select><br>
-                    
-                                        <label for="hijos">Número de Hijos: </label><br>
-                                        <input type="number" id="hijos" name="hijos" min="0" placeholder="0">
         
                                         <div id="nombreEdadJuguetes"></div>
 
@@ -185,7 +181,6 @@
                                     <h2>Tus Datos</h2>
                                     <i class="material-icons" onclick="closePopUpMyProfile()">cancel</i>
                                 </div>
-
                                 <div class="FirstRline">
                                     <h2 class="MyProfileInfo">Nombre de Usuario:</h2>
                                     <p class="MyProfileData"> <span id="MyUsername"></span> <i class="material-icons" onclick="openPopUpChangeUser()">edit</i></p>
@@ -390,44 +385,6 @@
                                         </div>
                                     </div>
                                     
-                                
-                                </div>
-                                
-                                <div class="FinalRline">
-                                    <h2 class="MyProfileInfo">Hijos:</h2>
-                                    <p class="MyProfileData"> <span id="MyNumChildren"></span></p>
-                                    <div id="infoHijos" class="infoHijos"></div>
-
-                                    <!--División del Frame para Formulario para editar la información de los hijos-->
-                                    <div class="cargaChangeChildren" id="cargaChangeChildren" style="display: none;">
-                                        <div id="contenidoChangeChildren">
-                                            <section class="ChangeChildrenPage">
-                                                <div class="ChangeChildrenTitle">
-                                                    <h2>Editar Hijo</h2>
-                                                </div>
-                                                
-                                                <form id="ChangeChildrenForm" class="ChangeChildrenForm" data-index="" onsubmit="changeChildren(); return false;">
-
-                                                    <label for="nameChildren">Nuevo Nombre: </label><br>
-                                                    <input type="text" id="nameChildren" name="nameChildren" placeholder="Nombre..."
-                                                        required><br>
-
-                                                    <label for="ageChildren">Nueva Edad: </label><br>
-                                                    <input type="number" id="ageChildren" name="ageChildren" min="0" placeholder="0"
-                                                        required><br>
-
-                                                    <label for="toysChildren">Nuevos Juguetes: </label><br>
-                                                    <input type="text" id="toysChildren" name="toysChildren" placeholder="Jueguetes..."
-                                                        required><br>                                  
-                                                                                                        
-                                                    <div class="chChildrenBottons">
-                                                        <button type="submit">Editar</button>
-                                                        <button type="button" onclick="closePopUpChangeChildren()">Cancelar</button>
-                                                    </div>
-                                                </form>
-                                            </section>
-                                        </div>
-                                    </div>
 
                                 </div>
                             </section>
@@ -447,6 +404,7 @@
                     </div>
             </nav>
         </header>
+        <div class="PageDivisor"></div>
 
         <section id="Page1" class="Page1"> <!--Inicio de la Primera Pagina-->
 
@@ -744,116 +702,119 @@
 
             </div>
         </section>
+        <div class="PageDivisor"></div>
 
         <section id="Page6" class="Page6"> <!--Inicio de la Sexta Pagina-->
+            <!--
             <div class="Decoraciones6">
-                <img class="Decoraciones6_1"src="images/Decoración.png">
-                <img class="Decoraciones6_2"src="images/Decoración.png">
-                <img class="Decoraciones6_3"src="images/Decoración.png">
-                <img class="Decoraciones6_4"src="images/Decoración.png">
+                <img class="Decoraciones6_1" src="images/Decoración.png" alt="">
+                <img class="Decoraciones6_2" src="images/Decoración.png" alt="">
+                <img class="Decoraciones6_3" src="images/Decoración.png" alt="">
+                <img class="Decoraciones6_4" src="images/Decoración.png" alt="">
             </div>
+            -->
             <header class="MyCalendarTitle"> <!--Titulo de la pagina de viajes-->
                 <h1>Calendario de Adviento</h1>
             </header>
             <div class = "Calendario">
                 <div class="Dia" onclick="popupAdviento(1)">
-                    <t>01</t>
+                    <p>01</p>
                     <img src="images/Calendario_adviento/Dia1.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(2)">
-                    <t>02</t>
+                    <p>02</p>
                     <img src="images/Calendario_adviento/Dia2.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(3)">
-                    <t>03</t>
+                    <p>03</p>
                     <img src="images/Calendario_adviento/Dia3.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(4)">
-                    <t>04</t>
+                    <p>04</p>
                     <img src="images/Calendario_adviento/Dia4.png" alt="">
                 </div>
-                <div class="Dia"onclick="popupAdviento(5)">
-                    <t>05</t>
+                <div class="Dia" onclick="popupAdviento(5)">
+                    <p>05</p>
                     <img src="images/Calendario_adviento/Dia5.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(6)">
-                    <t>06</t>
+                    <p>06</p>
                     <img src="images/Calendario_adviento/Dia6.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(7)">
-                    <t>07</t>
+                    <p>07</p>
                     <img src="images/Calendario_adviento/Dia7.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(8)">
-                    <t>08</t>
+                    <p>08</p>
                     <img src="images/Calendario_adviento/Dia8.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(9)">
-                    <t>09</t>
+                    <p>09</p>
                     <img src="images/Calendario_adviento/Dia9.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(10)">
-                    <t>10</t>
+                    <p>10</p>
                     <img src="images/Calendario_adviento/Dia10.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(11)">
-                    <t>11</t>
+                    <p>11</p>
                     <img src="images/Calendario_adviento/Dia11.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(12)">
-                    <t>12</t>
+                    <p>12</p>
                     <img src="images/Calendario_adviento/Dia12.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(13)">
-                    <t>13</t>
+                    <p>13</p>
                     <img src="images/Calendario_adviento/Dia13.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(14)">
-                    <t>14</t>
+                    <p>14</p>
                     <img src="images/Calendario_adviento/Dia14.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(15)">
-                    <t>15</t>
+                    <p>15</p>
                     <img src="images/Calendario_adviento/Dia15.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(16)">
-                    <t>16</t>
+                    <p>16</p>
                     <img src="images/Calendario_adviento/Dia16.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(17)">
-                    <t>17</t>
+                    <p>17</p>
                     <img src="images/Calendario_adviento/Dia17.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(18)">
-                    <t>18</t>
+                    <p>18</p>
                     <img src="images/Calendario_adviento/Dia18.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(19)">
-                    <t>19</t>
+                    <p>19</p>
                     <img src="images/Calendario_adviento/Dia19.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(20)">
-                    <t>20</t>
+                    <p>20</p>
                     <img src="images/Calendario_adviento/Dia20.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(21)">
-                    <t>21</t>
+                    <p>21</p>
                     <img src="images/Calendario_adviento/Dia21.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(22)">
-                    <t>22</t>
+                    <p>22</p>
                     <img src="images/Calendario_adviento/Dia22.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(23)">
-                    <t>23</t>
+                    <p>23</p>
                     <img src="images/Calendario_adviento/Dia23.png" alt="">
                 </div>
                 <div class="Dia" onclick="popupAdviento(24)">
-                    <t>24</t>
+                    <p>24</p>
                     <img src="images/Calendario_adviento/Dia24.png" alt="">
                 </div>
                  <div class="Dia_ultimo" onclick="popupAdviento(25)">
-                    <t>25</t>
+                    <p>25</p>
                     <img src="images/Calendario_adviento/Dia25.png" alt="">
                 </div>
             </div>
@@ -862,6 +823,7 @@
 
         </section>
 
+        <div class="PageDivisor"></div>
 
         <section id="Page7" class="Page7"> <!--Inicio de la Septima Pagina-->
 
@@ -876,7 +838,7 @@
                 <div class="TravelInfo">
                     <h3>Paquete 1</h3>
                     <div class="FirstTravelBlock">
-                        <img>
+                        <img alt="" src="">
                         <div class="SecondTravelBlock">
                             <p style="font-family:Verdana, Geneva, Tahoma, sans-serif;">
                                 <b>Querido Papá Noel</b><br>
@@ -896,6 +858,7 @@
 
         </section>
 
+        <div class="PageDivisor"></div>
 
         <footer class="footer">
 

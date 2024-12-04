@@ -115,14 +115,16 @@ body{
 .RegisterPage{
     background-color: rgb(133, 20, 20);
     width: 79.3vw;
-    height: 78.8vh;
+    height: fit-content;
+    padding: 30px;
     overflow: auto;
 }
 
 .RegisterTitle{
     font-size: 2rem;
     width: auto;
-    display: flex;
+    display: grid;
+    justify-content: center;
     padding: 1rem;
     font-family: 'Lily Script One', serif;
     color:  rgb(255, 255, 255);
@@ -263,18 +265,6 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-.cajaHijos{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    margin-top: 1rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    border: 0.3rem solid #000000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    background-color: rgb(133, 20, 20);
-}
-
 .rBottons{
     display: flex;
 }
@@ -349,14 +339,16 @@ input[type=number]::-webkit-outer-spin-button {
 .LogInPage{
     background-color: rgb(133, 20, 20);
     width: 39.4vw;
-    height: 68.7vh;
+    height: fit-content;
+    padding: 30px;
     overflow: auto;
 }
 
 .LogInTitle{
     font-size: 3rem;
     width: auto;
-    display: flex;
+    display: grid;
+    justify-content: center;
     padding: 1rem;
     font-family: 'Lily Script One', serif;
     color:  rgb(255, 255, 255);
@@ -438,10 +430,10 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 2rem;
     font-family: 'Lily Script One', serif;
     width: 25vw;
-    display: flex;
+    display: grid;
+    justify-content: center;
     margin-top: 0.5rem;
     margin-bottom: 0.2rem;
-    margin-left: 3rem;
     color: rgb(255, 255, 255);
     font-style: italic;
     font-weight: bold;
@@ -540,6 +532,7 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 3rem;
     width: auto;
     display: flex;
+    margin-left: 25%;
     padding: 1rem;
     font-family: 'Lily Script One', serif;
     color:  rgb(255, 255, 255);
@@ -602,40 +595,6 @@ input[type=number]::-webkit-outer-spin-button {
     color:#000000
 }
 
-.infoHijos{
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
-
-.MyProfileChildrenBox{
-    display: block;
-    margin-top: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 2rem;
-    border: 0.3rem solid #000000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    background-color: rgb(133, 20, 20);
-    font-size: 1.2rem;
-    width: auto;
-    padding: 1rem;
-    font-family: 'Verdana', serif;
-    color:  rgb(255, 255, 255);
-}
-
-.MyProfileChildrenBox strong{
-    font-family: 'Lily Script One', serif;
-    font-size: 2rem;
-    text-decoration: underline;
-}
-
-.MyProfileChildrenBox h2{
-    font-family: 'Lily Script One', serif;
-    font-size: 1.5rem;
-    text-decoration: underline;
-    display: inline
-}
 
 /*Carga del Frame cuando el usuario cambia username*/
 #cargaChangeUser {
@@ -1526,156 +1485,6 @@ input[type=number]::-webkit-outer-spin-button {
     color: #000000
 }
 
-/*Carga del Frame cuando el usuario edita a sus hijos*/
-#cargaChangeChildren {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); 
-    justify-content: center;
-}
-
-#contenidoChangeChildren {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 40vw;
-    height: 82vh;
-    z-index: 999;
-    transform: translate(-50%, -50%);
-    border: 0.3rem solid #000000;
-    justify-content: center;
-}
-
-/*Contenido del Frame de cuando el usuario edita a sus hijos*/
-.ChangeChildrenPage{
-    background-color: rgb(133, 20, 20);
-    width: 39.4vw;
-    height: 80.7vh;
-    overflow: auto;
-}
-
-.ChangeChildrenTitle{
-    font-size: 2.5rem;
-    width: auto;
-    display: flex;
-    padding: 1rem;
-    font-family: 'Lily Script One', serif;
-    color:  rgb(255, 255, 255);
-}
-
-.ChangeChildrenTitle h2{
-    font-style: italic;
-    font-weight: bold;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.ChangeChildrenForm{
-    width: auto;
-}
-
-.ChangeChildrenForm input[type=text]{
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
-}
-
-.ChangeChildrenForm input[type=text]:focus {
-  border: 0.3rem solid #000000;
-  background-color: rgb(255, 0, 0);
-  color:#ffffff;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-}
-
-.ChangeChildrenForm input[type=text]:focus::placeholder {
-    color: transparent;
-}
-
-.ChangeChildrenForm input[type=number]{
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
-}
-
-.ChangeChildrenForm input[type=number]:focus {
-  border: 0.3rem solid #000000;
-  background-color: rgb(255, 0, 0);
-  color:#ffffff;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-}
-
-.ChangeChildrenForm input[type=number]:focus::placeholder {
-    color: transparent;
-}
-
-.labelChangeChildren{
-    font-size: 1.5rem;
-    font-family: 'Lily Script One', serif;
-    width: 25vw;
-    display: flex;
-    margin-top: 0.5rem;
-    margin-bottom: 0.2rem;
-    margin-left: 3rem;
-    color: rgb(255, 255, 255);
-    font-style: italic;
-    font-weight: bold;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.chChildrenBottons{
-    display: flex;
-}
-
-.chChildrenBottons button {
-    background-color: #000000;
-    border: 2px solid #ffffff;
-    padding: 0.57rem 1rem;
-    color: #ffffff;
-    font-family: 'Lily Script One', serif;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-radius: 0.4rem;
-    transition: background-color 0.3s;
-    margin-top: 1.5rem;
-    width: 28%;
-    margin-left: 5rem;
-    margin-bottom: 2rem;
-}
-
-.chChildrenBottons button:hover {
-    background-color: #ffffff;
-    border: 2px solid #000000;
-    color: #000000
-}
-
 /*Apartado de mis cartas*/
 #cargaMyCards {
     display: none;
@@ -1987,7 +1796,7 @@ header.Encabezado{
 }
 
 .FirstBlock img{
-    height: 15vh; 
+    height: 10vh;
     flex-direction: row;
     justify-content: flex-start;
 }
@@ -2011,7 +1820,7 @@ header.Encabezado{
     border-top: 0.1rem  solid #f90000;
     padding-top: 0.4rem;
     margin-top: 0.71rem;
-    font-size: 0.5rem;
+    font-size: 1vw;
     font-style: italic;
 }
 
@@ -2169,14 +1978,7 @@ label{
     border-bottom: 0.3rem  solid #fafafa;
 }
 
-.Page5 header{
-    color: #ffffff;
-    font-family: 'Lily Script One', serif;
-    font-size: 3rem;
-    padding-top: 0.5rem;
-    padding-left: 2rem;
-    padding-bottom: 1rem;
-}
+
 
 
 /***************************************************/
@@ -2404,13 +2206,14 @@ a{
     color: white;
 }
 .Page6{
+    margin-top: 60px;
+    display: grid;
+    justify-content: center;
     background-color: rgb(133, 20, 20);
     width: 100vw;
     height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
 }
+
 .Decoraciones6{
     margin: 0;
     padding: 0;
@@ -2444,21 +2247,19 @@ a{
     left: 80%;
     top: 6em;
 }
+
 .MyCalendarTitle{
-    width: auto;
     height: fit-content;
-    display: flex;
-    justify-content: left;
-    margin: 0;
-    margin-top: 15vh;
-    margin-left: 3em;
+    display: grid;
+    margin-top: 60px;
+    justify-content: center;
     padding: 0;
 
 }
 .MyCalendarTitle h1{
     padding: 0;
     margin: 0;
-    font-size: 4rem;
+    font-size: 7vw;
     color:  rgb(255, 255, 255);
     font-family: 'Lily Script One', serif;
 }
@@ -2466,16 +2267,15 @@ a{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    width: 80%;
-    height: 70%;
+    width: fit-content;
+    height: 70vw;
     border: 2px solid black;
-    justify-self: center;
 }
-.Calendario t{
+.Calendario p{
     position: absolute;
     top: 3%;
     left: 79%;
-    font-size: 1.5em;
+    font-size: 1.5vw;
     color: white;
     font-family: 'Lily Script One', serif;
 }
@@ -2487,7 +2287,9 @@ a{
     background-color: darkgreen;
     border: 2px solid black;
     cursor: pointer;
+    width: 100%;
 }
+
 .Dia_ultimo{
     position: relative;
     display: flex;
@@ -2498,6 +2300,7 @@ a{
     grid-column: span 4;
     cursor: pointer;
 }
+
 .Dia_ultimo img{
     position: relative;
     margin:0;
@@ -2505,7 +2308,7 @@ a{
     height: 8.5em;
     width: 100%;
 }
-.Dia_ultimo t{
+.Dia_ultimo p{
     top: 3%;
     left: 94%;
 }
@@ -2513,19 +2316,19 @@ a{
     position: relative;
     margin:0;
     padding: 0;
-    height: 8.5em;
-    width: 8.5em;
+    height: 12vw;
+    width: 12vw;
 }
 .Frase_del_dia_ventana{
     display:none;
     flex-direction: column;
     background-color: rgb(133, 20, 20);
-    overflow: auto;
     position: fixed;
+    padding: 50px;
     top: 55%;
     left: 50%;
     width: 80vw;
-    height: 80vh;
+    height: fit-content;
     z-index: 1000;
     text-align: center;
     align-content: center;
@@ -2553,7 +2356,7 @@ a{
 .Frase_del_dia_ventana t{
     color: white;
     font-family: 'Lily Script One', serif;
-    font-size: 4em;
+    font-size: 4vw;
     margin-top: 2.5em;
 }
 
@@ -2565,20 +2368,21 @@ a{
     /*Cambios para el Encabezado*/
     header.Encabezado{
         grid-template-columns: 50% 50%;
-        height: 30vh;
+        height: fit-content;
     }
 
     .logo{
-        display: block;
-        height: 20vh;
+        height: 45vw;
     }
 
     .MenuPrincipal{
         flex-direction: column;
         width: 100%;
-        position: relative;
         top: 0;
+        height: fit-content;
     }
+
+
 
     .MenuPrincipal a{
         font-size: 9px;
@@ -2637,12 +2441,6 @@ a{
         margin: 0.2rem 1rem;
     }
 
-    .cajaHijos{
-        margin-top: 1rem;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-
-    }
 
     label{
         font-size: 1.2rem;
@@ -2661,7 +2459,6 @@ a{
 
     .LogInPage{
         width: 63.5vw;
-        height: 63.8vh;
     }
 
     .LogInTitle{
@@ -2710,21 +2507,7 @@ a{
         margin-left: 0.5rem;
     }
 
-    .infoHijos{
-        display: block;
-    }
 
-    .MyProfileChildrenBox{
-        font-size: 0.8rem;
-    }
-    
-    .MyProfileChildrenBox strong{
-        font-size: 1.5rem;
-    }
-    
-    .MyProfileChildrenBox h2{
-        font-size: 1.1rem;
-    }
 
     /*Cambios para el formulario de Cambio de Usuario*/
     #contenidoChangeUser {
@@ -2911,40 +2694,6 @@ a{
         margin-left: 3.2rem;
     }
 
-    /*Cambios para el formulario de Edición de los Hijos*/
-    #contenidoChangeChildren {
-        width: 65vw;
-        height: 87vh;
-    }
-
-    .ChangeChildrenPage{
-        width: 63.5vw;
-        height: 85.8vh;
-    }
-
-    .ChangeChildrenTitle{
-        font-size: 1.5rem;
-    }
-
-    .ChangeChildrenForm input[type=text]{
-        margin-bottom: 2rem;
-    }
-
-    .ChangeChildrenForm input[type=number]{
-        margin-bottom: 2rem;
-    }
-
-    .labelChangeChildren{
-        font-size: 1.2rem;
-        width: 45vw;
-    }
-
-    .chChildrenBottons button {
-        font-size: 1rem;
-        padding: 1rem 1rem;
-        margin-left: 3.2rem;
-    }
-
     /*Cambios para la ventana de mis cartas */
     #contenidoMyCards {
         width: 80vw;
@@ -3051,12 +2800,7 @@ a{
 
     /*Cambios para la Quinta Página*/
 
-    .Page5 header{
-        font-size: 2rem;
-        padding-top: 0.5rem;
-        padding-left: 2rem;
-        padding-bottom: 0.5rem;
-    }
+
 
     /*Cambios para el Footer*/
     .SecondFooterPart{
@@ -3092,14 +2836,6 @@ a{
 
     div.content {margin-left: 0;}
 
-    /*Cambios para el formulario de registro*/    
-    .cajaHijos{
-        margin-top: 1rem;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-
-    }
-
     label{
         font-size: 1.2rem;
         width: 30vw;
@@ -3117,7 +2853,6 @@ a{
 
     .LogInPage{
         width: 63.5vw;
-        height: 73.8vh;
     }
 
     .LogInTitle{
@@ -3166,17 +2901,6 @@ a{
         margin-left: 0.5rem;
     }
 
-    .MyProfileChildrenBox{
-        font-size: 1rem;
-    }
-    
-    .MyProfileChildrenBox strong{
-        font-size: 1.8rem;
-    }
-    
-    .MyProfileChildrenBox h2{
-        font-size: 1.5rem;
-    }
 
     /*Cambios para el formulario de Cambio de User*/
     #contenidoChangeUser {
@@ -3363,40 +3087,6 @@ a{
         margin-left: 5rem;
     }
 
-    /*Cambios para el formulario de Edición de Hijos*/
-    #contenidoChangeChildren {
-        width: 65vw;
-        height: 85vh;
-    }
-
-    .ChangeChildrenPage{
-        width: 63.5vw;
-        height: 83.8vh;
-    }
-
-    .ChangeChildrenTitle{
-        font-size: 2.2rem;
-    }
-
-    .ChangeChildrenForm input[type=text]{
-        margin-bottom: 1rem;
-    }
-
-    .ChangeChildrenForm input[type=number]{
-        margin-bottom: 1rem;
-    }
-
-    .labelChangeChildren{
-        font-size: 2rem;
-        width: 45vw;
-    }
-
-    .chChildrenBottons button {
-        font-size: 3rem;
-        padding: 1rem 1rem;
-        margin-left: 5rem;
-    }
-
     /*Cambios para la ventana de las cartas */
     #contenidoMyCards {
         width: 80vw;
@@ -3493,14 +3183,7 @@ a{
         margin-left: 22%;
     }
 
-    /*Cambios Quinta Página*/
 
-    .Page5 header{
-        font-size: 2.5rem;
-        padding-top: 0.5rem;
-        padding-left: 2rem;
-        padding-bottom: 0.5rem;
-    }
 
     /*Cambios para el Footer*/
     .SecondFooterPart{
@@ -3521,7 +3204,6 @@ a{
 
     .LogInPage{
         width: 63.5vw;
-        height: 73.8vh;
     }
 
     .LogInTitle{

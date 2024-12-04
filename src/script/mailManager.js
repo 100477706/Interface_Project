@@ -78,8 +78,6 @@ function rechargeData(dataStore, dataMail){
         email: dataStore.email,
         country: dataStore.country,
         gender: dataStore.gender,
-        numChildren: dataStore.numChildren,
-        children: dataStore.children,
         letters: lettersArray
     }
 

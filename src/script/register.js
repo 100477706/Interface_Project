@@ -17,71 +17,6 @@ function checkPassword() {
 
 window.onload = checkPassword()
 
-/*Función(es) que crea un pequeño formulario para cada hijo*/
-function regalosHijos(){
-    let parameterHijo = document.getElementById("hijos");
-    parameterHijo.addEventListener("input", crearForm);
-    
-}
-    
-function crearForm(){  
-    const hijosCount = parseInt(this.value);
-    const infoHijos = document.getElementById("nombreEdadJuguetes");
-    infoHijos.innerHTML = "";
-
-    if (hijosCount > 0){
-        for(let i=1; i<=hijosCount; i++){
-            const hijosDiv = document.createElement("div");
-            hijosDiv.classList.add("cajaHijos");
-
-            /*Creamos el campo para el nombre de los hijos*/
-            const nombreHijo = document.createElement("label");
-            nombreHijo.textContent = `Nombre del hijo/a ${i}:`;
-            const escrituraNombre = document.createElement("input");
-            escrituraNombre.type = "text";
-            escrituraNombre.className = "inputRform";
-            escrituraNombre.name = `nombre${i}`;
-            escrituraNombre.placeholder = "Nombre del hijo/a";
-            escrituraNombre.minLength = 3;
-            escrituraNombre.required = true;
-            
-            /*Creamos el campo para la edad de los hijos*/
-            const edadHijo = document.createElement("label");
-            edadHijo.textContent = `Edad del hijo/a ${i}:`;
-            const escrituraEdad = document.createElement("input");
-            escrituraEdad.type = "number";
-            escrituraEdad.className = "inputRform";
-            escrituraEdad.name = `edad${i}`;
-            escrituraEdad.placeholder = "Edad del hijo/a";
-            escrituraEdad.min = 0;
-            escrituraEdad.required = true;
-
-            /*Creamos el campo para los juguetes de los hijos*/
-            const juguetesHijo = document.createElement("label");
-            juguetesHijo.textContent = `Juguetes del hijo/a ${i}:`;
-            const escrituraJuguetes = document.createElement("input");
-            escrituraJuguetes.type = "text";
-            escrituraJuguetes.className = "inputRform";
-            escrituraJuguetes.name = `juguetes${i}`;
-            escrituraJuguetes.placeholder = "Jueguetes del hijo/a";
-            escrituraJuguetes.required = true;
-
-            /*Añadimos al objeto de la división en el nuevo formulario*/
-            hijosDiv.appendChild(nombreHijo);
-            hijosDiv.appendChild(escrituraNombre);
-            hijosDiv.appendChild(edadHijo);
-            hijosDiv.appendChild(escrituraEdad);
-            hijosDiv.appendChild(juguetesHijo);
-            hijosDiv.appendChild(escrituraJuguetes);
-
-            infoHijos.appendChild(hijosDiv)
-        }
-    }
-}
-
-window.onload = regalosHijos();
-
-
 /*Función que al limpiar los campos, el usuario confirme la operación*/
 function clearForm() {
     const formulario = document.getElementById("RegisterForm");
@@ -118,30 +53,6 @@ function almacenarDatos() {
     let country = document.forms["RegisterForm"]["pais"].value;
     let gender = document.forms["RegisterForm"]["gender"].value;
 
-    let hijos = document.forms["RegisterForm"]["hijos"].value;
-    if (!hijos){
-        hijos = 0;
-    }
-
-    /*Parte para guardar la información del formulario dinámico de los hijos*/
-    let hijosArray = [];
-
-    if (hijos > 0){
-        for (let i = 1; i <= hijos; i++) {
-            let nombre = document.querySelector(`input[name="nombre${i}"]`).value;
-            let edad = document.querySelector(`input[name="edad${i}"]`).value;
-            let juguetes = document.querySelector(`input[name="juguetes${i}"]`).value;
-
-            let hijosDatos = {
-                nombre: nombre,
-                edad: edad,
-                juguetes: juguetes
-            };
-            
-            hijosArray.push(hijosDatos);
-        }
-    
-    }
 
     /*Verificamos que el nombre de usuario no exista en la base de datos*/
     for (let i=0; i<localStorage.length; i++){
@@ -162,8 +73,6 @@ function almacenarDatos() {
         email: email,
         country: country,
         gender: gender,
-        numChildren: hijos,
-        children: hijosArray
     }
 
     let access = `${user},${password}`;
