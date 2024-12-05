@@ -34,6 +34,12 @@
         <script src="script/gameButtons.js" async></script>
         <!--Java Scrpit para las transiciones de las imagenes del paquete 1-->
         <script src="script/travelPackagesImages.js" async></script>
+        <!--Java Scrpit para las transiciones de las imagenes del paquete 2-->
+        <script src="script/travelPackagesImages2.js" async></script>
+        <!--Java Scrpit para las transiciones de las imagenes del paquete 3-->
+        <script src="script/travelPackagesImages3.js" async></script>
+        <!--Java Scrpit para las reservas de los viajes-->
+        <script src="script/travelReserve.js" async></script>
 
         <!--Java Scrpits para la apertura de Pop Ups de contenido-->
         <script src="script/logInFunction.js" async></script>
@@ -919,12 +925,112 @@
                                 <b>*</b> Desayuno Incluído<br> 
                                 <b>*</b> No se admiten mascotas<br>
                                 <b>*</b> Traslado hacia y desde el aereopuerto<br>
+                                <b>*</b> No incluye ninguna experiencia con Santa<br>
                             </p>
 
-                            <button>Reservar</button>
+                            <button onclick="reservePackage()">Reservar</button>
                         </div>
                     </div>
                 </div>
+
+                <div class="TravelInfo">
+                    <h3>Paquete 2</h3>
+                    <div class="FirstTravelBlock">
+                        <div class="container2">
+                            <div class="mySlides2">
+                              <div class="numbertext2">1 / 5</div>
+                              <img src="images/Paquetes de Viaje/Hotel2.1.jpg" alt = "paquete1" style="width:100%">
+                            </div>
+                          
+                            <div class="mySlides2">
+                              <div class="numbertext2">2 / 5</div>
+                              <img src="images/Paquetes de Viaje/Hotel2.2.jpg" alt = "paquete2" style="width:100%">
+                            </div>
+                          
+                            <div class="mySlides2">
+                              <div class="numbertext2">3 / 5</div>
+                              <img src="images/Paquetes de Viaje/Hotel2.3.jpg" alt = "paquete3" style="width:100%">
+                            </div>
+                              
+                            <div class="mySlides2">
+                              <div class="numbertext2">4 / 5</div>
+                              <img src="images/Paquetes de Viaje/Hotel2.4.jpg" alt = "paquete4" style="width:100%">
+                            </div>
+                          
+                            <div class="mySlides2">
+                              <div class="numbertext2">5 / 5</div>
+                              <img src="images/Paquetes de Viaje/Hotel2.5.jpg" alt = "paquete5" style="width:100%">
+                            </div>
+                              
+                            <a class="prev2" onclick="plusSlides2(-1)">❮</a>
+                            <a class="next2" onclick="plusSlides2(1)">❯</a>
+                        </div>
+
+                        <div class="SecondTravelBlock">
+                            <p style="font-family:Verdana, Geneva, Tahoma, sans-serif;">
+                                <b>* 7 días y 6 noches</b> en un cómoda y acojedora cabaña en Laponia, Finlandia.<br>
+                                <b>*</b> Ubicada dentro de la villa de Papá Noel<br>
+                                <b>*</b> Capacidad para 6 personas<br>
+                                <b>*</b> Cuenta con tres habitaciones, dos baños, calefacción, televisión por cable y WIFI<br>
+                                <b>*</b> El Desayuno no viene incluído<br>
+                                <b>*</b> No se admiten mascotas<br> 
+                                <b>*</b> Traslado hacia y desde el aereopuerto<br>
+                                <b>*</b> Incluye una experiencia en el taller de Santa de un día<br>
+                            </p>
+
+                            <button onclick="reservePackage()">Reservar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="TravelInfo">
+                    <h3>Paquete 3</h3>
+                    <div class="FirstTravelBlock">
+                        <div class="container3">
+                            <div class="mySlides3">
+                                <div class="numbertext3">1 / 5</div>
+                                <img src="images/Paquetes de Viaje/Hotel3.1.jpg" alt = "paquete1" style="width:100%">
+                            </div>
+                            
+                            <div class="mySlides3">
+                                <div class="numbertext3">2 / 5</div>
+                                <img src="images/Paquetes de Viaje/Hotel3.2.jpg" alt = "paquete2" style="width:100%">
+                            </div>
+                            
+                            <div class="mySlides3">
+                                <div class="numbertext3">3 / 5</div>
+                                <img src="images/Paquetes de Viaje/Hotel3.3.jpg" alt = "paquete3" style="width:100%">
+                            </div>
+                                
+                            <div class="mySlides3">
+                                <div class="numbertext3">4 / 5</div>
+                                <img src="images/Paquetes de Viaje/Hotel3.4.jpg" alt = "paquete4" style="width:100%">
+                            </div>
+                            
+                            <div class="mySlides3">
+                                <div class="numbertext3">5 / 5</div>
+                                <img src="images/Paquetes de Viaje/Hotel3.5.jpg" alt = "paquete5" style="width:100%">
+                            </div>
+                                
+                            <a class="prev3" onclick="plusSlides3(-1)">❮</a>
+                            <a class="next3" onclick="plusSlides3(1)">❯</a>
+                        </div>
+
+                        <div class="SecondTravelBlock">
+                            <p style="font-family:Verdana, Geneva, Tahoma, sans-serif;">
+                                <b>* 7 días y 6 noches</b> en un impresionante alojamiento conocido como los iglús de Laponia, Finlandia.<br>
+                                <b>*</b> Ubicado a 5 minutos en trineo de la villa<br>
+                                <b>*</b> Traslado en trineo a la villa incluído<br>
+                                <b>*</b> Capacidad para 4 personas<br>
+                                <b>*</b> Cuenta con dos camas, baño, calefacción y WIFI<br>
+                                <b>*</b> Desayuno Incluído <br> 
+                                <b>*</b> Traslado hacia y desde el aereopuerto<br>
+                                <b>*</b> Incluye una experiencia con Santa en su trineo y junto a sus duendes<br>
+                            </p>
+
+                            <button onclick="reservePackage()">Reservar</button>
+                        </div>
+                    </div>
 
             </div>
 

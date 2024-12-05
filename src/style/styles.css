@@ -2590,8 +2590,107 @@ a{
     color: #000000
 }
 
+.container2 {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
 
+.mySlides2 {
+    display: none;
+}
 
+.cursor2 {
+    cursor: pointer;
+}
+
+.prev2,
+.next2 {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: background-color 0.3s;
+}
+
+.next2 {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev2:hover,
+.next2:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: black;
+}
+
+.numbertext2 {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #f2f2f2;
+    font-size: 1.5vw;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.container3 {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+.mySlides3 {
+    display: none;
+}
+
+.cursor3 {
+    cursor: pointer;
+}
+
+.prev3,
+.next3 {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: background-color 0.3s;
+}
+
+.next3 {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev3:hover,
+.next3:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: black;
+}
+
+.numbertext3 {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #f2f2f2;
+    font-size: 1.5vw;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
 
 
 
