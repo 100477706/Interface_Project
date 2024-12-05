@@ -332,7 +332,7 @@ input[type=number]::-webkit-outer-spin-button {
     top: 50%;
     left: 50%;
     width: 40vw;
-    height: 70vh;
+    height: fit-content;
     z-index: 999;
     transform: translate(-50%, -50%);
     border: 0.3rem solid #000000;
@@ -2192,7 +2192,7 @@ a{
 }
 
 #marcadoresglobales h3{
-    font-size: clamp(0.5vw, 2vw, 4vw);
+    font-size: clamp(0.8vw, 3vw, 6vw);
     font-family: 'Verdana', serif;
     font-style: italic;
     font-weight: bold;
@@ -2202,7 +2202,7 @@ a{
 }
 
 #marcadoresglobales p{
-    font-size: 1rem;
+    font-size: clamp(0.4vw, 2vw, 3vw);
     font-family: 'Verdana', serif;
     font-style: italic;
     font-weight: bold;
@@ -2210,6 +2210,7 @@ a{
     padding: 1rem;
     margin: 0;
 }
+
 
 #Imagen1, #Imagen2, #Imagen3{
     position: relative;
@@ -2519,7 +2520,7 @@ a{
     /*Cambios para el formulario de Log In*/
     #contenidoLogIn {
         width: 65vw;
-        height: 65vh;
+        height: fit-content;
     }
 
     .LogInPage{
@@ -2910,7 +2911,7 @@ a{
     /*Cambios para el formulario de Log In*/
     #contenidoLogIn {
         width: 65vw;
-        height: 75vh;
+        height: fit-content;
     }
 
     .LogInPage{
@@ -3268,7 +3269,7 @@ a{
     /*Cambios para el formulario de Log In*/
     #contenidoLogIn {
         width: 65vw;
-        height: 75vh;
+        height: fit-content;
     }
 
     .LogInPage{

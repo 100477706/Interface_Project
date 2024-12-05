@@ -1,13 +1,13 @@
 function juego1(){
-        document.getElementById('Imagen1').style.display = 'block';
-        document.getElementById('marcadoresglobales').style.display = 'block';
-        closeGame('Imagen2');
-        closeGame('Imagen3');
+    document.getElementById('Imagen1').style.display = 'block';
+    document.getElementById('marcadoresglobales').style.display = 'block';
+    closeGame('Imagen2');
+    closeGame('Imagen3');
 
-        resetGame1();
-        clickTheCircle();
-        resetGame2();
-
+    resetGame1();
+    actualizarMarcadores("Haz clic en el círculo");
+    clickTheCircle();
+    resetGame2();
     }
 
     function juego2() {
@@ -16,6 +16,7 @@ function juego1(){
     closeGame('Imagen1');
     closeGame('Imagen3');
     resetGame1();
+    actualizarMarcadores("Simón dice");
     simondice();
     juegoActivo = true; // Activar estado del juego 2
 }
@@ -39,7 +40,7 @@ function juego1(){
 
     function clickTheCircle() {
 
-        maxTime = 90;
+        maxTime = 5;
         timeInterval = setInterval(function () {
             let minutes = Math.floor(maxTime / 60).toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false });
             let seconds = (maxTime % 60).toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false });
@@ -47,6 +48,8 @@ function juego1(){
             if (maxTime <= 0) {
                 clearInterval(timeInterval);
                 clearInterval(circleInterval);
+                guardarPuntuacion(score); // Guarda la puntuación al terminar el juego
+                actualizarMarcadores("Haz clic en el círculo");
             }
 
             document.getElementById('gameTimer').innerHTML = minutes + ':' + seconds;
@@ -165,6 +168,8 @@ document.addEventListener('keydown', function (event) {
                 secuencia();
             }
         } else {
+            guardarPuntuacion(nivel - 1); // Guarda la puntuación
+            actualizarMarcadores("Simón dice");
             alert('Cadena errónea');
         }
     }
@@ -180,3 +185,72 @@ function resetGame2() {
         color.style.visibility = 'hidden';
     });
 }
+
+
+function guardarPuntuacion(puntuacion) {
+    let logInData = `${parameterUser},${parameterPassword}`;
+    const usuario = localStorage.getItem(logInData); // Verifica si hay sesión iniciada
+    if (usuario) {
+        const puntuaciones = JSON.parse(localStorage.getItem('puntuaciones')) || []; // Obtiene puntuaciones previas o un array vacío
+        const usuarioNombre = JSON.parse(usuario).username;
+
+        // Busca si ya existe una puntuación para el usuario y el juego actual
+        const indiceExistente = puntuaciones.findIndex(registro =>
+            registro.nombre === usuarioNombre &&
+            registro.juego === (juegoActivo ? "Simón dice" : "Haz clic en el círculo")
+        );
+
+        if (indiceExistente !== -1) {
+            // Si existe un registro previo, reemplázalo si la nueva puntuación es mayor
+            if (puntuacion > puntuaciones[indiceExistente].puntuacion) {
+                puntuaciones[indiceExistente].puntuacion = puntuacion;
+                console.log(`Puntuación actualizada: ${JSON.stringify(puntuaciones[indiceExistente])}`);
+            } else {
+                console.log('La puntuación no se actualizó porque es menor o igual a la existente.');
+            }
+        } else {
+            // Si no existe un registro previo, lo agrega
+            const nuevoRegistro = {
+                nombre: usuarioNombre,
+                juego: juegoActivo ? "Simón dice" : "Haz clic en el círculo",
+                puntuacion: puntuacion
+            };
+            puntuaciones.push(nuevoRegistro);
+            console.log(`Nueva puntuación guardada: ${JSON.stringify(nuevoRegistro)}`);
+        }
+
+        // Guarda las puntuaciones actualizadas en localStorage
+        localStorage.setItem('puntuaciones', JSON.stringify(puntuaciones));
+    } else {
+        alert('Inicia sesión para guardar tu puntuación.');
+    }
+}
+
+
+function actualizarMarcadores(juegoActual) {
+    const puntuaciones = JSON.parse(localStorage.getItem('puntuaciones')) || [];
+
+    // Filtra las puntuaciones por juego
+    const puntuacionesJuego = puntuaciones
+        .filter(registro => registro.juego === juegoActual)
+        .sort((a, b) => b.puntuacion - a.puntuacion) // Ordena de mayor a menor puntuación
+        .slice(0, 5); // Toma las 5 mejores puntuaciones
+
+    // Actualiza los marcadores en el HTML
+    for (let i = 0; i < 3; i++) {
+        const nombreElemento = document.getElementById(`nombre${i + 1}`);
+        const puntajeElemento = document.getElementById(`puntaje${i + 1}`);
+
+        if (puntuacionesJuego[i]) {
+            const { nombre, puntuacion } = puntuacionesJuego[i];
+            nombreElemento.textContent = `${nombre}  ....  ${puntuacion}`;
+            puntajeElemento.textContent = ""; // Limpia el elemento de puntuación separado
+        } else {
+            // Si no hay puntuación para esta posición, usa el valor por defecto
+            nombreElemento.textContent = "Nombre  ....  ?";
+            puntajeElemento.textContent = ""; // Limpia el elemento de puntuación separado
+        }
+    }
+}
+
+
