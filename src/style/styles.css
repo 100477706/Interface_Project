@@ -89,7 +89,12 @@ body{
     width: 10vw;
     max-width: 150px;
 }
-
+#LogInBotton{
+    display: none;
+}
+#RegisterBotton{
+    display: none;
+}
 /*****************************/
 /*Carga del Frame de Registro*/
 #cargaRegistro {
@@ -1513,7 +1518,27 @@ input[type=number]::-webkit-outer-spin-button {
     transform: translate(-50%, -50%);
     border: 0.3rem solid #000000;
 }
-
+#testDeBondad{
+    display: none;
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+#testDeBondad form{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80vw;
+    height: 80vh;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    border: 0.3rem solid #000000;
+    background-color: rgba(191, 17, 17, 0.8);
+}
 /*Contenido del Frame de Mis Cartas*/
 .MyCardsPage{
     background-color: rgb(133, 20, 20);

@@ -47,6 +47,8 @@
         <script src="script/changeGenderFunction.js" async></script>
         <script src="script/myCardsFunction.js" async></script>
         <script src="script/popupAdviento.js" async></script>
+        <script src="script/testDeBondad.js" async></script>
+        <script src="script/testDeBondadFunctions.js" async></script>
 
     </head>
 
@@ -74,6 +76,7 @@
                         <div id="DropDown" class="DropDown" style="display:none;">
                             <a class="no-border" href="#" onclick="openMyMenu()" style="color: black;">Mi Perfil</a>
                             <a class="no-border" href="#Page1" onclick="openMyCards()" style="color: black;">Mis Cartas</a>
+                            <a class="no-border" href="#" onclick="openPopUpTestDeBondad()"  style="color: black;">Test de bondad</a>
                             <a class="no-border" href="#" onclick="closeSession()" style="color: black;">Cerrar Sesión</a>
                         </div>
                     </div>
@@ -403,6 +406,40 @@
                                 <div id="infoCards" class="infoCards"></div>
                             </section>                            
                         </div>     
+                    </div>
+                    <div id="testDeBondad">
+                        <form>
+                            <p>Indique su género</p>
+                        <div class="gen">
+                            <input type="radio"  name="genero"  id="t1">
+                            <label for="t1"><b>Hombre</b></label>
+                        </div>
+                        <p>Indique su género</p>
+                        <div class="gen">
+                            <input type="radio"  name="genero"  id="t2">
+                            <label for="t2"><b>Hombre</b></label>
+                        </div>
+                        <p>Indique su género</p>
+                        <div class="gen">
+                            <input type="radio"  name="genero"  id="t3">
+                            <label for="t3"><b>Hombre</b></label>
+                        </div>
+                        <p>Indique su género</p>
+                        <div class="gen">
+                            <input type="radio"  name="genero"  id="t4">
+                            <label for="t4"><b>Hombre</b></label>
+                        </div>
+                        <p>Indique su género</p>
+                        <div class="gen">
+                            <input type="radio"  name="genero"  id="t5">
+                            <label for="t5"><b>Hombre</b></label>
+                        </div>
+                        <div>
+                            <button>Send Button</button>
+                            <button type="button" onclick="closePopUpTestDeBondad()">Cancel Button</button>
+                        </div>
+                        </form>
+
                     </div>
             </nav>
         </header>

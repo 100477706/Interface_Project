@@ -34,6 +34,7 @@ function userRegister() {
         document.getElementById("LogInBotton").style.display = "none";
         document.getElementById("RegisterBotton").style.display = "none";
         document.getElementById("MyMenu").style.display = "block";
+        sessionStorage.setItem("logged", parameterUser);
         window.alert("Inicio de Sesión Exitoso");
         closePopUpLogIn();
     }
@@ -70,6 +71,7 @@ function closeSession(){
         document.getElementById("MyMenu").style.display = "none";
         document.getElementById("LogInBotton").style.display = "flex";
         document.getElementById("RegisterBotton").style.display = "flex";
+        sessionStorage.setItem("logged", "")
         console.log("Se ha cerrado sesión");
     }
 
@@ -84,4 +86,13 @@ function openMyMenu() {
     let importantData = `${parameterUser},${parameterPassword}`;
     validateData = localStorage.getItem(importantData);
     userInformation(validateData);
+}
+if (sessionStorage.getItem("logged") === null){
+        sessionStorage.setItem("logged", "")
+    }
+if (sessionStorage.getItem('logged') !== ""){
+    document.getElementById("MyMenu").style.display = "block";
+}else{
+    document.getElementById("LogInBotton").style.display = "flex";
+    document.getElementById("RegisterBotton").style.display = "flex";
 }
