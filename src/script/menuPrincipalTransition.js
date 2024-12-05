@@ -54,6 +54,14 @@ function detectSection() {
             else if (section.id === "Page5"){  
                 menuLinks[4].classList.add('active');
             }
+
+            else if (section.id === "Page6"){  
+                menuLinks[5].classList.add('active');
+            }
+
+            else if (section.id === "Page7"){  
+                menuLinks[6].classList.add('active');
+            }
         console.log(`Estás viendo: ${section.id}`);
         break;
         }
