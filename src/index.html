@@ -407,40 +407,57 @@
                             </section>                            
                         </div>     
                     </div>
-                    <div id="testDeBondad">
-                        <form>
-                            <p>Indique su género</p>
-                        <div class="gen">
-                            <input type="radio"  name="genero"  id="t1">
-                            <label for="t1"><b>Hombre</b></label>
+                <div id="testDeBondad">
+                    <div id="testDeBondadContent">
+                        <div id="testBondadTitle">
+                            <h2>Test de Bondad</h2>
+                            <i class="material-icons" onclick="closePopUpTestDeBondad()">cancel</i>
                         </div>
-                        <p>Indique su género</p>
-                        <div class="gen">
-                            <input type="radio"  name="genero"  id="t2">
-                            <label for="t2"><b>Hombre</b></label>
-                        </div>
-                        <p>Indique su género</p>
-                        <div class="gen">
-                            <input type="radio"  name="genero"  id="t3">
-                            <label for="t3"><b>Hombre</b></label>
-                        </div>
-                        <p>Indique su género</p>
-                        <div class="gen">
-                            <input type="radio"  name="genero"  id="t4">
-                            <label for="t4"><b>Hombre</b></label>
-                        </div>
-                        <p>Indique su género</p>
-                        <div class="gen">
-                            <input type="radio"  name="genero"  id="t5">
-                            <label for="t5"><b>Hombre</b></label>
-                        </div>
-                        <div>
-                            <button>Send Button</button>
-                            <button type="button" onclick="closePopUpTestDeBondad()">Cancel Button</button>
-                        </div>
-                        </form>
 
+                        <form onsubmit="testResults()">
+                            <div class="test">
+                                <p>¿Has sido generoso?</p>
+                                <div>
+                                    <input type="number" id="generoso" min="0" max="4" required>
+                                    <label for="generoso"></label>
+                                </div>
+                            </div>
+                            <div class="test">
+                                <p>¿Has ayudado a los demás?</p>
+                                <div>
+                                    <input type="number" id="ayuda" min="0" max="4" required>
+                                    <label for="ayuda"></label>
+                                </div>
+
+                            </div>
+                                <div class="test">
+                                <p>¿Te has peleado?</p>
+                                <div>
+                                    <input type="number" id="pelea" min="0" max="4" required>
+                                    <label for="pelea"></label>
+                                </div>
+
+                            </div>
+                            <div class="test">
+                                <p>¿Has hecho caso a tus padres?</p>
+                                <div>
+                                    <input type="number"  id="obediencia" min="0" max="4" required>
+                                    <label for="obediencia"></label>
+                                </div>
+                            </div>
+
+                            <button id="sendTestBondad">Evaluar</button>
+
+                        </form>
+                        <div id="goodKid">
+                            <p>¡Te has portado genial este año!</p>
+                            <p>Toma tus regalos</p>
+                            <img src="images/regalos.png" alt="regalosbuenos" id="regalos">
+                        </div>
+                        <div id="badkid"></div>
                     </div>
+                </div>
+
             </nav>
         </header>
         <div class="PageDivisor"></div>
