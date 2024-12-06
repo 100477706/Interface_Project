@@ -27,28 +27,25 @@ function changeUsername(){
     let confirmWithPassword = document.getElementById("chUserpassword").value;
 
     /*Verificamos que el nombre de usuario no exista en la base de datos*/
-    for (let i=0; i<localStorage.length; i++){
-        let clave = localStorage.key(i);
-        let [usernameStore, passwordStore] = clave.split(',');
 
-        if (usernameStore === newUser){
-            window.alert("Este nombre de usuario ya está registrado. Por favor, escoja otro");
-            return;
-        }
+    let usuario = JSON.parse(localStorage.getItem(newUser));
+    if (usuario !== null){
+        window.alert("Este nombre de usuario ya está registrado. Por favor, escoja otro");
+        return;
     }
+    let user_logged = sessionStorage.getItem("logged");
+    let user = JSON.parse(localStorage.getItem(user_logged));
+    if (user.password === confirmWithPassword){
+        if (user.username !== newUser){
 
-    if (userData.password === confirmWithPassword){
-        if (userData.username !== newUser){
-
-            let oldDataKey = `${userData.username},${userData.password}`;
-            localStorage.removeItem(oldDataKey);
-            
-            userData.username = newUser;
+            localStorage.removeItem(user_logged);
+            let nuevoUser = user
+            nuevoUser.username = newUser;
             /*Cambiamos su valor en la letiable global para que cuando se cierre la pestaña, se siga viendo el cambio*/
             parameterUser = newUser;
             /*********************************************************************************************************/
-            let newDataKey = `${newUser},${userData.password}`;
-            localStorage.setItem(newDataKey, JSON.stringify(userData));
+            localStorage.setItem(newUser, JSON.stringify(nuevoUser));
+            sessionStorage.setItem("logged", newUser)
             window.alert("Modificación Exitosa");
             closePopUpChangeUser();
             userInformation(JSON.stringify(userData));
