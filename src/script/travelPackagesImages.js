@@ -1,3 +1,7 @@
+/**********************************/
+/*Java Script para la Gestión del carrete de imagenes 1*/
+/**********************************/
+
 let slideIndex = 1;
 
 function plusSlides(n) {
