@@ -188,11 +188,11 @@ function resetGame2() {
 
 
 function guardarPuntuacion(puntuacion) {
-    let logInData = `${parameterUser},${parameterPassword}`;
-    const usuario = localStorage.getItem(logInData); // Verifica si hay sesión iniciada
-    if (usuario) {
+    const user_logged = sessionStorage.getItem("logged");
+    const user= JSON.parse(localStorage.getItem(user_logged)); // Verifica si hay sesión iniciada
+    if (user_logged !== "") {
         const puntuaciones = JSON.parse(localStorage.getItem('puntuaciones')) || []; // Obtiene puntuaciones previas o un array vacío
-        const usuarioNombre = JSON.parse(usuario).username;
+        const usuarioNombre = user.username;
 
         // Busca si ya existe una puntuación para el usuario y el juego actual
         const indiceExistente = puntuaciones.findIndex(registro =>

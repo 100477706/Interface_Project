@@ -4,8 +4,9 @@
 
 /*Función que verifica que el usuario haya iniciado sesión y el email sea el correcto*/
 function sendLetter(){
-    if (validateLogIn === true){
-        let userMailData = JSON.parse(validateData);
+    let user_logged = sessionStorage.getItem("logged");
+    if (user_logged !== "") {
+        let userMailData = JSON.parse(localStorage.getItem(user_logged));
         let emailLetter = document.forms["MailForm"]["correo"].value;
 
         if (userMailData.email === emailLetter){
@@ -45,7 +46,7 @@ function enviarcartacorreo(dataLetter) {
     }
 
     // Parámetros para enviar el correo
-    var templateParams = {
+    let templateParams = {
         nombre: dataLetter.nameMail,
         correo: dataLetter.emailMail,
         ciudad: dataLetter.cityMail,
@@ -65,23 +66,11 @@ function enviarcartacorreo(dataLetter) {
 
 /*Función que recarga la información del usuario cada vez que se escribe una nueva carta*/
 function rechargeData(dataStore, dataMail){
-    let DataKey = `${dataStore.username},${dataStore.password}`;
-    let storedData = JSON.parse(localStorage.getItem(DataKey)) || {};
 
-    let lettersArray = storedData.letters || [];
+    let lettersArray = dataStore.letters;
     lettersArray.push(dataMail);
 
-    let newRegisterData = {
-        username: dataStore.username,
-        password: dataStore.password,
-        city: dataStore.city,
-        email: dataStore.email,
-        country: dataStore.country,
-        gender: dataStore.gender,
-        letters: lettersArray
-    }
-
-    localStorage.setItem(DataKey, JSON.stringify(newRegisterData));
+    localStorage.setItem(dataStore.username, JSON.stringify(dataStore));
 
     window.alert("La información de la carta se ha guardado correctamente");
 }

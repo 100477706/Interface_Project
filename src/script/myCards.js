@@ -7,9 +7,8 @@ let draggedElementIndex;
 /*Función para abrir el menú con todas las cartas*/
 function openMyCards(){
     openPopUpMyCards();
-    let userCardsData = JSON.parse(validateData);
-    let DataKey = `${userCardsData.username},${userCardsData.password}`;
-    let storedData = JSON.parse(localStorage.getItem(DataKey)) || {};
+    let user_logged = sessionStorage.getItem("logged");
+    let storedData = JSON.parse(localStorage.getItem(user_logged));
 
     showCards(storedData);
     
@@ -56,9 +55,8 @@ function deleteCard(index){
     const confirmationMyCards = confirm("¿Está seguro que desea borrar los datos de esta carta?");
 
     if (confirmationMyCards){
-        let userCardsData = JSON.parse(validateData);
-        let DataKey = `${userCardsData.username},${userCardsData.password}`;
-        let storedData = JSON.parse(localStorage.getItem(DataKey)) || {};
+        let user_logged = sessionStorage.getItem("logged");
+        let storedData = JSON.parse(localStorage.getItem(user_logged));
         const santaCards = storedData.letters;
 
         for (let i=0; i<santaCards.length; i++){
@@ -89,10 +87,8 @@ function drop(event) {
     event.preventDefault();
     const droppedElementIndex = event.target.closest(".MyProfileCardsBox").dataset.index;
 
-    
-    const userCardsData = JSON.parse(validateData);
-    const dataKey = `${userCardsData.username},${userCardsData.password}`;
-    const storedData = JSON.parse(localStorage.getItem(dataKey)) || {};
+    let user_logged = sessionStorage.getItem("logged");
+    let storedData = JSON.parse(localStorage.getItem(user_logged));
     const cardsBank = storedData.letters;
 
     if (draggedElementIndex !== undefined && droppedElementIndex !== undefined) {

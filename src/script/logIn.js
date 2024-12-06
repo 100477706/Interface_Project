@@ -12,34 +12,24 @@ function userRegister() {
     validateLogIn = false;
     parameterUser = document.getElementById("liusername").value;
     parameterPassword = document.getElementById("lipassword").value;
-
-    for (let i=0; i<localStorage.length; i++){
-        let clave = localStorage.key(i);
-        let [usernameStore, passwordStore] = clave.split(',');
-
-        if (usernameStore === parameterUser){
-            if(passwordStore !== parameterPassword){
-                window.alert("Contraseña Incorrecta. Inténtelo de nuevo");
-                return;
-            }
-        }
-    }
-    
-    let logInData = `${parameterUser},${parameterPassword}`;
-    validateData = localStorage.getItem(logInData);
-
-
-    if (validateData){
-        validateLogIn = true;
-        document.getElementById("LogInBotton").style.display = "none";
-        document.getElementById("RegisterBotton").style.display = "none";
-        document.getElementById("MyMenu").style.display = "block";
-        sessionStorage.setItem("logged", parameterUser);
-        window.alert("Inicio de Sesión Exitoso");
-        closePopUpLogIn();
-    }
-    else{
+    let user = JSON.parse(localStorage.getItem(parameterUser));
+    if (user === null) {
         window.alert("El par de usuario y contraseña, no se encuentran en los registros");
+    }else {
+        console.log(user.password, parameterPassword);
+        if (user.password === parameterPassword) {
+            validateLogIn = true;
+            document.getElementById("LogInBotton").style.display = "none";
+            document.getElementById("RegisterBotton").style.display = "none";
+            document.getElementById("MyMenu").style.display = "block";
+            sessionStorage.setItem("logged", parameterUser);
+            window.alert("Inicio de Sesión Exitoso");
+
+            userInformation();
+            closePopUpLogIn();
+        }else {
+            console.log("Contraseña incorrecta")
+        }
     }
 
 }
@@ -83,9 +73,7 @@ function closeSession(){
 /*Función para abrir la información del usuario*/
 function openMyMenu() {
     openPopUpMyProfile();
-    let importantData = `${parameterUser},${parameterPassword}`;
-    validateData = localStorage.getItem(importantData);
-    userInformation(validateData);
+    userInformation();
 }
 if (sessionStorage.getItem("logged") === null){
         sessionStorage.setItem("logged", "")

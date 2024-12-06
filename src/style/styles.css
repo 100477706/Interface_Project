@@ -61,7 +61,7 @@ body{
 }
 
 
-.MenuPrincipal button {
+button {
     background-color: transparent;
     border: 2px solid #ffffff;
     padding: 0.57rem 1rem;
@@ -149,7 +149,7 @@ body{
     width: auto;
 }
 
-.inputRform{
+input{
     width: 30vw;
     padding: 0.5rem 0.5rem;
     margin: 0 3rem 0.4rem;
@@ -177,22 +177,6 @@ body{
     color: transparent;
 }
 
-input[type=password]{
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
-}
 
 input[type=password]:focus {
   border: 0.3rem solid #000000;
@@ -210,8 +194,7 @@ select {
     width: 30vw;
     padding: 0.5rem 0.5rem;
     font-size: 1rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0.8rem;
+    margin: 0.8rem 3rem 0.4rem;
     border: 0.3rem solid red;
     border-radius: 0.7rem;
     background-color: rgb(133, 20, 20);
@@ -236,21 +219,6 @@ select:hover {
     background-color: rgb(255, 0, 0);
 }
 
-input[type=number]{
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    transition: 0.5s;
-    outline: none;
-}
 
 input[type=number]:focus {
   border: 0.3rem solid #000000;
@@ -376,22 +344,6 @@ input[type=number]::-webkit-outer-spin-button {
     width: auto;
 }
 
-.inputLIform{
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
-}
 
 .inputLIform:focus{
   border: 0.3rem solid #000000;
@@ -405,22 +357,6 @@ input[type=number]::-webkit-outer-spin-button {
     color: transparent;
 }
 
-.LogInForm input[type=password]{
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
-}
 
 .LogInForm input[type=password]:focus {
   border: 0.3rem solid #000000;
@@ -474,18 +410,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 /************************************/
 /*Contenido del Menu de cada usuario*/
-.MyMenu button {
-    background-color: transparent;
-    border: 2px solid #ffffff;
-    padding: 0.57rem 1rem;
-    color: #ffffff;
-    font-family: 'Lily Script One', serif;
-    font-size: 1.14rem;
-    cursor: pointer;
-    border-radius: 0.4rem;
-    transition: background-color 0.3s;
-    margin-left: 0.71rem;
-}
 
 .MyMenu button:hover {
     background-color: #000000;
@@ -615,9 +539,7 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: rgba(0, 0, 0, 0.8); 
     justify-content: center;
 }
-
-#contenidoChangeUser {
-    display: none;
+.changes{
     position: fixed;
     top: 50%;
     left: 50%;
@@ -627,6 +549,9 @@ input[type=number]::-webkit-outer-spin-button {
     transform: translate(-50%, -50%);
     border: 0.3rem solid #000000;
     justify-content: center;
+}
+#contenidoChangeUser {
+    display: none;
 }
 
 /*Contenido del Frame de cuando el usuario cambia username*/
@@ -656,23 +581,6 @@ input[type=number]::-webkit-outer-spin-button {
     width: auto;
 }
 
-.inputChangeUser{
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
-}
-
 .inputChangeUser:focus{
   border: 0.3rem solid #000000;
   background-color: rgb(255, 0, 0);
@@ -685,22 +593,6 @@ input[type=number]::-webkit-outer-spin-button {
     color: transparent;
 }
 
-.ChangeUserForm input[type=password]{
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
-}
 
 .ChangeUserForm input[type=password]:focus {
   border: 0.3rem solid #000000;
@@ -806,23 +698,6 @@ input[type=number]::-webkit-outer-spin-button {
     width: auto;
 }
 
-.ChangePasswordForm input[type=password]{
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
-}
-
 .ChangePasswordForm input[type=password]:focus {
   border: 0.3rem solid #000000;
   background-color: rgb(255, 0, 0);
@@ -889,15 +764,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 #contenidoChangeCity {
     display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 40vw;
-    height: 70vh;
-    z-index: 999;
-    transform: translate(-50%, -50%);
-    border: 0.3rem solid #000000;
-    justify-content: center;
 }
 
 /*Contenido del Frame de cuando el usuario cambia su ciudad*/
@@ -927,23 +793,6 @@ input[type=number]::-webkit-outer-spin-button {
     width: auto;
 }
 
-.inputChangeCity{
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
-}
-
 .inputChangeCity:focus{
   border: 0.3rem solid #000000;
   background-color: rgb(255, 0, 0);
@@ -956,22 +805,6 @@ input[type=number]::-webkit-outer-spin-button {
     color: transparent;
 }
 
-.ChangeCityForm input[type=password]{
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
-}
 
 .ChangeCityForm input[type=password]:focus {
   border: 0.3rem solid #000000;
@@ -1039,15 +872,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 #contenidoChangeCountry {
     display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 40vw;
-    height: 70vh;
-    z-index: 999;
-    transform: translate(-50%, -50%);
-    border: 0.3rem solid #000000;
-    justify-content: center;
 }
 
 /*Contenido del Frame de cuando el usuario cambia su pais*/
@@ -1077,22 +901,7 @@ input[type=number]::-webkit-outer-spin-button {
     width: auto;
 }
 
-.inputChangeCountry{
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
-}
+
 
 .inputChangeCountry:focus{
   border: 0.3rem solid #000000;
@@ -1106,22 +915,6 @@ input[type=number]::-webkit-outer-spin-button {
     color: transparent;
 }
 
-.ChangeCountryForm input[type=password]{
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
-}
 
 .ChangeCountryForm input[type=password]:focus {
   border: 0.3rem solid #000000;
@@ -1189,15 +982,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 #contenidoChangeEmail {
     display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 40vw;
-    height: 70vh;
-    z-index: 999;
-    transform: translate(-50%, -50%);
-    border: 0.3rem solid #000000;
-    justify-content: center;
 }
 
 /*Contenido del Frame de cuando el usuario cambia su email*/
@@ -1227,22 +1011,6 @@ input[type=number]::-webkit-outer-spin-button {
     width: auto;
 }
 
-.inputChangeEmail{
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
-}
 
 .inputChangeEmail:focus{
   border: 0.3rem solid #000000;
@@ -1256,22 +1024,6 @@ input[type=number]::-webkit-outer-spin-button {
     color: transparent;
 }
 
-.ChangeEmailForm input[type=password]{
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
-}
 
 .ChangeEmailForm input[type=password]:focus {
   border: 0.3rem solid #000000;
@@ -1377,22 +1129,6 @@ input[type=number]::-webkit-outer-spin-button {
     width: auto;
 }
 
-.inputChangeGender{
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
-}
 
 .inputChangeGender:focus{
   border: 0.3rem solid #000000;
@@ -1406,22 +1142,6 @@ input[type=number]::-webkit-outer-spin-button {
     color: transparent;
 }
 
-.ChangeGenderForm input[type=password]{
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
-}
 
 .ChangeGenderForm input[type=password]:focus {
   border: 0.3rem solid #000000;
@@ -1655,10 +1375,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .MyProfileCardsBox{
     display: block;
-    margin-top: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 2rem;
+    margin: 1rem 1rem 2rem;
     border: 0.3rem solid #000000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border-radius: 0.7rem;
@@ -1963,19 +1680,6 @@ header.Encabezado{
 
 .inputCform{
     width: 40vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
 }
 
 .inputCform:focus{
@@ -1992,19 +1696,6 @@ header.Encabezado{
 
 textarea{
     width: 90vw;
-    padding: 0.5rem 0.5rem;
-    margin: 0.4rem 3rem;
-    margin-top: 0;
-    box-sizing: border-box;
-    background-color: rgb(133, 20, 20);
-    border: 0.3rem solid red;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    color:#757070;
-    font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.5s;
-    outline: none;
 }
 
 textarea:focus{

@@ -6,8 +6,9 @@ let userNamePassword;
 let userData;
 
 /*Función para mostrar la información del usuario*/
-function userInformation(data){
-    userData = JSON.parse(data);
+function userInformation(){
+    let userLogged = sessionStorage.getItem("logged");
+    userData = JSON.parse(localStorage.getItem(userLogged));
 
     document.getElementById("MyUsername").textContent = userData.username;
     document.getElementById("MyPassword").textContent = '•'.repeat(userData.password.length);

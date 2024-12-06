@@ -56,8 +56,7 @@ function almacenarDatos() {
 
     /*Verificamos que el nombre de usuario no exista en la base de datos*/
     for (let i=0; i<localStorage.length; i++){
-        let clave = localStorage.key(i);
-        let [usernameStore, passwordStore] = clave.split(',');
+        let usernameStore = localStorage.key(i);
 
         if (usernameStore === user){
             window.alert("Este nombre de usuario ya está registrado. Por favor, escoja otro");
@@ -73,11 +72,10 @@ function almacenarDatos() {
         email: email,
         country: country,
         gender: gender,
+        letters: []
     }
 
-    let access = `${user},${password}`;
-
-    localStorage.setItem(access, JSON.stringify(registerData));
+    localStorage.setItem(user, JSON.stringify(registerData));
     
     window.alert("La información se ha guardado correctamente");
     closePopUpRegister();
