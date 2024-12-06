@@ -1866,7 +1866,6 @@ header.Encabezado{
 
 .MyMailTitle{
     font-size: 4rem;
-    max-font-size: 40px;
     width: auto;
     height: fit-content;
     display: flex;
@@ -1998,119 +1997,6 @@ label{
     border: 2px solid #000000;
     color: #000000
 }
-
-/***************************************************/
-/*
-
-
-
-
-/***************************************************/
-/*Elementos del Pie de Pagina*/
-
-.footer{
-    width: 100%;
-    background-color: rgb(4, 71, 12);
-    background-image: linear-gradient(to bottom right, rgb(4, 71, 12), rgb(39, 121, 43), rgb(79, 128, 73));
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
-
-.logoFooter{
-    height: 15vh; 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-.SocialMedia{
-    display: flex;
-    justify-content: center;
-    margin-left: 2rem;
-    margin-top: 1rem;
-}
-
-.fa{
-    padding: 1rem;
-    width: 4rem;
-    text-align: center;
-    text-decoration: none;
-    margin: 2px 2px;
-}
-
-.fa:hover{
-    background: white;
-    color: rgb(0, 0, 0);
-    border: 0.1rem solid #000000;
-
-}
-
-.fa-facebook {
-    background: transparent;
-    color: rgb(255, 255, 255);
-    border: 0.1rem solid #ffffff;
-}
-
-.fa-google {
-    background: transparent;
-    color: rgb(255, 255, 255);
-    border: 0.1rem solid #ffffff;
-}
-
-.fa-twitter {
-    background: transparent;
-    color: rgb(255, 255, 255);
-    border: 0.1rem solid #ffffff;
-}
-
-.fa-instagram {
-    background: transparent;
-    color: rgb(255, 255, 255);
-    border: 0.1rem solid #ffffff;
-}
-
-.fa-pinterest {
-    background: transparent;
-    color: rgb(255, 255, 255);
-    border: 0.1rem solid #ffffff;
-}
-
-.fa-youtube{
-    background: transparent;
-    color: rgb(255, 255, 255);
-    border: 0.1rem solid #ffffff;
-}
-
-.SecondFooterPart{
-    display: grid;
-    margin-top: 1rem;
-}
-
-.Contact{
-    display: grid;
-    margin-top: 1rem;
-}
-
-.WebPolitics{
-    display: grid;
-    margin-top: 1rem;
-}
-
-.Contact h2{
-    color: #ffffff;
-    font-style: italic;
-    font-weight: bold;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-a{
-    display: block;
-    margin: 0.4rem;
-    text-decoration: none;
-    color: #cbcbcb;
-}
-
 
 /* Pagina de Juegos (Pagina 5) */
 #Page5{
@@ -2693,10 +2579,111 @@ a{
 }
 
 
+/***************************************************/
+/*Elementos del Pie de Pagina*/
 
+.footer{
+    width: 100%;
+    background-color: rgb(4, 71, 12);
+    background-image: linear-gradient(to bottom right, rgb(4, 71, 12), rgb(39, 121, 43), rgb(79, 128, 73));
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
 
+.logoFooter{
+    height: 15vh; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1rem;
+}
 
+.SocialMedia{
+    display: flex;
+    justify-content: center;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
 
+.fa{
+    padding: 1rem;
+    width: 4rem;
+    text-align: center;
+    text-decoration: none;
+    margin: 2px 2px;
+}
+
+.fa:hover{
+    background: white;
+    color: rgb(0, 0, 0);
+    border: 0.1rem solid #000000;
+
+}
+
+.fa-facebook {
+    background: transparent;
+    color: rgb(255, 255, 255);
+    border: 0.1rem solid #ffffff;
+}
+
+.fa-google {
+    background: transparent;
+    color: rgb(255, 255, 255);
+    border: 0.1rem solid #ffffff;
+}
+
+.fa-twitter {
+    background: transparent;
+    color: rgb(255, 255, 255);
+    border: 0.1rem solid #ffffff;
+}
+
+.fa-instagram {
+    background: transparent;
+    color: rgb(255, 255, 255);
+    border: 0.1rem solid #ffffff;
+}
+
+.fa-pinterest {
+    background: transparent;
+    color: rgb(255, 255, 255);
+    border: 0.1rem solid #ffffff;
+}
+
+.fa-youtube{
+    background: transparent;
+    color: rgb(255, 255, 255);
+    border: 0.1rem solid #ffffff;
+}
+
+.SecondFooterPart{
+    display: grid;
+    margin-top: 1rem;
+}
+
+.Contact{
+    display: grid;
+    margin-top: 1rem;
+}
+
+.WebPolitics{
+    display: grid;
+    margin-top: 1rem;
+}
+
+.Contact h2{
+    color: #ffffff;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+a{
+    display: block;
+    margin: 0.4rem;
+    text-decoration: none;
+    color: #cbcbcb;
+}
 
 /**********************************************************************************************************************************/
 /*Media para telefono*/
@@ -2725,8 +2712,6 @@ a{
         top: 0;
         height: fit-content;
     }
-
-
 
     .MenuPrincipal a{
         font-size: 9px;
@@ -3098,7 +3083,15 @@ a{
         font-size: 1.5rem;
     }
 
-    
+    .TravelPackages{
+        grid-template-columns: 100%;
+    }
+
+    .SecondTravelBlock p{
+        font-size: 2vw;
+
+    }
+
     /*Divisores de página*/
 
     .PageDivisor{
@@ -3147,12 +3140,25 @@ a{
 
 
     /*Cambios para el Footer*/
+    .footer{
+        grid-template-columns: 100%;
+    }
+
     .SecondFooterPart{
         display: grid;
-        margin-top: 4rem;
+        justify-content: center;
+        align-items: center;
     }
 
     div.content {margin-left: 0;}
+
+    .Contact h2{
+        font-size: 2rem;        
+    }
+
+    a{
+        font-size: 1rem;
+    }
 }
 
 /*Media para tablets****************************************************************************************************************/
