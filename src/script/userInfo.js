@@ -37,7 +37,14 @@ function changeUsername(){
     let user = JSON.parse(localStorage.getItem(user_logged));
     if (user.password === confirmWithPassword){
         if (user.username !== newUser){
-
+            let puntuaciones = JSON.parse(localStorage.getItem("puntuaciones"));
+            for (let i = 0; i < puntuaciones.length; i++){
+                console.log(puntuaciones[i].nombre);
+                if (puntuaciones[i].nombre === user_logged){
+                    puntuaciones[i].nombre = newUser;
+                }
+            }
+            localStorage.setItem("puntuaciones", JSON.stringify(puntuaciones));
             localStorage.removeItem(user_logged);
             let nuevoUser = user
             nuevoUser.username = newUser;
@@ -48,7 +55,7 @@ function changeUsername(){
             sessionStorage.setItem("logged", newUser)
             window.alert("Modificación Exitosa");
             closePopUpChangeUser();
-            userInformation(JSON.stringify(userData));
+            userInformation();
 
         }
         else{
@@ -67,23 +74,18 @@ function changePassword(){
     let oldPassword = document.getElementById("oldPassword").value;
     let newPassword = document.getElementById("newPassword").value;
     let confirmPassword = document.getElementById("confirmchPassword").value;
-
-    if (oldPassword === userData.password){
-        if (newPassword !== userData.password){
+    let user_logged = sessionStorage.getItem("logged");
+    let user = JSON.parse(localStorage.getItem(user_logged));
+    if (oldPassword === user.password){
+        if (newPassword !== user.password){
             if (newPassword === confirmPassword){
 
-                let oldDataKey = `${userData.username},${userData.password}`;
-                localStorage.removeItem(oldDataKey);
-
-                userData.password = newPassword;
-                /*Cambiamos su valor en la letiable global para que cuando se cierre la pestaña, se siga viendo el cambio*/
+                user.password = newPassword;
                 parameterPassword = newPassword;
-                /*********************************************************************************************************/
-                let newDataKey = `${userData.username},${newPassword}`;
-                localStorage.setItem(newDataKey, JSON.stringify(userData));
+                localStorage.setItem(user.username, JSON.stringify(user));
                 window.alert("Modificación Exitosa");
                 closePopUpChangePassword();
-                userInformation(JSON.stringify(userData));
+                userInformation();
             }
             else{
                 window.alert("Las Contraseñas No Coinciden. Inténtelo de nuevo");
@@ -104,19 +106,15 @@ function changePassword(){
 function changeCity(){
     let newCity = document.getElementById("chcity").value;
     let confirmWithPassword = document.getElementById("chCityPassword").value;
-
-    if (newCity !== userData.city){
-        if (confirmWithPassword === userData.password){
-            let oldDataKey = `${userData.username},${userData.password}`;
-            localStorage.removeItem(oldDataKey);
-                
-            userData.city = newCity;
-
-            let newDataKey = `${userData.username},${userData.password}`;
-            localStorage.setItem(newDataKey, JSON.stringify(userData));
+    let user_logged = sessionStorage.getItem("logged");
+    let user = JSON.parse(localStorage.getItem(user_logged));
+    if (newCity !== user.city){
+        if (confirmWithPassword === user.password){
+            user.city = newCity;
+            localStorage.setItem(user.username, JSON.stringify(user));
             window.alert("Modificación Exitosa");
             closePopUpChangeCity();
-            userInformation(JSON.stringify(userData));
+            userInformation();
         }
         else{
             window.alert("Contraseña Incorrecta. Inténtelo de nuevo");
@@ -133,19 +131,15 @@ function changeCity(){
 function changeEmail(){
     let newEmail = document.getElementById("chemail").value;
     let confirmWithPassword = document.getElementById("chEmailPassword").value;
-
-    if (newEmail !== userData.email){
-        if (confirmWithPassword === userData.password){
-            let oldDataKey = `${userData.username},${userData.password}`;
-            localStorage.removeItem(oldDataKey);
-                
-            userData.email = newEmail;
-
-            let newDataKey = `${userData.username},${userData.password}`;
-            localStorage.setItem(newDataKey, JSON.stringify(userData));
+    let user_logged = sessionStorage.getItem("logged");
+    let user = JSON.parse(localStorage.getItem(user_logged));
+    if (newEmail !== user.email){
+        if (confirmWithPassword === user.password){
+            user.email = newEmail;
+            localStorage.setItem(user.username, JSON.stringify(user));
             window.alert("Modificación Exitosa");
             closePopUpChangeEmail();
-            userInformation(JSON.stringify(userData));
+            userInformation();
         }
         else{
             window.alert("Contraseña Incorrecta. Inténtelo de nuevo");
@@ -161,19 +155,15 @@ function changeEmail(){
 function changeCountry(){
     let newCountry = document.getElementById("chcountry").value;
     let confirmWithPassword = document.getElementById("chCountryPassword").value;
-
-    if (newCountry !== userData.country){
-        if (confirmWithPassword === userData.password){
-            let oldDataKey = `${userData.username},${userData.password}`;
-            localStorage.removeItem(oldDataKey);
-                
-            userData.country = newCountry;
-
-            let newDataKey = `${userData.username},${userData.password}`;
-            localStorage.setItem(newDataKey, JSON.stringify(userData));
+    let user_logged = sessionStorage.getItem("logged");
+    let user = JSON.parse(localStorage.getItem(user_logged));
+    if (newCountry !== user.country){
+        if (confirmWithPassword === user.password){
+            user.country = newCountry;
+            localStorage.setItem(user.username, JSON.stringify(user));
             window.alert("Modificación Exitosa");
             closePopUpChangeCountry();
-            userInformation(JSON.stringify(userData));
+            userInformation();
         }
         else{
             window.alert("Contraseña Incorrecta. Inténtelo de nuevo");
@@ -189,19 +179,15 @@ function changeCountry(){
 function changeGender(){
     let newGender = document.getElementById("chgender").value;
     let confirmWithPassword = document.getElementById("chGenderPassword").value;
-
-    if (newGender !== userData.gender){
-        if (confirmWithPassword === userData.password){
-            let oldDataKey = `${userData.username},${userData.password}`;
-            localStorage.removeItem(oldDataKey);
-                
-            userData.gender = newGender;
-
-            let newDataKey = `${userData.username},${userData.password}`;
-            localStorage.setItem(newDataKey, JSON.stringify(userData));
+    let user_logged = sessionStorage.getItem("logged");
+    let user = JSON.parse(localStorage.getItem(user_logged));
+    if (newGender !== user.gender){
+        if (confirmWithPassword === user.password){
+            user.gender = newGender;
+            localStorage.setItem(user.username, JSON.stringify(user));
             window.alert("Modificación Exitosa");
             closePopUpChangeGender();
-            userInformation(JSON.stringify(userData));
+            userInformation();
         }
         else{
             window.alert("Contraseña Incorrecta. Inténtelo de nuevo");
