@@ -156,6 +156,7 @@ const teclaAColor = {
     '3': 'a',
     '4': 'am'
 };
+let juegoActivo = false;
 // Escucha eventos de teclado para seleccionar colores
 document.addEventListener('keydown', function (event) {
     if (!juegoActivo) return; // Solo procesar teclas si el juego 2 está activo

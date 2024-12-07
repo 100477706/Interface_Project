@@ -177,7 +177,6 @@ input{
     color: transparent;
 }
 
-
 input[type=password]:focus {
   border: 0.3rem solid #000000;
   background-color: rgb(255, 0, 0);
@@ -606,25 +605,11 @@ input[type=number]::-webkit-outer-spin-button {
     color: transparent;
 }
 
-.labelChangeUser{
-    font-size: 1.5rem;
-    font-family: 'Lily Script One', serif;
-    width: 25vw;
-    display: flex;
-    margin-top: 0.5rem;
-    margin-bottom: 0.2rem;
-    margin-left: 3rem;
-    color: rgb(255, 255, 255);
-    font-style: italic;
-    font-weight: bold;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
 
 .chUserBottons{
     display: flex;
 }
-
-.chUserBottons button {
+.changeButtons{
     background-color: #000000;
     border: 2px solid #ffffff;
     padding: 0.57rem 1rem;
@@ -639,6 +624,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin-left: 5rem;
     margin-bottom: 2rem;
 }
+
 
 .chUserBottons button:hover {
     background-color: #ffffff;
@@ -710,38 +696,9 @@ input[type=number]::-webkit-outer-spin-button {
     color: transparent;
 }
 
-.labelChangePassword{
-    font-size: 1.5rem;
-    font-family: 'Lily Script One', serif;
-    width: 25vw;
-    display: flex;
-    margin-top: 0.5rem;
-    margin-bottom: 0.2rem;
-    margin-left: 3rem;
-    color: rgb(255, 255, 255);
-    font-style: italic;
-    font-weight: bold;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
 
 .chPasswordBottons{
     display: flex;
-}
-
-.chPasswordBottons button {
-    background-color: #000000;
-    border: 2px solid #ffffff;
-    padding: 0.57rem 1rem;
-    color: #ffffff;
-    font-family: 'Lily Script One', serif;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-radius: 0.4rem;
-    transition: background-color 0.3s;
-    margin-top: 1.5rem;
-    width: 28%;
-    margin-left: 5rem;
-    margin-bottom: 2rem;
 }
 
 .chPasswordBottons button:hover {
@@ -818,38 +775,9 @@ input[type=number]::-webkit-outer-spin-button {
     color: transparent;
 }
 
-.labelChangeCity{
-    font-size: 1.5rem;
-    font-family: 'Lily Script One', serif;
-    width: 25vw;
-    display: flex;
-    margin-top: 0.5rem;
-    margin-bottom: 0.2rem;
-    margin-left: 3rem;
-    color: rgb(255, 255, 255);
-    font-style: italic;
-    font-weight: bold;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
 
 .chCityBottons{
     display: flex;
-}
-
-.chCityBottons button {
-    background-color: #000000;
-    border: 2px solid #ffffff;
-    padding: 0.57rem 1rem;
-    color: #ffffff;
-    font-family: 'Lily Script One', serif;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-radius: 0.4rem;
-    transition: background-color 0.3s;
-    margin-top: 1.5rem;
-    width: 28%;
-    margin-left: 5rem;
-    margin-bottom: 2rem;
 }
 
 .chCityBottons button:hover {
@@ -928,38 +856,9 @@ input[type=number]::-webkit-outer-spin-button {
     color: transparent;
 }
 
-.labelChangeCountry{
-    font-size: 1.5rem;
-    font-family: 'Lily Script One', serif;
-    width: 25vw;
-    display: flex;
-    margin-top: 0.5rem;
-    margin-bottom: 0.2rem;
-    margin-left: 3rem;
-    color: rgb(255, 255, 255);
-    font-style: italic;
-    font-weight: bold;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
 
 .chCountryBottons{
     display: flex;
-}
-
-.chCountryBottons button {
-    background-color: #000000;
-    border: 2px solid #ffffff;
-    padding: 0.57rem 1rem;
-    color: #ffffff;
-    font-family: 'Lily Script One', serif;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-radius: 0.4rem;
-    transition: background-color 0.3s;
-    margin-top: 1.5rem;
-    width: 28%;
-    margin-left: 5rem;
-    margin-bottom: 2rem;
 }
 
 .chCountryBottons button:hover {
@@ -1037,38 +936,9 @@ input[type=number]::-webkit-outer-spin-button {
     color: transparent;
 }
 
-.labelChangeEmail{
-    font-size: 1.5rem;
-    font-family: 'Lily Script One', serif;
-    width: 25vw;
-    display: flex;
-    margin-top: 0.5rem;
-    margin-bottom: 0.2rem;
-    margin-left: 3rem;
-    color: rgb(255, 255, 255);
-    font-style: italic;
-    font-weight: bold;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
 
 .chEmailBottons{
     display: flex;
-}
-
-.chEmailBottons button {
-    background-color: #000000;
-    border: 2px solid #ffffff;
-    padding: 0.57rem 1rem;
-    color: #ffffff;
-    font-family: 'Lily Script One', serif;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-radius: 0.4rem;
-    transition: background-color 0.3s;
-    margin-top: 1.5rem;
-    width: 28%;
-    margin-left: 5rem;
-    margin-bottom: 2rem;
 }
 
 .chEmailBottons button:hover {
@@ -1189,22 +1059,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 .chGenderBottons{
     display: flex;
-}
-
-.chGenderBottons button {
-    background-color: #000000;
-    border: 2px solid #ffffff;
-    padding: 0.57rem 1rem;
-    color: #ffffff;
-    font-family: 'Lily Script One', serif;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-radius: 0.4rem;
-    transition: background-color 0.3s;
-    margin-top: 1.5rem;
-    width: 28%;
-    margin-left: 5rem;
-    margin-bottom: 2rem;
 }
 
 .chGenderBottons button:hover {
