@@ -1560,6 +1560,7 @@ header.Encabezado{
 }
 
 textarea{
+    margin-left: 5vw;
     width: 90vw;
 }
 
@@ -1605,6 +1606,7 @@ label{
     float: left;
     width: 100%;
 }
+
 
 .FinishLine button {
     background-color: #000000;
@@ -2791,6 +2793,7 @@ a{
 
     /*Cambios para la Cuarta Página*/
     textarea{
+        margin-left: 10vw;
         width: 80vw;
     }
 
@@ -2810,8 +2813,6 @@ a{
         margin-left: 1.5rem;
         margin-top: 0.5rem;
     }
-
-    /*Cambios para la Quinta Página*/
 
 
 
@@ -3231,6 +3232,7 @@ a{
 
     /*Cambios para la Cuarta Página*/
     textarea{
+        margin-left: 10vw;
         width: 80vw;
     }
 
