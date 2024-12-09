@@ -53,12 +53,13 @@
         <script src="script/myCardsFunction.js" async></script>
         <script src="script/popupAdviento.js" async></script>
         <script src="script/testDeBondad.js" async></script>
+        <script src="script/travelPackagesFunction.js" async></script>
 
     </head>
 
     <body>
 
-        <header class="Encabezado">
+        <header class="Encabezado" id="Encabezado">
             <div class="logo"> <!--Logo de la pagina-->
                 <img src="images/Santa1-transformed.png" alt="">
             </div>
@@ -891,7 +892,7 @@
 
         <div class="PageDivisor"></div>
 
-        <div id="Page7" class="Page7"> <!--Inicio de la Septima Pagina-->
+        <section id="Page7" class="Page7"> <!--Inicio de la Septima Pagina-->
 
             <header class="MyTravelTitle"> <!--Titulo de la pagina de viajes-->
                 <h2>Paquetes de Viajes</h2>
@@ -947,7 +948,7 @@
                                 <b>*</b> No incluye ninguna experiencia con Santa<br>
                             </p>
 
-                            <button onclick="reservePackage()">Reservar</button>
+                            <button onclick="reservePackage(this)" data-package="Paquete 1">Reservar</button>
                         </div>
                     </div>
                 </div>
@@ -997,7 +998,7 @@
                                 <b>*</b> Incluye una experiencia en el taller de Santa de un día<br>
                             </p>
 
-                            <button onclick="reservePackage()">Reservar</button>
+                            <button onclick="reservePackage(this)" data-package="Paquete 2">Reservar</button>
                         </div>
                     </div>
                 </div>
@@ -1047,15 +1048,80 @@
                                 <b>*</b> Incluye una experiencia con Santa en su trineo y junto a sus duendes<br>
                             </p>
 
-                            <button onclick="reservePackage()">Reservar</button>
+                            <button onclick="reservePackage(this)" data-package="Paquete 3">Reservar</button>
                         </div>
                     </div>
 
+                </div>
             </div>
 
+            <!--División del Frame para Formulario de Registro de Paquetes-->
+            <div class="cargaPaquete" id="cargaPaquete" style="display:none;">
+                <div id="contenidoPaquete">
+                    <section class="PlanificatorTravelPage">
+                        <div class="PlanificatorTravelTitle">
+                            <h2>Planificador de Viajes</h2>
+                        </div>
+            
+                        <form id="TravelForm" onsubmit="validateParameters() && saveTravelData();">
+                            <input type="hidden" id="selectedPackage" name="selectedPackage">
 
+                            <div class="FirstRline">
+                                <label for="phoneTravel">Teléfono: </label><br>
+                                <input type="tel" id="phoneTravel" name="phoneTravel" placeholder="Ej. +34 123 456 789" required><br>
+                                
+                                <label for="fechaInicioTravel">Fecha de Inicio:</label><br>
+                                <input type="date" id="fechaInicioTravel" name="fechaInicioTravel" required><br>
+
+                                <label for="cardNumber">Número de Tarjeta:</label><br>
+                                <input type="text" id="cardNumber" name="cardNumber" maxlength="19" placeholder="1234 5678 9012 3456" required 
+                                    onchange="validateCard(this)">
+                                <br>
+
+                                <label for="cardFecha">Fecha de Vencimiento:</label><br>
+                                <input type="month" id="cardFecha" name="cardFecha" required>
+                                <br>
+                            
+                            </div>
+            
+                            <div class="SecondRline">
+                                <label for="emailTravel">Email: </label><br>
+                                <input type="email" class="inputRform" id="emailTravel" name="emailTravel" required placeholder="Tu Correo..."><br>
+                                
+                                <label for="fechaFinTravel">Fecha Fin:</label><br>
+                                <input type="date" id="fechaFinTravel" name="fechaFinTravel" required><br>
+
+                                <label for="cardName">Nombre en la Tarjeta:</label><br>
+                                <input type="text" id="cardName" name="cardName" placeholder="Como aparece en la tarjeta" required>
+                                <br>
+
+                                <label for="cvv">CVV:</label><br>
+                                <input type="password" id="cvv" name="cvv" maxlength="3" placeholder="123" required 
+                                    oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <br>
+                            </div>
+                                
+                            <div class="FinalRline">
+                                <label for="passwordTravel">Contraseña:</label><br>
+                                <input type="password" id="passwordTravel" name="passwordTravel" placeholder="Contraseña..."
+                                    title="La contraseña debe tener 12 caracteres, y al menos: 1 letra minúscula, 1 mayúscula, 2 números y un símbolo especial"
+                                    pattern="^(?=(?:[^0-9]*[0-9]){2})(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{12}$"
+                                    required><br>
+
+                                <!--<input type="submit" value="Aceptar">-->
+                                <div class="rBottons">
+                                    <button type="button" onclick="clearTravelForm()">Limpiar Campos</button>
+                                    <button type="submit">Reservar</button>
+                                    <button type="button" onclick="closeTravelForm()">Cancelar</button>
+                                </div>                            
+                            </div>
+                        </form>
+                    </section>
+                </div>
             </div>
-        </div>
+        </section>
+
+
         <div class="PageDivisor"></div>
 
         <footer class="footer">

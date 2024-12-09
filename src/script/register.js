@@ -72,7 +72,8 @@ function almacenarDatos() {
         email: email,
         country: country,
         gender: gender,
-        letters: []
+        letters: [],
+        travelPackages: []
     }
 
     localStorage.setItem(user, JSON.stringify(registerData));
