@@ -24,6 +24,7 @@ function juego1(){
     let game3Radio = document.getElementById('juego3');
     game3Radio.addEventListener('click', function () {
         document.getElementById('Imagen3').style.display = 'block';
+        document.getElementById('marcadoresglobales').style.display = 'none';
         closeGame('Imagen1');
         closeGame('Imagen2');
     });
@@ -40,7 +41,7 @@ function juego1(){
 
     function clickTheCircle() {
 
-        maxTime = 5;
+        maxTime = 60;
         timeInterval = setInterval(function () {
             let minutes = Math.floor(maxTime / 60).toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false });
             let seconds = (maxTime % 60).toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false });
