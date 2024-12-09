@@ -65,7 +65,7 @@ function deleteCard(index){
             }
         }
 
-        localStorage.setItem(DataKey, JSON.stringify(storedData));
+        localStorage.setItem(user_logged, JSON.stringify(storedData));
         window.alert("Modificación Exitosa");
     }
     
@@ -100,7 +100,7 @@ function drop(event) {
         cardsBank[fromIndex] = cardsBank[toIndex];
         cardsBank[toIndex] = temp;
 
-        localStorage.setItem(dataKey, JSON.stringify(storedData));
+        localStorage.setItem(user_logged, JSON.stringify(storedData));
 
         showCards(storedData);
     }

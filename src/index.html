@@ -39,6 +39,8 @@
         <script src="script/travelPackagesImages3.js" async></script>
         <!--Java Scrpit para las reservas de los viajes-->
         <script src="script/travelReserve.js" async></script>
+        <!--Java Scrpit para el apartado de mis paquetes-->
+        <script src="script/myPackages.js" async></script>
 
         <!--Java Scrpits para la apertura de Pop Ups de contenido-->
         <script src="script/logInFunction.js" async></script>
@@ -54,6 +56,7 @@
         <script src="script/popupAdviento.js" async></script>
         <script src="script/testDeBondad.js" async></script>
         <script src="script/travelPackagesFunction.js" async></script>
+        <script src="script/myPackagesFunction.js" async></script>
 
     </head>
 
@@ -81,6 +84,7 @@
                         <div id="DropDown" class="DropDown" style="display:none;">
                             <a class="no-border" href="#" onclick="openMyMenu()" style="color: black;">Mi Perfil</a>
                             <a class="no-border" href="#Page1" onclick="openMyCards()" style="color: black;">Mis Cartas</a>
+                            <a class="no-border" href="#" onclick="openMyPackages()"  style="color: black;">Mis Viajes</a>
                             <a class="no-border" href="#" onclick="openPopUpTestDeBondad()"  style="color: black;">Test de bondad</a>
                             <a class="no-border" href="#" onclick="closeSession()" style="color: black;">Cerrar Sesión</a>
                         </div>
@@ -412,6 +416,21 @@
                             </section>                            
                         </div>     
                     </div>
+                    
+                    <div class="cargaMyPackages" id="cargaMyPackages" style="display: none;">
+                        <div id="contenidoMyPackages">
+                            <section class="MyCardsPage">
+                                <div class="MyCardsTitle">
+                                    <h2>Mis Paquetes de Viaje</h2>
+                                    <i class="material-icons" onclick="closePopUpMyPackages()">cancel</i>
+                                </div>
+                                <div id="infoMyPackages" class="infoPackages"></div>
+                            </section>                            
+                        </div>     
+                    </div>
+
+
+
                 <div id="testDeBondad">
                     <div id="testDeBondadContent">
                         <div id="testBondadTitle">

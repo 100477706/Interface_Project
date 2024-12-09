@@ -1092,6 +1092,109 @@ input[type=number]::-webkit-outer-spin-button {
     border: 0.3rem solid #000000;
 }
 
+/*Contenido del Frame de Mis Cartas*/
+.MyCardsPage{
+    background-color: rgb(133, 20, 20);
+    width: 79.3vw;
+    height: 78.8vh;
+    overflow: auto;
+}
+
+.MyCardsTitle{
+    font-size: 3rem;
+    width: auto;
+    display: flex;
+    padding: 1rem;
+    font-family: 'Lily Script One', serif;
+    color:  rgb(255, 255, 255);
+}
+
+.MyCardsTitle h2{
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.MyCardsTitle i {
+    font-size: 3rem;
+    margin-left: auto;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.MyCardsTitle i:hover {
+    color: #000000
+}
+
+.infoCards{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.MyProfileCardsBox{
+    display: block;
+    margin: 1rem 1rem 2rem;
+    border: 0.3rem solid #000000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 0.7rem;
+    background-color: rgb(133, 20, 20);
+    font-size: 1.2rem;
+    width: auto;
+    padding: 1rem;
+    font-family: 'Verdana', serif;
+    color:  rgb(255, 255, 255);
+}
+
+.MyProfileCardsBox strong{
+    font-family: 'Lily Script One', serif;
+    font-size: 2rem;
+    text-decoration: underline;
+}
+
+.MyProfileCardsBox h2{
+    font-family: 'Lily Script One', serif;
+    font-size: 1.5rem;
+    text-decoration: underline;
+    display: inline
+}
+
+.mensaje {
+    white-space: normal; 
+    word-break: break-word; 
+    overflow-wrap: break-word; 
+    max-width: 100%;
+}
+
+/*Apartado de mis Paquetes*/
+#cargaMyPackages {
+    display: none;
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+
+#contenidoMyPackages {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80vw;
+    height: 80vh;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    border: 0.3rem solid #000000;
+}
+
+.infoPackages{
+    display: block;
+}
+
+/*Test de Bondad*/
 #testDeBondad{
     display: none;
     position: fixed;
@@ -1196,79 +1299,6 @@ input[type=number]::-webkit-outer-spin-button {
 #coal{
     width: 10vw;
     height: 10vw;
-}
-/*Contenido del Frame de Mis Cartas*/
-.MyCardsPage{
-    background-color: rgb(133, 20, 20);
-    width: 79.3vw;
-    height: 78.8vh;
-    overflow: auto;
-}
-
-.MyCardsTitle{
-    font-size: 3rem;
-    width: auto;
-    display: flex;
-    padding: 1rem;
-    font-family: 'Lily Script One', serif;
-    color:  rgb(255, 255, 255);
-}
-
-.MyCardsTitle h2{
-    font-style: italic;
-    font-weight: bold;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.MyCardsTitle i {
-    font-size: 3rem;
-    margin-left: auto;
-    color: white;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.MyCardsTitle i:hover {
-    color: #000000
-}
-
-.infoCards{
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
-
-.MyProfileCardsBox{
-    display: block;
-    margin: 1rem 1rem 2rem;
-    border: 0.3rem solid #000000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0.7rem;
-    background-color: rgb(133, 20, 20);
-    font-size: 1.2rem;
-    width: auto;
-    padding: 1rem;
-    font-family: 'Verdana', serif;
-    color:  rgb(255, 255, 255);
-}
-
-.MyProfileCardsBox strong{
-    font-family: 'Lily Script One', serif;
-    font-size: 2rem;
-    text-decoration: underline;
-}
-
-.MyProfileCardsBox h2{
-    font-family: 'Lily Script One', serif;
-    font-size: 1.5rem;
-    text-decoration: underline;
-    display: inline
-}
-
-.mensaje {
-    white-space: normal; 
-    word-break: break-word; 
-    overflow-wrap: break-word; 
-    max-width: 100%;
 }
 
 /*************************************/
