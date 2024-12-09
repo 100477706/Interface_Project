@@ -33,7 +33,7 @@ function popupAdviento(dia){
     let titulo = document.createElement("h1");
     titulo.textContent = "Día" + dia;
     container.appendChild(titulo);
-    let texto =document.createElement('t');
+    let texto =document.createElement('p');
     texto.textContent =frasesNavidenas[dia -1  ];
     container.appendChild(texto);
     let X = document.createElement("i");
