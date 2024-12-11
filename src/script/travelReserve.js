@@ -43,7 +43,8 @@ function monthValidate(){
 
     const startMonth = startDate.getMonth();
     const finalMonth = finalDate.getMonth();
-    const cardFinalMonth = cardFinalDate.getMonth();
+    const cardFinalYear = cardFinalDate.getFullYear();
+    const finalDateYear = finalDate.getFullYear();
 
     if (startMonth !== 10 && startMonth !== 11) {
         window.alert("Por favor, selecciona una fecha en noviembre o diciembre para el inicio del viaje.");
@@ -57,7 +58,7 @@ function monthValidate(){
         window.alert("La fecha de inicio debe ser anterior a la fecha de fin.");
         return false;
     }
-    if (finalMonth >= cardFinalMonth) {
+    if (finalDateYear >= cardFinalYear) {
         window.alert("La tarjeta tiene una fecha de vencimiento anterior a la de fin de viaje.");
         return false;
     }

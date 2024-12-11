@@ -113,8 +113,6 @@ button {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 80vw;
-    height: 80vh;
     z-index: 999;
     transform: translate(-50%, -50%);
     border: 0.3rem solid #000000;
@@ -146,8 +144,9 @@ button {
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.RegisterForm{
-    width: auto;
+#RegisterForm{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 input{
@@ -243,6 +242,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .rBottons{
     display: flex;
+    grid-column: span 2;
 }
 
 .rBottons button {
@@ -255,7 +255,7 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer;
     border-radius: 0.4rem;
     transition: background-color 0.3s;
-    margin-top: 3rem;
+    margin-top: 2rem;
     width: 28%;
     margin-left: 3rem;
     margin-bottom: 2rem;
@@ -948,125 +948,6 @@ input[type=number]::-webkit-outer-spin-button {
     color: #000000
 }
 
-/*Carga del Frame cuando el usuario cambia gender*/
-#cargaChangeGender {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); 
-    justify-content: center;
-}
-
-#contenidoChangeGender{
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 40vw;
-    height: 70vh;
-    z-index: 999;
-    transform: translate(-50%, -50%);
-    border: 0.3rem solid #000000;
-    justify-content: center;
-}
-
-/*Contenido del Frame de cuando el usuario cambia gender*/
-.ChangeGenderPage{
-    background-color: rgb(133, 20, 20);
-    width: 39.4vw;
-    height: 68.7vh;
-    overflow: auto;
-}
-
-.ChangeGenderTitle{
-    font-size: 2.5rem;
-    width: auto;
-    display: flex;
-    padding: 1rem;
-    font-family: 'Lily Script One', serif;
-    color:  rgb(255, 255, 255);
-}
-
-.ChangeGenderTitle h2{
-    font-style: italic;
-    font-weight: bold;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.ChangeGenderForm{
-    width: auto;
-}
-
-
-.inputChangeGender:focus{
-  border: 0.3rem solid #000000;
-  background-color: rgb(255, 0, 0);
-  color:#ffffff;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-}
-
-.inputChangeGender:focus::placeholder {
-    color: transparent;
-}
-
-
-.ChangeGenderForm input[type=password]:focus {
-  border: 0.3rem solid #000000;
-  background-color: rgb(255, 0, 0);
-  color:#ffffff;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-}
-
-.ChangeGenderForm input[type=password]:focus::placeholder {
-    color: transparent;
-}
-
-.labelChangeGender{
-    font-size: 1.5rem;
-    font-family: 'Lily Script One', serif;
-    width: 25vw;
-    display: flex;
-    margin-top: 0.5rem;
-    margin-bottom: 0.2rem;
-    margin-left: 3rem;
-    color: rgb(255, 255, 255);
-    font-style: italic;
-    font-weight: bold;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.ChangeGenderForm select {
-    width: 30vw;
-    padding: 0.5rem 0.5rem;
-    font-size: 1rem;
-    margin: 0.4rem 3rem;
-    border: 0.3rem solid red;
-    border-radius: 0.7rem;
-    background-color: rgb(133, 20, 20);
-    color:#ffffff;
-    transition: border-color 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.ChangeGenderForm select:focus {
-    outline: none;
-    border: 0.3rem solid #000000;
-}
-
-.chGenderBottons{
-    display: flex;
-}
-
-.chGenderBottons button:hover {
-    background-color: #ffffff;
-    border: 2px solid #000000;
-    color: #000000
-}
 
 /*Apartado de mis cartas*/
 #cargaMyCards {
@@ -1567,11 +1448,34 @@ header.Encabezado{
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.Formulario{
-    height: fit-content;
-    width: fit-content;
+#MailForm{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
 }
-
+#letterText{
+    grid-column: span 2;
+}
+#sendLetterButton{
+    grid-column: span 2;
+    width: 10vw;
+    justify-self: center;
+    margin-top: 1rem;
+    background-color: #000000;
+    border: 2px solid #ffffff;
+    padding: 0.57rem 1rem;
+    color: #ffffff;
+    font-family: 'Lily Script One', serif;
+    font-size: 1.14rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    transition: background-color 0.3s;
+}
+#sendLetterButton:hover {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    color: #000000
+}
 .inputCform{
     width: 40vw;
 }
@@ -1630,45 +1534,7 @@ label{
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.FirstLine{
-    float: left;
-    display: block;
-    width: 50%;
-}
 
-.SecondLine{
-    float: left;
-    display: block;
-    width: 50%;
-}
-
-.FinishLine{
-    float: left;
-    width: 100%;
-}
-
-
-.FinishLine button {
-    background-color: #000000;
-    border: 2px solid #ffffff;
-    padding: 0.57rem 1rem;
-    color: #ffffff;
-    font-family: 'Lily Script One', serif;
-    font-size: 1.14rem;
-    cursor: pointer;
-    border-radius: 0.4rem;
-    transition: background-color 0.3s;
-    margin-top: 1.2rem;
-    width: 50%;
-    margin-left: 25%;
-    margin-bottom: 0.7rem;
-}
-
-.FinishLine button:hover {
-    background-color: #ffffff;
-    border: 2px solid #000000;
-    color: #000000
-}
 
 /*******************************/
 /* Pagina de Juegos (Pagina 5) */
@@ -2304,7 +2170,13 @@ label{
     font-weight: bold;
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-
+#travelInputs{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 20vw;
+    overflow-y: scroll;
+}
 input[type=tel]:focus {
     border: 0.3rem solid #000000;
     background-color: rgb(255, 0, 0);
@@ -2760,40 +2632,6 @@ a{
         margin-left: 3.2rem;
     }
 
-    /*Cambios para el formulario de Cambio de Género*/
-    #contenidoChangeGender {
-        width: 65vw;
-        height: 65vh;
-    }
-
-    .ChangeGenderPage{
-        width: 63.5vw;
-        height: 63.8vh;
-    }
-
-    .ChangeGenderTitle{
-        font-size: 1.5rem;
-    }
-
-    .ChangeGenderForm input[type=password]{
-        margin-bottom: 2rem;
-    }
-
-    .labelChangeGender{
-        font-size: 1.2rem;
-        width: 45vw;
-    }
-
-    .ChangeGenderForm select{
-        width: 30vw;
-        margin: 0.4rem 3rem;
-    }
-
-    .chGenderBottons button {
-        font-size: 1rem;
-        padding: 1rem 1rem;
-        margin-left: 3.2rem;
-    }
 
     /*Cambios para la ventana de mis cartas */
     #contenidoMyCards {
@@ -3213,41 +3051,6 @@ a{
     }
 
     .chCountryBottons button {
-        font-size: 3rem;
-        padding: 1rem 1rem;
-        margin-left: 5rem;
-    }
-
-    /*Cambios para el formulario de Cambio de Género*/
-    #contenidoChangeGender {
-        width: 65vw;
-        height: 75vh;
-    }
-
-    .ChangeGenderPage{
-        width: 63.5vw;
-        height: 73.8vh;
-    }
-
-    .ChangeGenderTitle{
-        font-size: 2.2rem;
-    }
-
-    .ChangeGenderForm input[type=password]{
-        margin-bottom: 3rem;
-    }
-
-    .labelChangeGender{
-        font-size: 2rem;
-        width: 45vw;
-    }
-
-    .ChangeGenderForm select{
-        width: 30vw;
-        margin: 0.4rem 3rem;
-    }
-
-    .chGenderBottons button {
         font-size: 3rem;
         padding: 1rem 1rem;
         margin-left: 5rem;

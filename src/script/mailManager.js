@@ -4,6 +4,7 @@
 
 /*Función que verifica que el usuario haya iniciado sesión y el email sea el correcto*/
 function sendLetter(){
+    console.log("Hola");
     let user_logged = sessionStorage.getItem("logged");
     if (user_logged !== "") {
         let userMailData = JSON.parse(localStorage.getItem(user_logged));
@@ -11,6 +12,7 @@ function sendLetter(){
 
         if (userMailData.email === emailLetter){
             let cityLetter = document.forms["MailForm"]["ciudad"].value;
+
             let nameLetter = document.forms["MailForm"]["nombre"].value;
             let countryLetter = document.forms["MailForm"]["pais"].value;
             let messageLetter = document.forms["MailForm"]["message"].value;

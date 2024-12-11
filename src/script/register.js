@@ -51,7 +51,6 @@ function almacenarDatos() {
     let city = document.forms["RegisterForm"]["ciudad"].value;
     let email = document.forms["RegisterForm"]["correo"].value;
     let country = document.forms["RegisterForm"]["pais"].value;
-    let gender = document.forms["RegisterForm"]["gender"].value;
 
 
     /*Verificamos que el nombre de usuario no exista en la base de datos*/
@@ -71,7 +70,6 @@ function almacenarDatos() {
         city: city,
         email: email,
         country: country,
-        gender: gender,
         letters: [],
         travelPackages: []
     }

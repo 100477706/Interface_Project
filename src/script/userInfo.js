@@ -15,7 +15,6 @@ function userInformation(){
     document.getElementById("MyCity").textContent = userData.city;
     document.getElementById("MyEmail").textContent = userData.email;
     document.getElementById("MyCountry").textContent = userData.country;
-    document.getElementById("MyGender").textContent = userData.gender;
 
     userNamePassword = `${userData.username},${userData.password}`
 }
@@ -176,26 +175,3 @@ function changeCountry(){
     }   
 }
 
-function changeGender(){
-    let newGender = document.getElementById("chgender").value;
-    let confirmWithPassword = document.getElementById("chGenderPassword").value;
-    let user_logged = sessionStorage.getItem("logged");
-    let user = JSON.parse(localStorage.getItem(user_logged));
-    if (newGender !== user.gender){
-        if (confirmWithPassword === user.password){
-            user.gender = newGender;
-            localStorage.setItem(user.username, JSON.stringify(user));
-            window.alert("Modificación Exitosa");
-            closePopUpChangeGender();
-            userInformation();
-        }
-        else{
-            window.alert("Contraseña Incorrecta. Inténtelo de nuevo");
-            return;
-        }
-    }
-    else{
-        window.alert("Este es tu género definido anteriormente");
-        return;
-    }
-}
