@@ -2883,6 +2883,8 @@ a{
     }
 
 
+
+
     div.content {margin-left: 0;}
 
     label{
@@ -3213,6 +3215,7 @@ a{
 
 
 
+
     /*Cambios para la Tercera Página*/
     .Page3{
         border-bottom: 0.3rem  solid #fafafa;
@@ -3241,6 +3244,17 @@ a{
         left: 90%;
     }
 
+    #travelInputs div{
+         width: fit-content;
+    }
+
+    #travelInputs label{
+        margin: 0;
+    }
+    #travelInputs input{
+        margin: 0;
+    }
+
     /*Cambios para el Footer*/
     .SecondFooterPart{
         display: grid;
@@ -3259,6 +3273,16 @@ a{
         font-size: 2vw;
     }
 
+     #travelInputs div{
+         width: fit-content;
+    }
+
+    #travelInputs label{
+        margin: 0;
+    }
+    #travelInputs input{
+        margin: 0;
+    }
     /*Cambios para el formulario de Log In*/
     #contenidoLogIn {
         width: 65vw;
