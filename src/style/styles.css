@@ -2810,16 +2810,24 @@ a{
     }
     #travelInputs{
         display: flex;
+        align-content: center;
+        align-items: center;
         flex-direction: column;
         width: 100%;
-        height: 50vw;
+        height: 70vw;
         overflow-y: scroll;
     }
     #travelInputs div{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        display: grid;
     }
+
+    #travelInputs input{
+        margin: 2px 0;
+    }
+    #travelInputs label{
+        margin: 8px 0;
+    }
+
     .PlanificatorTravelPage{
         background-color: rgb(133, 20, 20);
         width: 79.3vw;
