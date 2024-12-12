@@ -3,7 +3,7 @@
 /**********************************/
 let slideIndex3 = 0;
 const slides = document.querySelectorAll(".container3 img")
-console.log(slides[0].classList)
+
 
 function plusSlides3(n) {
   slides[slideIndex3].previousElementSibling.style.display = "none"
