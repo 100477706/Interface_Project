@@ -1904,9 +1904,9 @@ label{
 
 .TravelPackages {
     display: grid;
-    grid-template-columns: 33.33% 33.33% 33.34%;
+    grid-template-columns: 30.33% 30.33% 30.33%;
+    justify-content: space-evenly;
     gap: 1rem;
-    padding: 1rem;
 }
 
 
@@ -1914,7 +1914,6 @@ label{
     background-color: rgb(210, 157, 157);
     width: auto;
     border: 0.5rem solid red;
-    padding: 2vh;
     margin: 0.7rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
@@ -2145,8 +2144,6 @@ img.displaySlide{
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 80vw;
-    height: 80vh;
     z-index: 999;
     transform: translate(-50%, -50%);
     border: 0.3rem solid #000000;
@@ -2339,17 +2336,18 @@ a{
 
     /*Cambios para el Encabezado*/
     header.Encabezado{
-        grid-template-columns: 50% 50%;
+        display: flex;
         height: fit-content;
     }
 
     p{
         font-size: 1rem;
     }
-
+    h2{
+        font-size: 3rem;
+    }
     .logo img{
-        width:200px;
-        max-width: none;
+        width:10vw;
     }
 
     #pepepe {
@@ -2357,18 +2355,17 @@ a{
     }
 
     .MenuPrincipal{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        width: fit-content;
+        display: flex;
         top: 0;
         height: fit-content;
     }
 
     .MenuPrincipal a{
-        font-size: 9px;
+        font-size: 0.5rem;
         border-right: none;
         margin-bottom: 0.5rem;
         margin-top: 0.05rem;
+        padding: 0.1rem;
     }
 
     .MenuPrincipal a::after {
@@ -2399,7 +2396,15 @@ a{
         margin-top: 0.1rem;
         margin-left: 0.2rem
     }
-
+    #LogInBotton{
+        padding: 0.2rem;
+    }
+    #RegisterBotton{
+        padding: 0.2rem;
+    }
+    #MyAccount{
+        padding: 0.2rem;
+    }
     /*Cambios para el formulario de registro*/
     .inputRform{
         width: 20vw;
