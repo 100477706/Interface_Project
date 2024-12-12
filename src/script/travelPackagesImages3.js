@@ -10,10 +10,6 @@ function plusSlides3(n) {
   showSlides3(slideIndex3 += n);
 }
 
-function currentSlide3(n) {
-  showSlides3(slideIndex3 = n);
-}
-
 function showSlides3(index) {
   if (index >= slides.length) {slideIndex3 = 0}
   else if (index < 0) {slideIndex3 = slides.length -1}
