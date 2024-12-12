@@ -1,5 +1,5 @@
 /**********************************/
-/*Java Script para la Gestión del carrete de imagenes 1*/
+/*Java Script para la Gestión del carrete de imagenes 3*/
 /**********************************/
 let slideIndex3 = 0;
 const slides = document.querySelectorAll(".container3 img")
@@ -19,9 +19,9 @@ function showSlides3(index) {
   slides[slideIndex3].classList.add("displaySlide");
   slides[slideIndex3].previousElementSibling.style.display = "block"
 }
-document.addEventListener("DOMContentLoaded", initializeSlider())
+document.addEventListener("DOMContentLoaded", initializeSlider3())
 
-function initializeSlider(){
+function initializeSlider3(){
   slides[slideIndex3].classList.add("displaySlide");
   slides[slideIndex3].previousElementSibling.style.display = "block"
 }

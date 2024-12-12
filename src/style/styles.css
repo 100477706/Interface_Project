@@ -1935,7 +1935,7 @@ label{
     margin: auto;
 }
 
-.mySlides {
+.container img{
     display: none;
 }
 
@@ -1972,6 +1972,7 @@ label{
 }
 
 .numbertext {
+    display: none;
     background-color: rgba(0, 0, 0, 0.8);
     color: #f2f2f2;
     font-size: 1.5vw;
@@ -2022,7 +2023,7 @@ label{
     margin: auto;
 }
 
-.mySlides2 {
+.container2 img{
     display: none;
 }
 
@@ -2059,6 +2060,7 @@ label{
 }
 
 .numbertext2 {
+    display: none;
     background-color: rgba(0, 0, 0, 0.8);
     color: #f2f2f2;
     font-size: 1.5vw;
