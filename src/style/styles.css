@@ -1451,7 +1451,7 @@ header.Encabezado{
 #MailForm{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: auto;
+    margin: 0;
 }
 #letterText{
     grid-column: span 2;
@@ -1461,6 +1461,7 @@ header.Encabezado{
     width: 10vw;
     justify-self: center;
     margin-top: 1rem;
+    margin-bottom: 3rem;
     background-color: #000000;
     border: 2px solid #ffffff;
     padding: 0.57rem 1rem;
