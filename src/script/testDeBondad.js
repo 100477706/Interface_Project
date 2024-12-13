@@ -1,3 +1,8 @@
+/**********************************/
+/*Java Script para el Test de Bondad*/
+/**********************************/
+
+/*Función para calcular el resultado del test de Bondad segun respuestas*/
 function testResults(){
     let q1 = Number(document.getElementById('generoso').value);
     let q2 = Number(document.getElementById('ayuda').value);
@@ -15,10 +20,13 @@ function testResults(){
     }
 
 }
+
+/*Función para abrir Pop Up del Test de Bondad*/
 function openPopUpTestDeBondad(){
     document.getElementById("testDeBondad").style.display = "block";
 }
 
+/*Función para cerrar el Pop Up del Test de Bondad*/
 function closePopUpTestDeBondad(){
     document.getElementById("testDeBondad").style.display = "none";
 }

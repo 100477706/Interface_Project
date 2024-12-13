@@ -1,6 +1,14 @@
+/**********************************/
+/*Java Script para Funcionamiento del Calendario de Adviento*/
+/**********************************/
+
+/*Java para apertura del Pop Up del calendario de adviento y su funcionaminto*/
 function popupAdviento(dia){
     let hoy = new Date().getDate();
+
+    /*Si el dia seleccionado en el calendario es menor al dia actual, se puede abrir el mensaje*/
     if (dia <= hoy) {
+        /*Cargamos el contenido del Pop Up del calendario con el mensaje a mostrar*/
         document.getElementById("Frase_del_dia_ventana").style.display = "flex";
         document.getElementById("cargaRegistro").style.display = "block";
         const frasesNavidenas = [
@@ -30,8 +38,10 @@ function popupAdviento(dia){
             "El mejor adorno de Navidad es una sonrisa sincera.",
             "¡FELIZ NAVIDAD!"
         ];
+
+        /*Despues de cargar el mensaje, se muestra la informacion al usuario*/
         let container = document.getElementById("Frase_del_dia_ventana");
-        container.innerHTML = ''; /*limpio el contenedor cada vez que pulso un día*/
+        container.innerHTML = ''; /*Limpio el contenedor cada vez que pulso un día*/
         let titulo = document.createElement("h1");
         titulo.textContent = "Día" + dia;
         container.appendChild(titulo);
@@ -48,6 +58,8 @@ function popupAdviento(dia){
         window.alert("Todavía no es " + dia);
     }
 }
+
+/*Función que cierra el Pop Up del mensaje del calendario*/
 function closepopupAdviento(){
     document.getElementById("Frase_del_dia_ventana").style.display = "none";
     document.getElementById("cargaRegistro").style.display = "none";

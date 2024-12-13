@@ -15,34 +15,38 @@
 
         <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">  </script>
 
-        <!--Java Scrpit para las transiciones del menu-->
+        <!--Java Script para las transiciones del menu-->
         <script src="script/menuPrincipalTransition.js" async></script>
-        <!--Java Scrpit para el contador-->
+        <!--Java Script para el contador-->
         <script src="script/countdown.js" async></script>
-        <!--Java Scrpit para Formulario de Registro-->
+        <!--Java Script para Formulario de Registro-->
         <script src="script/register.js" async></script>
-        <!--Java Scrpit para Formulario de Log In-->
+        <!--Java Script para Formulario de Log In-->
         <script src="script/logIn.js" async></script>
-        <!--Java Scrpit para Mostrar la Información del Usuario-->
+        <!--Java Script para el Test de Bondad-->
+        <script src="script/testDeBondad.js" async></script>
+        <!--Java Script para Mostrar la Información del Usuario-->
         <script src="script/userInfo.js" async></script>
-        <!--Java Scrpit para Gestionar el envío de Cartas-->
+        <!--Java Script para Gestionar el envío de Cartas-->
         <script src="script/mailManager.js" async></script>
-        <!--Java Scrpit para el apartado de mis cartas-->
+        <!--Java Script para el apartado de mis cartas-->
         <script src="script/myCards.js" async></script>
-        <!--Java Scrpit para Los botones de los juegos-->
+        <!--Java Script para Los botones de los juegos-->
         <script src="script/gameButtons.js" async></script>
-        <!--Java Scrpit para las transiciones de las imagenes del paquete 1-->
+        <!--Java Script para el calendario de Adviento-->
+        <script src="script/popupAdviento.js" async></script>
+        <!--Java Script para las transiciones de las imagenes del paquete 1-->
         <script src="script/travelPackagesImages.js" async></script>
-        <!--Java Scrpit para las transiciones de las imagenes del paquete 2-->
+        <!--Java Script para las transiciones de las imagenes del paquete 2-->
         <script src="script/travelPackagesImages2.js" async></script>
-        <!--Java Scrpit para las transiciones de las imagenes del paquete 3-->
+        <!--Java Script para las transiciones de las imagenes del paquete 3-->
         <script src="script/travelPackagesImages3.js" async></script>
-        <!--Java Scrpit para las reservas de los viajes-->
+        <!--Java Script para las reservas de los viajes-->
         <script src="script/travelReserve.js" async></script>
-        <!--Java Scrpit para el apartado de mis paquetes-->
+        <!--Java Script para el apartado de mis paquetes-->
         <script src="script/myPackages.js" async></script>
 
-        <!--Java Scrpits para la apertura de Pop Ups de contenido-->
+        <!--Java Scripts para la apertura de Pop Ups de contenido-->
         <script src="script/logInFunction.js" async></script>
         <script src="script/registerFunction.js" async></script>
         <script src="script/userInfoFunction.js" async></script>
@@ -52,8 +56,6 @@
         <script src="script/changeEmailFunction.js" async></script>
         <script src="script/changeCountryFunction.js" async></script>
         <script src="script/myCardsFunction.js" async></script>
-        <script src="script/popupAdviento.js" async></script>
-        <script src="script/testDeBondad.js" async></script>
         <script src="script/travelPackagesFunction.js" async></script>
         <script src="script/myPackagesFunction.js" async></script>
 
@@ -356,6 +358,7 @@
                         </div>
                     </div>
 
+                    <!--Apartado que permite ver todas las cartas del usuario-->
                     <div class="cargaMyCards" id="cargaMyCards" style="display: none;">
                         <div id="contenidoMyCards">
                             <section class="MyCardsPage">
@@ -368,6 +371,7 @@
                         </div>     
                     </div>
                     
+                    <!--Apartado que permite ver todos los viajes del usuario-->
                     <div class="cargaMyPackages" id="cargaMyPackages" style="display: none;">
                         <div id="contenidoMyPackages">
                             <section class="MyCardsPage">
@@ -381,7 +385,7 @@
                     </div>
 
 
-
+                <!--Apartado para el desarrollo del test de Bondad-->
                 <div id="testDeBondad">
                     <div id="testDeBondadContent">
                         <div id="testBondadTitle">
@@ -686,10 +690,10 @@
 
         <div class="PageDivisor"></div>
 
-        <section id="Page5"> <!-- Quinta página -->
+        <section id="Page5"> <!-- Inicio de la Quinta Pagina -->
             <!--class="pn_write" -->
             <div>
-                <h2 id="hh2">¡Juega! </h2>
+                <h2 id="hh2">¡Juega! </h2> <!-- Título para el apartado de juegos -->
             </div>
 
             <div id="game">
@@ -738,10 +742,11 @@
                 </div>
             </div>
 
-        </section>
+        </section><!--Fin de la Quinta Pagina-->
+
         <div class="PageDivisor"></div>
 
-        <section id="Page6" class="Page6"> <!--Inicio de la Sexta -->
+        <section id="Page6" class="Page6"> <!--Inicio de la Sexta Página-->
             <!--
             <div class="Decoraciones6">
                 <img class="Decoraciones6_1" src="images/Decoración.png" alt="">
@@ -750,7 +755,7 @@
                 <img class="Decoraciones6_4" src="images/Decoración.png" alt="">
             </div>
             -->
-            <header class="MyCalendarTitle"> <!--Titulo de la pagina de viajes-->
+            <header class="MyCalendarTitle"> <!--Titulo de la pagina de Calendario de Adviento-->
                 <h1>Calendario de Adviento</h1>
             </header>
             <div class = "Calendario">
@@ -858,7 +863,7 @@
             <div class="Frase_del_dia_ventana" id="Frase_del_dia_ventana">
             </div>
 
-        </section>
+        </section> <!--Fin de la Sexta Pagina-->
 
         <div class="PageDivisor"></div>
 
@@ -1091,12 +1096,12 @@
                     </section>
                 </div>
             </div>
-        </section>
+        </section> <!--Fin de la Septima Pagina-->
 
 
         <div class="PageDivisor"></div>
 
-        <footer class="footer">
+        <footer class="footer"> <!--Inicio del Pie de Pagina-->
 
             <div class="FirstFooterPart">
                 <div class="logoFooter"> <!--Logo de la pagina-->
