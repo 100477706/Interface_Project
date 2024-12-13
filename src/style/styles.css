@@ -1786,14 +1786,6 @@ label{
     height: 70vw;
     border: 2px solid black;
 }
-.Calendario p{
-    position: absolute;
-    top: 3%;
-    left: 79%;
-    font-size: 1.5vw;
-    color: white;
-    font-family: 'Lily Script One', serif;
-}
 .Dia{
     position: relative;
     display: flex;
@@ -1803,6 +1795,20 @@ label{
     border: 2px solid black;
     cursor: pointer;
     width: 100%;
+}
+.Dia p{
+    position: absolute;
+    top: 3%;
+    left: 79%;
+    font-size: 1.5vw;
+    color: white;
+    font-family: 'Lily Script One', serif;
+}
+.Dia:hover{
+    background-color: white;
+}
+.Dia:hover p{
+    color: black;
 }
 
 .Dia_ultimo{
@@ -1815,7 +1821,12 @@ label{
     grid-column: span 4;
     cursor: pointer;
 }
-
+.Dia_ultimo:hover{
+    background-color: white;
+}
+.Dia_ultimo:hover p{
+    color: black;
+}
 .Dia_ultimo img{
     position: relative;
     margin:0;
@@ -1826,6 +1837,10 @@ label{
 .Dia_ultimo p{
     top: 3%;
     left: 94%;
+    position: absolute;
+    font-size: 1.5vw;
+    color: white;
+    font-family: 'Lily Script One', serif;
 }
 .Dia img{
     position: relative;
