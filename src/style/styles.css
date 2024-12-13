@@ -1458,13 +1458,14 @@ header.Encabezado{
 }
 #sendLetterButton{
     grid-column: span 2;
-    width: 10vw;
+    width: fit-content;
+    height: fit-content;
     justify-self: center;
     margin-top: 1rem;
     margin-bottom: 3rem;
     background-color: #000000;
     border: 2px solid #ffffff;
-    padding: 0.57rem 1rem;
+    padding: 2rem;
     color: #ffffff;
     font-family: 'Lily Script One', serif;
     font-size: 1.14rem;
