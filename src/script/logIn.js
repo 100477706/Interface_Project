@@ -36,6 +36,11 @@ function userRegister() {
 
 /*Función para desplegar el menú de búsqueda*/
 function openDropDown() {
+    /*Cerramos los juegos para que no interfieran con las otras opciones de la web*/
+    closeGame('Imagen2');
+    closeGame('Imagen1')
+    closeGame('Imagen3')
+    juegoActivo = false;
     dropDownMenu = document.getElementById("DropDown");
     dropDownMenu.style.display = "block";
 }
